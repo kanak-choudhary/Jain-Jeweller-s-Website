@@ -1,0 +1,41 @@
+{
+  "sectionHeader": {
+    "eyebrow": "THE ART OF JEWELLERY",
+    "title": "Experience the World of Jain",
+    "description": "Discover a world where timeless elegance meets thoughtful design. Explore the beauty of jewellery through craftsmanship, personal expression and memorable experiences.",
+    "ctaText": "Discover Our Story",
+    "ctaHref": "#brand-story"
+  },
+  "featuredImage": {
+    "src": "https://images.unsplash.com/photo-1531995811006-35cb42e1a022?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Master artisan jeweller handcrafting fine jewellery at a workbench",
+    "badge": "Handcrafted Heritage & Master Artistry"
+  },
+  "pillars": [
+    {
+      "number": "01",
+      "icon": "Gem",
+      "title": "Thoughtful Craftsmanship",
+      "description": "Discover jewellery designs created with attention to detail and a passion for timeless elegance."
+    },
+    {
+      "number": "02",
+      "icon": "Crown",
+      "title": "Timeless Designs",
+      "description": "Explore styles that bring together traditional inspiration and contemporary expression."
+    },
+    {
+      "number": "03",
+      "icon": "HeartHandshake",
+      "title": "Personal Guidance",
+      "description": "Find jewellery that reflects your style with a more personal and thoughtful shopping experience."
+    },
+    {
+      "number": "04",
+      "icon": "Sparkles",
+      "title": "Moments to Treasure",
+      "description": "Celebrate life's meaningful occasions with jewellery that becomes part of your memories."
+    }
+  ]
+}
+

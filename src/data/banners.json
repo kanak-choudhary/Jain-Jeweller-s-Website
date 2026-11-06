@@ -1,0 +1,46 @@
+[
+  {
+    "id": "royal-wedding-edit",
+    "brandTag": "JAIN JEWELLERS • ROYAL LUXURY",
+    "title": "Precious, Every Day",
+    "subtitle": "Handcrafted in 22KT Pure Gold with Uncut Polki & Basra Pearls",
+    "ctaLabel": "Shop Now",
+    "ctaLink": "#bridal",
+    "image": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1600&auto=format&fit=crop",
+    "desktopImage": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1600&auto=format&fit=crop",
+    "bgGradient": "from-burgundy-dark via-burgundy/90 to-transparent"
+  },
+  {
+    "id": "luminescence-solitaires",
+    "brandTag": "NATURAL CONFLICT-FREE DIAMONDS",
+    "title": "Shine with Distinction",
+    "subtitle": "IGI Certified Solitaires Precision-Cut for Life's Rare Moments",
+    "ctaLabel": "Explore Solitaires",
+    "ctaLink": "#diamond",
+    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1600&auto=format&fit=crop",
+    "desktopImage": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1600&auto=format&fit=crop",
+    "bgGradient": "from-[#520000] via-burgundy-dark/90 to-transparent"
+  },
+  {
+    "id": "temple-heritage-gold",
+    "brandTag": "100% BIS HALLMARKED 22KT",
+    "title": "Tradition Meets Elegance",
+    "subtitle": "Intricate Hand-Engraved Temple Kadas & Royal Nizam Heirlooms",
+    "ctaLabel": "Discover Gold",
+    "ctaLink": "#gold",
+    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop",
+    "desktopImage": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop",
+    "bgGradient": "from-[#4a0100] via-burgundy/85 to-transparent"
+  },
+  {
+    "id": "everyday-royalty",
+    "brandTag": "MODERN MINIMALISM EDIT",
+    "title": "Grace in Every Detail",
+    "subtitle": "Contemporary 18KT Diamond Chokers & Stackable Elegance",
+    "ctaLabel": "Shop Collection",
+    "ctaLink": "#explore-jewellery",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600&auto=format&fit=crop",
+    "desktopImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600&auto=format&fit=crop",
+    "bgGradient": "from-[#650100] via-burgundy/90 to-transparent"
+  }
+]

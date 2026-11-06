@@ -1,0 +1,51 @@
+[
+  {
+    "id": "certified-purity",
+    "title": "100% Certified",
+    "subtitle": "BIS Hallmarked gold and lab-certified natural diamonds",
+    "icon": "Award",
+    "badge": "BIS Hallmarked",
+    "offset": "default"
+  },
+  {
+    "id": "transparent-pricing",
+    "title": "Transparent Pricing",
+    "subtitle": "Zero hidden costs with complete weight and rate breakdown",
+    "icon": "Scale",
+    "badge": "Zero Hidden Fees",
+    "offset": "stagger"
+  },
+  {
+    "id": "lifetime-exchange",
+    "title": "Lifetime Exchange",
+    "subtitle": "Exchange or upgrade your precious jewellery anytime",
+    "icon": "RefreshCw",
+    "badge": "Assured Value",
+    "offset": "default"
+  },
+  {
+    "id": "insured-shipping",
+    "title": "Free Insured Shipping",
+    "subtitle": "100% tamper-evident, secure doorstep delivery",
+    "icon": "Truck",
+    "badge": "Pan-India Delivery",
+    "offset": "stagger"
+  },
+  {
+    "id": "easy-returns",
+    "title": "7-Day Easy Returns",
+    "subtitle": "Hassle-free returns and convenient money-back support",
+    "icon": "RotateCcw",
+    "badge": "Hassle-Free",
+    "offset": "default"
+  },
+  {
+    "id": "master-craftsmanship",
+    "title": "Master Craftsmanship",
+    "subtitle": "Heritage Indian jewellery handcrafted by generational karigars",
+    "icon": "Gem",
+    "badge": "Generational Heritage",
+    "offset": "stagger"
+  }
+]
+

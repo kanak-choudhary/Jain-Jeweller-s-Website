@@ -1,0 +1,32 @@
+{
+  "eyebrow": "YOUR FOREVER BEGINS HERE",
+  "title": "The Bridal Collection",
+  "description": "Celebrate your most beautiful beginning with exquisite jewellery crafted for moments that last a lifetime.",
+  "ctaText": "Explore Bridal Collection",
+  "ctaHref": "/bridal-collection",
+  "secondaryCtaText": "Book Bridal Consultation",
+  "secondaryCtaHref": "#consultation",
+  "primaryImage": {
+    "src": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1600&auto=format&fit=crop",
+    "alt": "Indian bride wearing royal gold and gemstone jewellery, ornate necklace, earrings and maang tikka",
+    "caption": "Handcrafted 22K Gold • Uncut Polki & Heritage Gemstones"
+  },
+  "features": [
+    {
+      "title": "Imperial Necklaces & Chokers",
+      "description": "Elaborate multi-tier rani haars and kundan chokers sculpted for regal grace."
+    },
+    {
+      "title": "Auspicious Maang Tikkas",
+      "description": "Intricately detailed forehead adornments and matha pattis blessed for your sacred vows."
+    },
+    {
+      "title": "Heirloom Kadas & Haathphool",
+      "description": "Traditional temple bangles and bridal hand ornaments finished with timeless craftsmanship."
+    }
+  ],
+  "guarantee": {
+    "title": "Bespoke Bridal Trousseau Service",
+    "subtitle": "Complimentary styling consultation with master jewellers"
+  }
+}

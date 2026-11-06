@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "JAIN JEWELLERS",
+    "tagline": "Royal Indian Luxury",
+    "description": "Discover timeless elegance with Jain Jewellers. Explore jewellery designs for life's most meaningful moments."
+  },
+  "columns": [
+    {
+      "title": "Shop & Explore",
+      "links": [
+        { "label": "All Jewellery", "href": "#all-jewellery" },
+        { "label": "Gold Jewellery", "href": "#gold" },
+        { "label": "Diamond Jewellery", "href": "#diamond" },
+        { "label": "Silver Jewellery", "href": "#silver" },
+        { "label": "Earrings", "href": "#earrings" },
+        { "label": "Rings", "href": "#rings" },
+        { "label": "Bridal Collection", "href": "#bridal" }
+      ]
+    },
+    {
+      "title": "Customer Assistance",
+      "links": [
+        { "label": "Contact Us", "href": "#contact" },
+        { "label": "FAQs", "href": "#faqs" },
+        { "label": "Shipping Information", "href": "#shipping" },
+        { "label": "Return Policy", "href": "#returns" },
+        { "label": "Jewellery Guide", "href": "#jewellery-guide" },
+        { "label": "Book an Appointment", "href": "#appointment" }
+      ]
+    },
+    {
+      "title": "About Jain Jewellers",
+      "links": [
+        { "label": "About Us", "href": "#about" },
+        { "label": "Our Collections", "href": "#discover-collection" },
+        { "label": "Jain Experience", "href": "#experience" },
+        { "label": "Store Locator", "href": "#store-locator" }
+      ]
+    }
+  ],
+  "newsletter": {
+    "heading": "Stay in the Loop",
+    "description": "Be the first to discover new collections, inspirations and updates from Jain Jewellers.",
+    "placeholder": "Enter your email address",
+    "buttonText": "Subscribe"
+  },
+  "legal": [
+    { "label": "Privacy Policy", "href": "#privacy-policy" },
+    { "label": "Terms & Conditions", "href": "#terms" }
+  ],
+  "copyright": "© 2026 Jain Jewellers. All rights reserved."
+}
+

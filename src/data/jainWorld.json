@@ -1,0 +1,38 @@
+{
+  "eyebrow": "STORIES IN GOLD",
+  "title": "Welcome to Jain World",
+  "description": "Immerse yourself in a world of royal Indian craftsmanship, timeless family heirlooms, and bespoke modern luxury.",
+  "stories": [
+    {
+      "id": "royal-atelier",
+      "tag": "Generational Heritage",
+      "title": "The Royal Atelier",
+      "description": "Preserving centuries-old Indian goldsmithing, intricate Jadau setting, and handcrafted Kundan artistry with multi-generational karigars.",
+      "image": "https://images.unsplash.com/photo-1569388330292-79cc1ec67270?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Master artisan goldsmith hand-setting precious gemstones in royal gold",
+      "ctaLabel": "Discover Our Craft",
+      "href": "#about-us"
+    },
+    {
+      "id": "bespoke-bridal",
+      "tag": "Signature Service",
+      "title": "Bespoke Bridal Journey",
+      "description": "Experience personal one-on-one bridal consultations, custom fitting, and customized heirloom creations for your auspicious day.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Indian bride adorned with bespoke royal jewellery suite",
+      "ctaLabel": "Book Bridal Styling",
+      "href": "#appointment"
+    },
+    {
+      "id": "solitaire-universe",
+      "tag": "Certified Brilliance",
+      "title": "The Solitaire Universe",
+      "description": "Natural, conflict-free diamonds meticulously evaluated and certified for exceptional light dispersion and timeless promises.",
+      "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Luxury editorial portrait highlighting fine solitaire diamond jewellery",
+      "ctaLabel": "Explore Solitaires",
+      "href": "#diamond"
+    }
+  ]
+}
+

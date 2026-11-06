@@ -1,0 +1,47 @@
+[
+  {
+    "id": "gold",
+    "name": "Gold",
+    "tag": "22KT BIS Hallmarked",
+    "description": "Discover the timeless beauty of gold jewellery.",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
+    "alt": "Lustrous 22KT yellow gold necklace and traditional jewellery piece",
+    "ctaLabel": "Explore Gold",
+    "href": "#gold"
+  },
+  {
+    "id": "diamond",
+    "name": "Diamond",
+    "tag": "IGI & GIA Certified",
+    "description": "Explore the brilliance of elegant diamond designs.",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop",
+    "alt": "Sparkling solitaire diamond ring set in luminous 18KT gold",
+    "ctaLabel": "Explore Diamond",
+    "href": "#diamond"
+  },
+  {
+    "id": "silver",
+    "name": "Silver",
+    "tag": "925 Sterling Silver",
+    "description": "Find understated elegance in beautifully designed silver jewellery.",
+    "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=800&auto=format&fit=crop",
+    "alt": "Fine 925 sterling silver bracelets, anklets and artisan silverware",
+    "ctaLabel": "Explore Silver",
+    "href": "#silver"
+  },
+  {
+    "id": "daily-wear",
+    "name": "Daily Wear",
+    "tag": "Feather-light 18KT",
+    "description": "Discover versatile jewellery for your everyday moments.",
+    "image": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=800&auto=format&fit=crop",
+    "alt": "Minimalist modern 18KT gold and diamond stackable everyday jewellery",
+    "ctaLabel": "Explore Daily Wear",
+    "href": "#daily-wear"
+  }
+]
+

@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #8A0201;
+  --color-burgundy-dark: #650100;
+  --color-gold: #D99506;
+  --color-gold-light: #F6B621;
+  --color-white: #FFFFFF;
+  --color-ivory: #FAF8F4;
+  --color-champagne: #F2E8D8;
+  --color-charcoal: #292321;
+  --color-muted: #77716D;
+  --color-border-soft: #E8E1D8;
+
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-lato), Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --color-burgundy: #8A0201;
+  --color-burgundy-dark: #650100;
+  --color-gold: #D99506;
+  --color-gold-light: #F6B621;
+  --color-white: #FFFFFF;
+  --color-ivory: #FAF8F4;
+  --color-champagne: #F2E8D8;
+  --color-charcoal: #292321;
+  --color-muted: #77716D;
+  --color-border-soft: #E8E1D8;
+
+  --background: #FFFFFF;
+  --foreground: #292321;
+}
+
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base Document Styles */
+html {
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading Defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* Brand Selection Styling */
+::selection {
+  background-color: rgba(217, 149, 6, 0.22);
+  color: var(--color-burgundy);
+}
+
+/* Image Reset */
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Button & Link Reset */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessible Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Reusable Responsive Container */
+.container-custom {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-inline: 2rem;
+  }
+}

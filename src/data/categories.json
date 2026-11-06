@@ -1,0 +1,50 @@
+[
+  {
+    "id": "earrings",
+    "name": "Earrings",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop",
+    "link": "#earrings"
+  },
+  {
+    "id": "rings",
+    "name": "Rings",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop",
+    "link": "#rings"
+  },
+  {
+    "id": "pendants",
+    "name": "Pendants",
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop",
+    "link": "#pendants"
+  },
+  {
+    "id": "bracelets",
+    "name": "Bracelets",
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop",
+    "link": "#bracelets"
+  },
+  {
+    "id": "chains",
+    "name": "Chains",
+    "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=800&auto=format&fit=crop",
+    "link": "#chains"
+  },
+  {
+    "id": "mangalsutras",
+    "name": "Mangalsutras",
+    "image": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=800&auto=format&fit=crop",
+    "link": "#mangalsutras"
+  },
+  {
+    "id": "anklets",
+    "name": "Anklets",
+    "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=800&auto=format&fit=crop",
+    "link": "#anklets"
+  },
+  {
+    "id": "view-all",
+    "name": "View All",
+    "link": "#all-jewellery",
+    "isViewAll": true
+  }
+]

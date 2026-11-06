@@ -1,0 +1,62 @@
+[
+  {
+    "id": "wedding-classics",
+    "title": "Wedding Classics",
+    "tag": "Bridal Collection",
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1400&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=800&auto=format&fit=crop",
+    "alt": "Imperial royal bridal gold necklace with basra pearls and uncut gemstones",
+    "ctaLabel": "Explore Collection",
+    "href": "#bridal-collection",
+    "featured": true,
+    "layoutVariant": "featured-tall"
+  },
+  {
+    "id": "traditional-elegance",
+    "title": "Traditional Elegance",
+    "tag": "Kundan & Jadau",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
+    "alt": "Traditional Indian gold and kundan jewellery arrangement",
+    "ctaLabel": "Explore",
+    "href": "#traditional",
+    "featured": false,
+    "layoutVariant": "standard"
+  },
+  {
+    "id": "everyday-essentials",
+    "title": "Everyday Essentials",
+    "tag": "Fine Jewellery",
+    "image": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?q=80&w=800&auto=format&fit=crop",
+    "alt": "Minimalist fine diamond ring on neutral background",
+    "ctaLabel": "Explore",
+    "href": "#daily-wear",
+    "featured": false,
+    "layoutVariant": "standard"
+  },
+  {
+    "id": "modern-statements",
+    "title": "Modern Statements",
+    "tag": "Contemporary",
+    "image": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=800&auto=format&fit=crop",
+    "alt": "Modern contemporary statement diamond jewellery",
+    "ctaLabel": "Explore",
+    "href": "#contemporary",
+    "featured": false,
+    "layoutVariant": "standard"
+  },
+  {
+    "id": "festive-favourites",
+    "title": "Festive Favourites",
+    "tag": "Celebration",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop",
+    "mobileImage": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop",
+    "alt": "Festive Indian celebration gold earrings with pearls",
+    "ctaLabel": "Explore",
+    "href": "#festive",
+    "featured": false,
+    "layoutVariant": "standard"
+  }
+]

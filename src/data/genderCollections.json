@@ -1,0 +1,27 @@
+{
+  "title": "Curated For You",
+  "subtitle": "Shop By Gender",
+  "collections": [
+    {
+      "id": "women-jewellery",
+      "name": "Women Jewellery",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Women Jewellery - Elegant Indian festive necklace, earrings and jewellery",
+      "href": "#women"
+    },
+    {
+      "id": "men-jewellery",
+      "name": "Men Jewellery",
+      "image": "https://images.unsplash.com/photo-1783188223567-e98c411c57cd?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Men Jewellery - Traditional Indian wedding jewellery necklace and accessories",
+      "href": "#men"
+    },
+    {
+      "id": "kids-jewellery",
+      "name": "Kids Jewellery",
+      "image": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=1200&auto=format&fit=crop",
+      "alt": "Kids Jewellery - Handcrafted delicate traditional jewellery for children",
+      "href": "#kids"
+    }
+  ]
+}

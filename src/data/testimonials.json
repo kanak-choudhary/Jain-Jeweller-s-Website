@@ -1,0 +1,28 @@
+{
+  "sectionHeader": {
+    "eyebrow": "WHAT OUR CUSTOMERS SAY",
+    "title": "Stories of Trust & Love",
+    "description": "Every piece of jewellery becomes part of a special memory. Discover the experiences shared by our customers."
+  },
+  "testimonials": [
+    {
+      "id": "review-01",
+      "customer": "Priya Sharma",
+      "review": "Beautiful designs and excellent finishing. I found exactly what I was looking for. The overall experience was wonderful.",
+      "context": "A memorable shopping experience"
+    },
+    {
+      "id": "review-02",
+      "customer": "Ananya Verma",
+      "review": "The collection is elegant and the staff was helpful throughout my visit. I truly loved the experience.",
+      "context": "A delightful store experience"
+    },
+    {
+      "id": "review-03",
+      "customer": "Riya Patel",
+      "review": "I loved the attention to detail and the beautiful jewellery designs. A lovely experience from beginning to end.",
+      "context": "Finding the perfect jewellery"
+    }
+  ]
+}
+

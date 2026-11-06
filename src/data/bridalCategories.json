@@ -1,0 +1,45 @@
+[
+  {
+    "id": "bridal-necklace-sets",
+    "name": "Bridal Necklace Sets",
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Royal bridal necklace set in gold and gemstones",
+    "href": "#bridal-necklaces"
+  },
+  {
+    "id": "bridal-earrings",
+    "name": "Bridal Earrings",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Heritage bridal jhumkas and chandelier earrings",
+    "href": "#bridal-earrings"
+  },
+  {
+    "id": "maang-tikka",
+    "name": "Maang Tikka",
+    "image": "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Intricately detailed bridal maang tikka and matha patti",
+    "href": "#bridal-maang-tikka"
+  },
+  {
+    "id": "bridal-bangles",
+    "name": "Bridal Bangles",
+    "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Handcrafted gold bridal kadas and bangles",
+    "href": "#bridal-bangles"
+  },
+  {
+    "id": "nath-nose-rings",
+    "name": "Nath & Nose Rings",
+    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Traditional bridal nath and nose ornaments",
+    "href": "#bridal-nath"
+  },
+  {
+    "id": "complete-bridal-sets",
+    "name": "Complete Bridal Sets",
+    "image": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Complete bridal jewellery trousseau suite",
+    "href": "#bridal-sets"
+  }
+]
+

@@ -1,0 +1,197 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "id": "occasion",
+      "question": "What are you shopping for?",
+      "subtitle": "Select the special milestone or occasion you are celebrating",
+      "options": [
+        {
+          "id": "wedding",
+          "label": "Wedding",
+          "description": "Grand bridal sets & wedding heirlooms",
+          "icon": "Crown",
+          "categoryRef": "bridal"
+        },
+        {
+          "id": "festive",
+          "label": "Festive Celebration",
+          "description": "Diwali, Dhanteras & auspicious festivities",
+          "icon": "Sparkles",
+          "categoryRef": "traditional"
+        },
+        {
+          "id": "daily",
+          "label": "Daily Wear",
+          "description": "Sleek, lightweight fine jewellery for every day",
+          "icon": "Sun",
+          "categoryRef": "daily-wear"
+        },
+        {
+          "id": "gifting",
+          "label": "Gifting",
+          "description": "Meaningful tokens of love & blessings",
+          "icon": "Gift",
+          "categoryRef": "gifting"
+        },
+        {
+          "id": "special",
+          "label": "Special Occasion",
+          "description": "Anniversaries, galas & milestones",
+          "icon": "Gem",
+          "categoryRef": "collections"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "id": "category",
+      "question": "What type of jewellery do you love?",
+      "subtitle": "Choose your preferred silhouette to narrow your discovery",
+      "options": [
+        {
+          "id": "earrings",
+          "label": "Earrings",
+          "description": "Jhumkas, chandbalis, studs & hoops",
+          "icon": "Disc",
+          "categoryRef": "earrings"
+        },
+        {
+          "id": "necklace",
+          "label": "Necklace",
+          "description": "Chokers, rani haars & tennis chains",
+          "icon": "CircleDot",
+          "categoryRef": "necklaces"
+        },
+        {
+          "id": "rings",
+          "label": "Rings",
+          "description": "Solitaires, cocktail rings & bands",
+          "icon": "Circle",
+          "categoryRef": "rings"
+        },
+        {
+          "id": "bangles",
+          "label": "Bangles & Bracelets",
+          "description": "Kadas, cuffs & tennis bracelets",
+          "icon": "LifeBuoy",
+          "categoryRef": "bangles"
+        },
+        {
+          "id": "pendants",
+          "label": "Pendants",
+          "description": "Delicate gold & diamond drops",
+          "icon": "Shield",
+          "categoryRef": "pendants"
+        },
+        {
+          "id": "sets",
+          "label": "Jewellery Sets",
+          "description": "Coordinated sets for complete elegance",
+          "icon": "Layers",
+          "categoryRef": "sets"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "id": "style",
+      "question": "Which style speaks to you?",
+      "subtitle": "Select your personal aesthetic and craftsmanship preference",
+      "options": [
+        {
+          "id": "traditional",
+          "label": "Traditional",
+          "description": "Kundan, Jadau, Meenakari & Temple gold",
+          "icon": "Flame",
+          "categoryRef": "traditional"
+        },
+        {
+          "id": "contemporary",
+          "label": "Contemporary",
+          "description": "Modern architectural & geometric motifs",
+          "icon": "Compass",
+          "categoryRef": "contemporary"
+        },
+        {
+          "id": "minimal",
+          "label": "Minimal",
+          "description": "Clean lines, subtle pavé & sleek gold",
+          "icon": "MinusCircle",
+          "categoryRef": "minimal"
+        },
+        {
+          "id": "statement",
+          "label": "Statement",
+          "description": "Bold, eye-catching luxury showstoppers",
+          "icon": "Star",
+          "categoryRef": "statement"
+        },
+        {
+          "id": "bridal",
+          "label": "Bridal",
+          "description": "Majestic royal bridal splendour",
+          "icon": "Crown",
+          "categoryRef": "bridal"
+        }
+      ]
+    }
+  ],
+  "recommendationMatrix": [
+    {
+      "id": "rec-bridal-necklace",
+      "matchCondition": { "occasion": "wedding", "category": "necklace" },
+      "collectionName": "Imperial Nizam Royal Bridal Choker",
+      "collectionTag": "Royal Heritage 22KT Gold",
+      "description": "A breathtaking bridal heirloom handcrafted in hallmarked 22KT gold featuring uncut Polki diamonds, hand-strung Basra pearls, and rare Zambian emerald drops.",
+      "route": "#collections",
+      "features": ["22KT BIS Hallmarked", "Handcrafted Uncut Polki", "Complimentary Bespoke Fitting"]
+    },
+    {
+      "id": "rec-wedding-sets",
+      "matchCondition": { "occasion": "wedding", "category": "sets" },
+      "collectionName": "The Rajputana Royal Bridal Shringaar",
+      "collectionTag": "Full Bridal Ensemble",
+      "description": "Complete wedding jewellery suite comprising the grand choker, matching jhumkas, maang tikka, and hathphool created for the memorable royal bride.",
+      "route": "#collections",
+      "features": ["Certified Heritage Craft", "Includes Matching Tikka & Jhumkas", "Lifetime Exchange Guarantee"]
+    },
+    {
+      "id": "rec-daily-minimal",
+      "matchCondition": { "occasion": "daily", "style": "minimal" },
+      "collectionName": "Luminescence 18KT Everyday Fine Gold",
+      "collectionTag": "Modern Minimalist Fine Jewellery",
+      "description": "Understated luxury designed for seamless daily transition. Featuring sleek architectural silhouettes, conflict-free pavé diamonds, and feather-light ergonomics.",
+      "route": "#collections",
+      "features": ["Feather-light 18KT Gold", "VVS-EF Natural Diamonds", "Daily Comfort Guarantee"]
+    },
+    {
+      "id": "rec-gifting-rings",
+      "matchCondition": { "occasion": "gifting", "category": "rings" },
+      "collectionName": "Eternal Promise Solitaire Bands",
+      "collectionTag": "Luxury Gifting Edition",
+      "description": "A timeless gesture of affection. Certified brilliant-cut diamond bands set in luminous 18KT gold, packaged in a bespoke velvet jewellery presentation box.",
+      "route": "#collections",
+      "features": ["IGI Certified Diamonds", "Luxury Signature Gift Box", "Complimentary Engraving"]
+    },
+    {
+      "id": "rec-festive-earrings",
+      "matchCondition": { "occasion": "festive", "category": "earrings" },
+      "collectionName": "Chandrakala Heritage Kundan Chandbalis",
+      "collectionTag": "Festive Celebration Edit",
+      "description": "Intricate crescent chandbalis embellished with fine meenakari enamel work, cascading pearls, and radiant jadau stones for auspicious family festivities.",
+      "route": "#collections",
+      "features": ["Traditional Hand-Enamel Work", "22KT Gold Purity", "Feather-light Backing Support"]
+    },
+    {
+      "id": "rec-default",
+      "matchCondition": {},
+      "collectionName": "Jain Jewellers Signature Heritage Collection",
+      "collectionTag": "Curated Royal Selection",
+      "description": "A magnificent curation embodying the pinnacle of Indian jewellery artistry—from hallmarked 22KT gold to certified diamonds and timeless gemstones.",
+      "route": "#collections",
+      "features": ["100% Certified Purity", "Bespoke Craftsmanship", "Insured Pan-India Delivery"]
+    }
+  ]
+}
+
