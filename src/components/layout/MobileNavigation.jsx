@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { X, ChevronRight, ChevronDown, Search, Heart, ShoppingBag, User, Phone, MapPin } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
+import { allJewelleryMenuData } from '@/data/allJewelleryMenu';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
 
@@ -12,6 +13,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
   const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
   const [expandedCategories, setExpandedCategories] = useState({});
+  const [mobileAllJewelleryTab, setMobileAllJewelleryTab] = useState('category');
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
 
   // Prevent background scrolling when mobile menu is open
@@ -149,30 +151,101 @@ export default function MobileNavigation({ isOpen, onClose }) {
                       {/* Expandable Submenu */}
                       {isExpanded && (
                         <div className="pl-3 pr-2 py-2 space-y-3 bg-ivory/60 rounded-xl my-1 border border-border-soft/60 animate-in fade-in duration-150">
-                          {cat.subcategories.map((sub, idx) => (
-                            <div key={idx} className="space-y-1.5">
-                              {sub.title && (
-                                <p className="text-[11px] font-bold uppercase tracking-wider text-charcoal/80 border-b border-champagne/60 pb-1">
-                                  {sub.title}
-                                </p>
-                              )}
-                              {sub.items && (
-                                <ul className="space-y-1.5 list-none m-0 p-0">
-                                  {sub.items.map((item, i) => (
-                                    <li key={i}>
-                                      <Link
-                                        href={item.href}
-                                        onClick={handleLinkClick}
-                                        className="text-xs text-charcoal/90 hover:text-burgundy transition-colors block py-1 font-serif"
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    </li>
+                          {cat.id === 'all-jewellery' ? (
+                            <div className="space-y-3">
+                              {/* Horizontal Tab Selector for All Jewellery */}
+                              <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 no-scrollbar border-b border-champagne/60">
+                                {allJewelleryMenuData.tabs.map((tab) => (
+                                  <button
+                                    key={tab.id}
+                                    type="button"
+                                    onClick={() => setMobileAllJewelleryTab(tab.id)}
+                                    className={`px-2.5 py-1 rounded-full text-[11px] font-medium tracking-wide whitespace-nowrap transition-colors ${
+                                      mobileAllJewelleryTab === tab.id
+                                        ? 'bg-burgundy text-white shadow-xs font-semibold'
+                                        : 'bg-champagne/40 text-charcoal hover:bg-champagne/70'
+                                    }`}
+                                  >
+                                    {tab.label}
+                                  </button>
+                                ))}
+                              </div>
+
+                              {/* Mobile Tab Content */}
+                              {mobileAllJewelleryTab === 'category' ? (
+                                <div className="space-y-3">
+                                  {allJewelleryMenuData.content.category.columns.map((col, idx) => (
+                                    <div key={idx} className="space-y-1.5">
+                                      <p className="text-[10px] font-bold uppercase tracking-wider text-charcoal/70 border-b border-champagne/40 pb-0.5">
+                                        {col.title}
+                                      </p>
+                                      <div className="grid grid-cols-2 gap-1.5">
+                                        {col.items.map((item, i) => (
+                                          <Link
+                                            key={i}
+                                            href={item.href}
+                                            onClick={handleLinkClick}
+                                            className="text-xs text-charcoal hover:text-burgundy transition-colors py-1 px-1.5 rounded-md hover:bg-white/80 font-serif line-clamp-1"
+                                          >
+                                            {item.name}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    </div>
                                   ))}
-                                </ul>
+                                </div>
+                              ) : (
+                                <div className="space-y-2">
+                                  {allJewelleryMenuData.content[mobileAllJewelleryTab]?.columns[0]?.items.map((item, i) => (
+                                    <Link
+                                      key={i}
+                                      href={item.href}
+                                      onClick={handleLinkClick}
+                                      className="flex items-center justify-between py-1.5 px-2 rounded-lg bg-white/70 hover:bg-white transition-colors"
+                                    >
+                                      <div>
+                                        <span className="text-xs font-serif font-medium text-charcoal hover:text-burgundy block">
+                                          {item.name}
+                                        </span>
+                                        {item.detail && (
+                                          <span className="text-[10px] text-muted block line-clamp-1">
+                                            {item.detail}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <ChevronRight className="w-3 h-3 text-muted" />
+                                    </Link>
+                                  ))}
+                                </div>
                               )}
                             </div>
-                          ))}
+                          ) : (
+                            cat.subcategories &&
+                            cat.subcategories.map((sub, idx) => (
+                              <div key={idx} className="space-y-1.5">
+                                {sub.title && (
+                                  <p className="text-[11px] font-bold uppercase tracking-wider text-charcoal/80 border-b border-champagne/60 pb-1">
+                                    {sub.title}
+                                  </p>
+                                )}
+                                {sub.items && (
+                                  <ul className="space-y-1.5 list-none m-0 p-0">
+                                    {sub.items.map((item, i) => (
+                                      <li key={i}>
+                                        <Link
+                                          href={item.href}
+                                          onClick={handleLinkClick}
+                                          className="text-xs text-charcoal/90 hover:text-burgundy transition-colors block py-1 font-serif"
+                                        >
+                                          {item.name}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </div>
+                            ))
+                          )}
                         </div>
                       )}
                     </div>
