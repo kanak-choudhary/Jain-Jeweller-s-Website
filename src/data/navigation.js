@@ -107,6 +107,7 @@ export const navigationCategories = [
     id: "coins",
     label: "Coins",
     href: "#coins",
+    hasMegaMenu: true,
   },
   {
     id: "collections",

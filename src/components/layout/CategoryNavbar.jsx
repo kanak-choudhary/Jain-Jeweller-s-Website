@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
 import AllJewelleryMegaMenu from '@/components/navigation/AllJewelleryMegaMenu';
+import MetalMegaMenu from '@/components/navigation/MetalMegaMenu';
+import CoinsMegaMenu from '@/components/navigation/CoinsMegaMenu';
+import { goldMenuData, diamondMenuData, silverMenuData } from '@/data/metalMegaMenuData';
 
 export default function CategoryNavbar() {
   const [activeCategory, setActiveCategory] = useState(null);
@@ -114,14 +117,40 @@ export default function CategoryNavbar() {
                   />
                 </Link>
 
-                {/* SPECIALIZED ALL JEWELLERY MEGA MENU */}
+                {/* MEGA MENUS */}
                 {cat.id === 'all-jewellery' ? (
                   <AllJewelleryMegaMenu
                     isOpen={isOpen}
                     onClose={() => setActiveCategory(null)}
                   />
+                ) : cat.id === 'gold' ? (
+                  <MetalMegaMenu
+                    data={goldMenuData}
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                    align="left"
+                  />
+                ) : cat.id === 'diamond' ? (
+                  <MetalMegaMenu
+                    data={diamondMenuData}
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                    align="center"
+                  />
+                ) : cat.id === 'silver' ? (
+                  <MetalMegaMenu
+                    data={silverMenuData}
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                    align="center"
+                  />
+                ) : cat.id === 'coins' ? (
+                  <CoinsMegaMenu
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                  />
                 ) : (
-                  /* STANDARD CATEGORY MEGA MENU */
+                  /* STANDARD CATEGORY MEGA MENU (e.g. Collections) */
                   cat.hasMegaMenu &&
                   cat.subcategories && (
                     <div

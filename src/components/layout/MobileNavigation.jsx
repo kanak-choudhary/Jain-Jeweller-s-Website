@@ -6,14 +6,26 @@ import Image from 'next/image';
 import { X, ChevronRight, ChevronDown, Search, Heart, ShoppingBag, User, Phone, MapPin } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
 import { allJewelleryMenuData } from '@/data/allJewelleryMenu';
+import { goldMenuData, diamondMenuData, silverMenuData, coinsMenuData } from '@/data/metalMegaMenuData';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
+
+const metalDataMap = {
+  gold: goldMenuData,
+  diamond: diamondMenuData,
+  silver: silverMenuData,
+};
 
 export default function MobileNavigation({ isOpen, onClose }) {
   const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
   const [expandedCategories, setExpandedCategories] = useState({});
   const [mobileAllJewelleryTab, setMobileAllJewelleryTab] = useState('category');
+  const [mobileMetalTabs, setMobileMetalTabs] = useState({
+    gold: 'category',
+    diamond: 'category',
+    silver: 'category',
+  });
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
 
   // Prevent background scrolling when mobile menu is open
@@ -218,6 +230,107 @@ export default function MobileNavigation({ isOpen, onClose }) {
                                   ))}
                                 </div>
                               )}
+                            </div>
+                          ) : metalDataMap[cat.id] ? (
+                            (() => {
+                              const mData = metalDataMap[cat.id];
+                              const activeTab = mobileMetalTabs[cat.id] || 'category';
+                              const tabContent = mData.content[activeTab];
+
+                              return (
+                                <div className="space-y-3">
+                                  {/* Horizontal Tab Selector for Gold / Diamond / Silver */}
+                                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 no-scrollbar border-b border-champagne/60">
+                                    {mData.tabs.map((tab) => (
+                                      <button
+                                        key={tab.id}
+                                        type="button"
+                                        onClick={() =>
+                                          setMobileMetalTabs((prev) => ({
+                                            ...prev,
+                                            [cat.id]: tab.id,
+                                          }))
+                                        }
+                                        className={`px-2.5 py-1 rounded-full text-[11px] font-medium tracking-wide whitespace-nowrap transition-colors ${
+                                          activeTab === tab.id
+                                            ? 'bg-burgundy text-white shadow-xs font-semibold'
+                                            : 'bg-champagne/40 text-charcoal hover:bg-champagne/70'
+                                        }`}
+                                      >
+                                        {tab.label}
+                                      </button>
+                                    ))}
+                                  </div>
+
+                                  {/* Metal Mobile Tab Content */}
+                                  {activeTab === 'category' ? (
+                                    <div className="space-y-3">
+                                      {tabContent?.columns?.map((col, idx) => (
+                                        <div key={idx} className="space-y-1.5">
+                                          <p className="text-[10px] font-bold uppercase tracking-wider text-charcoal/70 border-b border-champagne/40 pb-0.5">
+                                            {col.title}
+                                          </p>
+                                          <div className="grid grid-cols-2 gap-1.5">
+                                            {col.items.map((item, i) => (
+                                              <Link
+                                                key={i}
+                                                href={item.href}
+                                                onClick={handleLinkClick}
+                                                className="text-xs text-charcoal hover:text-burgundy transition-colors py-1 px-1.5 rounded-md hover:bg-white/80 font-serif line-clamp-1"
+                                              >
+                                                {item.name}
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ) : (
+                                    <div className="grid grid-cols-2 gap-1.5 pt-1">
+                                      {tabContent?.items?.map((item, i) => (
+                                        <Link
+                                          key={i}
+                                          href={item.href}
+                                          onClick={handleLinkClick}
+                                          className={`py-1.5 px-2 rounded-lg text-xs font-serif transition-colors block ${
+                                            item.isHighlight
+                                              ? 'font-semibold text-burgundy bg-champagne/30'
+                                              : 'text-charcoal hover:text-burgundy bg-white/70 hover:bg-white'
+                                          }`}
+                                        >
+                                          {item.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })()
+                          ) : cat.id === 'coins' ? (
+                            <div className="space-y-3">
+                              {coinsMenuData.columns.map((col, idx) => (
+                                <div key={idx} className="space-y-1.5">
+                                  <p className="text-[10px] font-bold uppercase tracking-wider text-gold border-b border-champagne/40 pb-0.5">
+                                    {col.title}
+                                  </p>
+                                  <div className="grid grid-cols-2 gap-1.5">
+                                    {col.items.map((item, i) => (
+                                      <Link
+                                        key={i}
+                                        href={item.href}
+                                        onClick={handleLinkClick}
+                                        className={`text-xs transition-colors py-1 px-1.5 rounded-md font-serif line-clamp-1 ${
+                                          item.isHighlight
+                                            ? 'font-semibold text-burgundy bg-champagne/30'
+                                            : 'text-charcoal hover:text-burgundy hover:bg-white/80'
+                                        }`}
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
                             </div>
                           ) : (
                             cat.subcategories &&
