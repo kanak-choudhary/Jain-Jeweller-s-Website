@@ -1,5 +1,4 @@
 import HeroSection from '@/components/home/HeroSection';
-import FindYourMatch from '@/components/home/FindYourMatch';
 import ShopByCategory from '@/components/home/ShopByCategory';
 import JainPromises from '@/components/home/JainPromises';
 import DiamondCollection from '@/components/home/DiamondCollection';
@@ -18,9 +17,6 @@ export default function HomePage() {
     <main className="min-h-screen flex flex-col bg-white">
       {/* SECTION 03 — Hero Campaign Slider */}
       <HeroSection />
-
-      {/* SECTION 04 — Find Your Perfect Match */}
-      <FindYourMatch />
 
       {/* SECTION 05 — Shop by Category */}
       <ShopByCategory />

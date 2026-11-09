@@ -1,46 +1,70 @@
 [
   {
-    "id": "royal-wedding-edit",
-    "brandTag": "JAIN JEWELLERS • ROYAL LUXURY",
-    "title": "Precious, Every Day",
-    "subtitle": "Handcrafted in 22KT Pure Gold with Uncut Polki & Basra Pearls",
+    "id": "hero-banner-01",
+    "brandTag": "JAIN JEWELLERS • IDOLS COLLECTION",
+    "title": "Idols Collection",
+    "subtitle": "Divine Idols in Pure Silver",
     "ctaLabel": "Shop Now",
-    "ctaLink": "#bridal",
-    "image": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1600&auto=format&fit=crop",
-    "desktopImage": "https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1600&auto=format&fit=crop",
-    "bgGradient": "from-burgundy-dark via-burgundy/90 to-transparent"
+    "ctaLink": "#silver-idols",
+    "isGraphicArtwork": true,
+    "images": {
+      "desktop": "/images/home/hero/desktop/hero-banner-01.webp",
+      "tablet": "/images/home/hero/tablet/hero-banner-01.webp",
+      "mobile": "/images/home/hero/mobile/hero-banner-01.webp"
+    },
+    "image": "/images/home/hero/desktop/hero-banner-01.webp",
+    "desktopImage": "/images/home/hero/desktop/hero-banner-01.webp",
+    "bgColor": "#FAF4EC"
   },
   {
-    "id": "luminescence-solitaires",
-    "brandTag": "NATURAL CONFLICT-FREE DIAMONDS",
-    "title": "Shine with Distinction",
-    "subtitle": "IGI Certified Solitaires Precision-Cut for Life's Rare Moments",
-    "ctaLabel": "Explore Solitaires",
-    "ctaLink": "#diamond",
-    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1600&auto=format&fit=crop",
-    "desktopImage": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1600&auto=format&fit=crop",
-    "bgGradient": "from-[#520000] via-burgundy-dark/90 to-transparent"
+    "id": "hero-banner-02",
+    "brandTag": "JAIN JEWELLERS • WEDDING SIGNATURES",
+    "title": "Wedding Signatures",
+    "subtitle": "For Weddings Crafted by You",
+    "ctaLabel": "Shop Now",
+    "ctaLink": "/bridal-collection",
+    "isGraphicArtwork": true,
+    "images": {
+      "desktop": "/images/home/hero/desktop/hero-banner-02.webp",
+      "tablet": "/images/home/hero/tablet/hero-banner-02.webp",
+      "mobile": "/images/home/hero/mobile/hero-banner-02.webp"
+    },
+    "image": "/images/home/hero/desktop/hero-banner-02.webp",
+    "desktopImage": "/images/home/hero/desktop/hero-banner-02.webp",
+    "bgColor": "#FAF4EC"
   },
   {
-    "id": "temple-heritage-gold",
-    "brandTag": "100% BIS HALLMARKED 22KT",
-    "title": "Tradition Meets Elegance",
-    "subtitle": "Intricate Hand-Engraved Temple Kadas & Royal Nizam Heirlooms",
-    "ctaLabel": "Discover Gold",
-    "ctaLink": "#gold",
-    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop",
-    "desktopImage": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop",
-    "bgGradient": "from-[#4a0100] via-burgundy/85 to-transparent"
+    "id": "hero-banner-03",
+    "brandTag": "JAIN JEWELLERS • RINGS & FINE JEWELLERY",
+    "title": "Rings that Celebrate Every Moment",
+    "subtitle": "Exquisite Fine Jewellery in Gold & Diamonds",
+    "ctaLabel": "Shop Now",
+    "ctaLink": "#rings",
+    "isGraphicArtwork": true,
+    "images": {
+      "desktop": "/images/home/hero/desktop/hero-banner-03.webp",
+      "tablet": "/images/home/hero/tablet/hero-banner-03.webp",
+      "mobile": "/images/home/hero/mobile/hero-banner-03.webp"
+    },
+    "image": "/images/home/hero/desktop/hero-banner-03.webp",
+    "desktopImage": "/images/home/hero/desktop/hero-banner-03.webp",
+    "bgColor": "#1C382C"
   },
   {
-    "id": "everyday-royalty",
-    "brandTag": "MODERN MINIMALISM EDIT",
-    "title": "Grace in Every Detail",
-    "subtitle": "Contemporary 18KT Diamond Chokers & Stackable Elegance",
-    "ctaLabel": "Shop Collection",
-    "ctaLink": "#explore-jewellery",
-    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600&auto=format&fit=crop",
-    "desktopImage": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1600&auto=format&fit=crop",
-    "bgGradient": "from-[#650100] via-burgundy/90 to-transparent"
+    "id": "hero-banner-04",
+    "brandTag": "JAIN JEWELLERS • EARRINGS COLLECTION",
+    "title": "Elegant Earrings for Every Occasion",
+    "subtitle": "Modern Minimalism in Gold & Diamonds",
+    "ctaLabel": "Shop Now",
+    "ctaLink": "#earrings",
+    "isGraphicArtwork": true,
+    "images": {
+      "desktop": "/images/home/hero/desktop/hero-banner-04.png",
+      "tablet": "/images/home/hero/tablet/hero-banner-04.png",
+      "mobile": "/images/home/hero/mobile/hero-banner-04.png"
+    },
+    "image": "/images/home/hero/desktop/hero-banner-04.png",
+    "desktopImage": "/images/home/hero/desktop/hero-banner-04.png",
+    "bgColor": "#082F34"
   }
 ]

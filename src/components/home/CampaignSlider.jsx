@@ -82,7 +82,7 @@ export default function CampaignSlider() {
       className="relative w-full py-6 sm:py-8 lg:py-10 bg-gradient-to-b from-champagne/20 via-ivory/40 to-white overflow-hidden focus:outline-none"
     >
       {/* 3D Coverflow Cards Stage */}
-      <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[480px] flex items-center justify-center">
+      <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[480px] flex items-center justify-center">
         {bannersData.map((banner, index) => {
           // Calculate cyclic offset relative to currentSlide
           let diff = (index - currentSlide) % totalSlides;
@@ -138,56 +138,91 @@ export default function CampaignSlider() {
                 !isActive ? 'cursor-pointer hover:opacity-80' : ''
               } motion-reduce:transition-none`}
             >
-              {/* Background Campaign Image - Bright & Clearly Visible */}
-              <div className="relative w-full h-full bg-charcoal">
-                <Image
-                  src={banner.image}
-                  alt={banner.title}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 90vw, 75vw"
-                  className="object-cover object-right sm:object-center transition-transform duration-1000 ease-out"
-                />
+              {banner.isGraphicArtwork && banner.images ? (
+                /* Complete Graphic Artwork Banner (Responsive <picture> with no overlaid HTML text/buttons) */
+                <Link
+                  href={banner.ctaLink}
+                  onClick={(e) => {
+                    if (!isActive) e.preventDefault();
+                  }}
+                  className="block relative w-full h-full focus:outline-none"
+                  style={{ backgroundColor: banner.bgColor || '#FAF4EC' }}
+                  aria-label={`${banner.title} - ${banner.subtitle}`}
+                >
+                  <picture className="w-full h-full block">
+                    {/* Desktop: 1024px+ */}
+                    <source
+                      media="(min-width: 1024px)"
+                      srcSet={banner.images.desktop}
+                    />
+                    {/* Tablet: 640px to 1023px */}
+                    <source
+                      media="(min-width: 640px)"
+                      srcSet={banner.images.tablet}
+                    />
+                    {/* Mobile: default fallback */}
+                    <img
+                      src={banner.images.mobile}
+                      alt={banner.title || 'Jain Jewellers'}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      fetchPriority={index === 0 ? 'high' : 'auto'}
+                      decoding="async"
+                      className="w-full h-full object-contain sm:object-cover object-center select-none"
+                    />
+                  </picture>
+                </Link>
+              ) : (
+                /* Standard Editorial Campaign Slide with Text Overlay */
+                <div className="relative w-full h-full bg-charcoal">
+                  <Image
+                    src={banner.image}
+                    alt={banner.title}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 90vw, 75vw"
+                    className={`object-cover ${banner.objectPosition || 'object-right sm:object-center'} transition-transform duration-1000 ease-out`}
+                  />
 
-                {/* Subtle Editorial Gradient on Left for Lean Minimal Text Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-r from-burgundy-dark/95 via-burgundy/80 sm:via-burgundy/75 to-transparent w-full sm:w-3/5 lg:w-1/2 pointer-events-none" />
+                  {/* Subtle Editorial Gradient on Left for Lean Minimal Text Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-burgundy-dark/95 via-burgundy/80 sm:via-burgundy/75 to-transparent w-full sm:w-3/5 lg:w-1/2 pointer-events-none" />
 
-                {/* Card Content (Lean & Minimal) */}
-                <div className="absolute inset-0 z-10 flex items-center p-6 sm:p-10 lg:p-14">
-                  <div className="max-w-xs sm:max-w-sm lg:max-w-md text-left">
-                    {/* Brand Tag */}
-                    <div className="mb-2 sm:mb-3">
-                      <span className="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gold-light">
-                        {banner.brandTag}
-                      </span>
-                    </div>
+                  {/* Card Content (Lean & Minimal) */}
+                  <div className="absolute inset-0 z-10 flex items-center p-6 sm:p-10 lg:p-14">
+                    <div className="max-w-xs sm:max-w-sm lg:max-w-md text-left">
+                      {/* Brand Tag */}
+                      <div className="mb-2 sm:mb-3">
+                        <span className="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gold-light">
+                          {banner.brandTag}
+                        </span>
+                      </div>
 
-                    {/* Headline */}
-                    <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2 sm:mb-3">
-                      {banner.title}
-                    </h2>
+                      {/* Headline */}
+                      <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2 sm:mb-3">
+                        {banner.title}
+                      </h2>
 
-                    {/* Subtitle */}
-                    <p className="text-xs sm:text-sm lg:text-base text-ivory/90 font-light leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-none">
-                      {banner.subtitle}
-                    </p>
+                      {/* Subtitle */}
+                      <p className="text-xs sm:text-sm lg:text-base text-ivory/90 font-light leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-none">
+                        {banner.subtitle}
+                      </p>
 
-                    {/* Minimal Clean Pill Button */}
-                    <div>
-                      <Link
-                        href={banner.ctaLink}
-                        className="group inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-white hover:bg-gold-light text-burgundy hover:text-charcoal font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
-                        onClick={(e) => {
-                          if (!isActive) e.preventDefault();
-                        }}
-                      >
-                        <span>{banner.ctaLabel}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-burgundy group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                      {/* Minimal Clean Pill Button */}
+                      <div>
+                        <Link
+                          href={banner.ctaLink}
+                          className="group inline-flex items-center gap-2 px-6 sm:px-7 py-2.5 sm:py-3 bg-white hover:bg-gold-light text-burgundy hover:text-charcoal font-semibold text-xs sm:text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                          onClick={(e) => {
+                            if (!isActive) e.preventDefault();
+                          }}
+                        >
+                          <span>{banner.ctaLabel}</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-burgundy group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           );
         })}
