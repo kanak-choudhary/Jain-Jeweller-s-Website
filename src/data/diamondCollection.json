@@ -5,16 +5,16 @@
   "heroCard": {
     "title": "Crafted for those who wear their brilliance with pride",
     "collection": "PRIDE diamond collection",
-    "image": "/images/diamond/card1-hero.png",
-    "alt": "Indian model wearing exquisite emerald and diamond jewellery - PRIDE diamond collection",
+    "image": "/images/diamond/diamond-hero-model.webp",
+    "alt": "Indian model wearing exquisite emerald saree and diamond jewellery - Jain Jewellers",
     "href": "#diamond",
     "ctaLabel": "SHOP NOW"
   },
   "bannerCard": {
     "title": "Timeless brilliance, crafted to shine.",
     "collection": "PRIDE diamond collection",
-    "image": "/images/diamond/card2-banner.png",
-    "alt": "Diamond and emerald necklace set crafted on terracotta background - PRIDE diamond collection",
+    "image": "/images/diamond/diamond-emerald-necklace-banner.webp",
+    "alt": "Diamond and emerald necklace set crafted on terracotta silk - Jain Jewellers",
     "href": "#diamond",
     "ctaLabel": "SHOP NOW"
   },
@@ -22,22 +22,22 @@
     {
       "id": "card-earrings",
       "title": "Diamond Drop Earrings",
-      "image": "/images/diamond/card3-earrings.png",
+      "image": "/images/diamond/diamond-earrings.webp",
       "alt": "Exquisite diamond teardrop chandelier earrings",
       "href": "#earrings"
     },
     {
       "id": "card-necklace",
       "title": "Ruby & Diamond Necklace Set",
-      "image": "/images/diamond/card4-necklace.png",
+      "image": "/images/diamond/diamond-necklace-set.webp",
       "alt": "Royal floral ruby and diamond necklace set",
       "href": "#necklaces"
     },
     {
       "id": "card-bangles",
       "title": "Diamond & Emerald Bangles",
-      "image": "/images/diamond/card5-bangles.png",
-      "alt": "Pair of handcrafted diamond and emerald kadas",
+      "image": "/images/diamond/diamond-bangles.webp",
+      "alt": "Pair of handcrafted floral diamond and emerald bangles",
       "href": "#bangles"
     }
   ]
