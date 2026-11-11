@@ -41,20 +41,12 @@ export default function MetalCollectionCard({ collection, priority = false }) {
         </div>
 
         {/* Bottom Editorial Content */}
-        <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 space-y-2 text-left">
-          <h3 className="font-serif text-2xl font-bold text-white tracking-tight group-hover:text-champagne transition-colors">
-            {collection.name}
-          </h3>
-          <p className="font-sans text-xs text-white/80 leading-relaxed font-normal line-clamp-2">
-            {collection.description}
-          </p>
-
-          <div className="pt-2">
-            <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-gold-light group-hover:text-white transition-colors">
-              <span>{collection.ctaLabel}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-1 transition-transform" />
-            </span>
-          </div>
+        <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 text-left">
+          <span className="sr-only">{collection.name}</span>
+          <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-gold-light group-hover:text-white transition-colors">
+            <span>{collection.ctaLabel}</span>
+            <ArrowRight className="w-3.5 h-3.5 text-gold group-hover:translate-x-1 transition-transform" />
+          </span>
         </div>
       </div>
     </Link>

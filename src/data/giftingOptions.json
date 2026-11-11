@@ -6,40 +6,52 @@
   },
   "giftCards": [
     {
-      "id": "birthday-gifts",
-      "tag": "Birthday Keepsakes",
-      "title": "Birthday Gifts",
-      "description": "Make their special day unforgettable with radiant diamond pendants, delicate earrings and bespoke charms.",
-      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1200&auto=format&fit=crop",
-      "ctaText": "Explore Birthday Gifts",
-      "href": "#birthday"
+      "id": "birthday-gifting",
+      "title": "Birthday Gifting",
+      "image": "/images/home/gifting-and-more/landscape/birthday-gifting.webp",
+      "alt": "Birthday Gifting - Exquisite jewellery gifts for birthdays",
+      "href": "#birthday",
+      "type": "horizontal"
     },
     {
-      "id": "anniversary-gifts",
-      "tag": "Milestone Romance",
-      "title": "Anniversary Gifts",
-      "description": "Celebrate your shared journey with eternity diamond bands, sparkling solitaires and enduring symbols of devotion.",
-      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1200&auto=format&fit=crop",
-      "ctaText": "Explore Anniversary Gifts",
-      "href": "#anniversary"
+      "id": "festive-gifting",
+      "title": "Festive Gifting",
+      "image": "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "alt": "Festive Gifting - Traditional gold jewellery gifts for festive celebrations",
+      "href": "#festive",
+      "type": "horizontal"
     },
     {
-      "id": "wedding-gifts",
-      "tag": "Auspicious Blessings",
-      "title": "Wedding Gifts",
-      "description": "Honor new beginnings with heritage gold creations, royal polki jewels and blessed wedding heirlooms.",
-      "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1200&auto=format&fit=crop",
-      "ctaText": "Explore Wedding Gifts",
-      "href": "#wedding-gifts"
+      "id": "anniversary-gifting",
+      "title": "Anniversary Gifting",
+      "image": "/images/home/gifting-and-more/landscape/anniversary-gifting.webp",
+      "alt": "Anniversary Gifting - Fine diamond jewellery gifts for anniversaries",
+      "href": "#anniversary",
+      "type": "horizontal"
     },
     {
-      "id": "all-occasions",
-      "tag": "Signature Curations",
-      "title": "Gifts for Every Occasion",
-      "description": "Find thoughtful tokens of appreciation, festive delights and timeless classics for every joyous milestone.",
-      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1200&auto=format&fit=crop",
-      "ctaText": "Explore All Gifts",
-      "href": "#all-gifts"
+      "id": "new-born-gifting",
+      "title": "New Born Gifting",
+      "image": "/images/home/gifting-and-more/landscape/new-born-gifting.webp",
+      "alt": "New Born Gifting - Delicate gold keepsake jewellery for newborns and children",
+      "href": "#newborn",
+      "type": "horizontal"
+    },
+    {
+      "id": "gift-card",
+      "title": "Jain Jewellers Gift Card",
+      "image": "/images/home/gifting-and-more/portrait/gift-card-gifting.webp",
+      "alt": "Jain Jewellers Gift Card - A gift that always fits, always sparkles",
+      "href": "#gift-card",
+      "type": "tall"
+    },
+    {
+      "id": "corporate-gifting",
+      "title": "Corporate Gifting",
+      "image": "/images/home/gifting-and-more/portrait/corporate-gifting.webp",
+      "alt": "Corporate Gifting - Elevated gifting for corporate excellence",
+      "href": "#corporate",
+      "type": "tall"
     }
   ],
   "giftingPerks": [

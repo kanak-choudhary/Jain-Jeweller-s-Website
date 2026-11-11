@@ -32,8 +32,8 @@ export default function JewelleryExploreCard({ card, isFeatured = false, priorit
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
 
-        {/* Ambient Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+        {/* Ambient Gradient Overlay with enhanced contrast for pure white heading */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-95" />
 
         {/* Minimal Bottom Content: Title + Sleek Link */}
         <div className="relative z-10 p-6 sm:p-8 flex items-end justify-between gap-4 text-left">
@@ -43,7 +43,10 @@ export default function JewelleryExploreCard({ card, isFeatured = false, priorit
                 {card.tag}
               </span>
             )}
-            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-normal group-hover:text-champagne transition-colors">
+            <h3
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-white !text-white tracking-normal transition-colors"
+              style={{ color: '#FFFFFF' }}
+            >
               {card.title}
             </h3>
           </div>
@@ -74,8 +77,8 @@ export default function JewelleryExploreCard({ card, isFeatured = false, priorit
         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
       />
 
-      {/* Ambient Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/25 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+      {/* Ambient Gradient Overlay with enhanced contrast for pure white heading */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-95" />
 
       {/* Minimal Bottom Content: Title + Sleek Arrow */}
       <div className="relative z-10 p-4 sm:p-5 flex items-end justify-between gap-3 text-left">
@@ -85,7 +88,10 @@ export default function JewelleryExploreCard({ card, isFeatured = false, priorit
               {card.tag}
             </span>
           )}
-          <h4 className="font-serif text-lg sm:text-xl font-normal text-white tracking-normal group-hover:text-champagne transition-colors">
+          <h4
+            className="font-serif text-lg sm:text-xl font-normal text-white !text-white tracking-normal transition-colors"
+            style={{ color: '#FFFFFF' }}
+          >
             {card.title}
           </h4>
         </div>

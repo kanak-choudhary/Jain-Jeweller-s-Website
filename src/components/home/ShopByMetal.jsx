@@ -23,10 +23,6 @@ export default function ShopByMetal() {
           <span className="h-1.5 w-1.5 rotate-45 bg-gold" />
           <span className="h-px w-10 bg-border-soft" />
         </div>
-
-        <p className="font-sans text-sm sm:text-base text-muted max-w-lg mx-auto leading-relaxed">
-          Explore jewellery collections crafted to complement every style and occasion.
-        </p>
       </div>
 
       {/* 4-Column Responsive Grid */}

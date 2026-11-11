@@ -9,21 +9,27 @@ const iconMap = {
   Sparkles,
 };
 
+const cardLayoutClasses = {
+  'birthday-gifting': 'aspect-[1.9/1] sm:col-start-1 sm:row-start-1 lg:col-start-1 lg:row-start-1',
+  'festive-gifting': 'aspect-[1.9/1] sm:col-start-1 sm:row-start-2 lg:col-start-1 lg:row-start-2',
+  'anniversary-gifting': 'aspect-[1.9/1] sm:col-start-2 sm:row-start-1 lg:col-start-2 lg:row-start-1',
+  'new-born-gifting': 'aspect-[1.9/1] sm:col-start-2 sm:row-start-2 lg:col-start-2 lg:row-start-2',
+  'gift-card': 'aspect-[4/5] sm:aspect-[4/5] lg:aspect-auto lg:h-full sm:col-start-1 sm:row-start-3 lg:col-start-3 lg:row-start-1 lg:row-span-2',
+  'corporate-gifting': 'aspect-[4/5] sm:aspect-[4/5] lg:aspect-auto lg:h-full sm:col-start-2 sm:row-start-3 lg:col-start-4 lg:row-start-1 lg:row-span-2',
+};
+
 export default function GiftingSection() {
   const { sectionHeader, giftCards, giftingPerks } = giftingData;
 
   return (
     <section
       id="gifting"
-      className="py-20 lg:py-28 bg-gradient-to-b from-white via-ivory/40 to-white relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden"
       aria-labelledby="gifting-heading"
     >
-      {/* Subtle Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-gold/5 via-burgundy/5 to-transparent blur-3xl pointer-events-none -z-10" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-14">
           <p className="text-xs font-bold tracking-[0.25em] text-burgundy uppercase mb-3">
             {sectionHeader.eyebrow}
           </p>
@@ -39,10 +45,15 @@ export default function GiftingSection() {
           </p>
         </div>
 
-        {/* 4 Occasion Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {giftCards.map((card) => (
-            <GiftingCard key={card.id} card={card} />
+        {/* Asymmetrical 4-Column Gifting Grid (Reference Match) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch">
+          {giftCards.map((card, index) => (
+            <GiftingCard
+              key={card.id}
+              card={card}
+              priority={index < 2}
+              className={cardLayoutClasses[card.id] || 'aspect-[1.9/1]'}
+            />
           ))}
         </div>
 
