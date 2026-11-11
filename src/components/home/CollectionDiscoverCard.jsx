@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function CollectionDiscoverCard({ collection }) {
-  const { number, title, description, image, ctaText, href } = collection;
+  const { number, title, image, ctaText, href } = collection;
 
   return (
     <div className="group flex flex-col h-full bg-white rounded-2xl border border-soft-border/80 hover:border-gold/60 shadow-xs hover:shadow-xl transition-all duration-500 overflow-hidden">
@@ -34,9 +34,6 @@ export default function CollectionDiscoverCard({ collection }) {
           <h3 className="font-playfair text-xl sm:text-2xl font-bold text-charcoal group-hover:text-burgundy transition-colors duration-300 tracking-tight">
             {title}
           </h3>
-          <p className="mt-2 text-sm text-muted font-light leading-relaxed">
-            {description}
-          </p>
         </div>
 
         <div className="mt-6 pt-4 border-t border-soft-border/60">

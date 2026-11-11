@@ -23,9 +23,6 @@ export default function DiscoverCollection() {
             {sectionHeader.title}
           </h2>
           <div className="w-16 h-0.5 bg-gold mx-auto my-4" />
-          <p className="text-base sm:text-lg text-muted font-light leading-relaxed">
-            {sectionHeader.description}
-          </p>
         </div>
 
         {/* 4-Card Collection Grid */}

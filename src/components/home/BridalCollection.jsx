@@ -43,7 +43,7 @@ export default function BridalCollection() {
                   fill
                   priority={false}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 55vw"
-                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
+                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
                 />
 
                 {/* Subtle Luxury Gradient Overlay at the base */}
