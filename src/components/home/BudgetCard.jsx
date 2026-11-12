@@ -1,49 +1,48 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
-export default function BudgetCard({ tier }) {
-  const { range, subtitle, ctaText, image, href } = tier;
+export default function BudgetCard({ tier, className = '', priority = false }) {
+  const { label = 'Under', amount, range, image, href = '#budget', alt } = tier;
+  const displayAmount = amount || range;
 
   return (
-    <div className="group flex flex-col h-full bg-white rounded-2xl border border-soft-border/80 hover:border-gold/60 shadow-xs hover:shadow-xl transition-all duration-500 overflow-hidden">
-      {/* Image Container */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-champagne/20">
+    <div
+      className={`filter drop-shadow-[0_12px_28px_rgba(41,35,33,0.12)] hover:drop-shadow-[0_18px_36px_rgba(138,2,1,0.18)] transition-all duration-500 ${className}`}
+    >
+      <Link
+        href={href}
+        className="group relative block w-full h-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        style={{
+          clipPath: 'url(#budget-card-clip)',
+          WebkitClipPath: 'url(#budget-card-clip)',
+        }}
+        aria-label={`${label} ${displayAmount}`}
+      >
+        {/* Jewellery Image */}
         <Image
           src={image}
-          alt={`Jewellery range ${range}`}
+          alt={alt || `${label} ${displayAmount}`}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transform-none"
+          priority={priority}
+          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 35vw, 30vw"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 motion-reduce:transform-none"
         />
 
-        {/* Ambient Dark Vignette at base */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/25 via-transparent to-transparent pointer-events-none" />
-      </div>
+        {/* Ambient Contrast Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-charcoal/20 to-charcoal/35 transition-opacity duration-500 group-hover:opacity-85 pointer-events-none" />
 
-      {/* Content Area */}
-      <div className="p-6 flex flex-col flex-grow justify-between bg-white">
-        <div>
-          <h3 className="font-playfair text-xl sm:text-2xl font-bold text-charcoal group-hover:text-burgundy transition-colors duration-300 tracking-tight">
-            {range}
-          </h3>
-          <p className="mt-2 text-sm text-muted font-light leading-relaxed">
-            {subtitle}
-          </p>
+        {/* Centered Budget Typography */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 text-center pointer-events-none select-none">
+          <span className="font-sans text-xs sm:text-sm lg:text-base font-medium tracking-wider text-white/95 uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            {label}
+          </span>
+          <span className="font-playfair text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white tracking-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)] mt-0.5">
+            {displayAmount}
+          </span>
         </div>
-
-        <div className="mt-6 pt-4 border-t border-soft-border/60">
-          <Link
-            href={href}
-            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-burgundy group-hover:text-burgundy-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded"
-            aria-label={`${ctaText} for ${range}`}
-          >
-            <span>{ctaText}</span>
-            <ArrowRight className="w-4 h-4 text-gold transition-transform duration-300 group-hover:translate-x-1.5 motion-reduce:transform-none" />
-          </Link>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 }
-

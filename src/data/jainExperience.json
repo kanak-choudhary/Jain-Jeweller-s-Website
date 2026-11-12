@@ -1,41 +1,50 @@
 {
   "sectionHeader": {
-    "eyebrow": "THE ART OF JEWELLERY",
-    "title": "Experience the World of Jain",
-    "description": "Discover a world where timeless elegance meets thoughtful design. Explore the beauty of jewellery through craftsmanship, personal expression and memorable experiences.",
-    "ctaText": "Discover Our Story",
-    "ctaHref": "#brand-story"
+    "title": "Jain Experience",
+    "subtitle": "Find a Boutique or Book a Consultation"
   },
-  "featuredImage": {
-    "src": "https://images.unsplash.com/photo-1531995811006-35cb42e1a022?q=80&w=1200&auto=format&fit=crop",
-    "alt": "Master artisan jeweller handcrafting fine jewellery at a workbench",
-    "badge": "Handcrafted Heritage & Master Artistry"
-  },
-  "pillars": [
+  "services": [
     {
-      "number": "01",
-      "icon": "Gem",
-      "title": "Thoughtful Craftsmanship",
-      "description": "Discover jewellery designs created with attention to detail and a passion for timeless elegance."
+      "id": "visit-our-store",
+      "title": "Visit Our Store",
+      "image": "/images/home/jain-experience/visit-our-store.webp",
+      "alt": "Jain Jewellers luxury boutique interior with elegant showcases",
+      "href": "#visit-store"
     },
     {
-      "number": "02",
-      "icon": "Crown",
-      "title": "Timeless Designs",
-      "description": "Explore styles that bring together traditional inspiration and contemporary expression."
+      "id": "book-an-appointment",
+      "title": "Book an Appointment",
+      "image": "/images/home/jain-experience/book-an-appointment.webp",
+      "alt": "Book an appointment for bespoke jewellery consultation",
+      "href": "#book-appointment"
     },
     {
-      "number": "03",
-      "icon": "HeartHandshake",
-      "title": "Personal Guidance",
-      "description": "Find jewellery that reflects your style with a more personal and thoughtful shopping experience."
+      "id": "talk-to-an-expert",
+      "title": "Talk to an Expert",
+      "image": "/images/home/jain-experience/talk-to-an-expert.webp",
+      "alt": "Consult with a certified jewellery expert",
+      "href": "#talk-to-expert"
     },
     {
-      "number": "04",
-      "icon": "Sparkles",
-      "title": "Moments to Treasure",
-      "description": "Celebrate life's meaningful occasions with jewellery that becomes part of your memories."
+      "id": "digital-gold",
+      "title": "Digital Gold",
+      "image": "/images/home/jain-experience/digital-gold.webp",
+      "alt": "Invest in certified 24K digital gold and bullion",
+      "href": "#digital-gold"
+    },
+    {
+      "id": "blogs",
+      "title": "Blogs",
+      "image": "/images/home/jain-experience/blogs.webp",
+      "alt": "Editorial jewellery trends, stories and style guides",
+      "href": "#blogs"
+    },
+    {
+      "id": "jewellery-guide",
+      "title": "Jewellery Guide",
+      "image": "/images/home/jain-experience/jewellery-guide.webp",
+      "alt": "Comprehensive guide on precious metals, diamonds and jewellery care",
+      "href": "#jewellery-guide"
     }
   ]
 }
-

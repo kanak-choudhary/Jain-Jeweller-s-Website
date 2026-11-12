@@ -1,42 +1,36 @@
 {
   "sectionHeader": {
-    "eyebrow": "BEAUTY FOR EVERY BUDGET",
-    "title": "Shop by Budget",
-    "description": "Find jewellery that feels just right. Explore beautiful designs across budgets and discover something special for every occasion."
+    "smallLabel": "Shop by",
+    "title": "budget",
+    "eyebrow": "BEAUTY FOR EVERY BUDGET"
   },
   "budgetTiers": [
     {
-      "id": "under-5000",
-      "range": "Under ₹5,000",
-      "subtitle": "Everyday Minimalist Elegance",
-      "ctaText": "Explore Designs",
-      "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=1000&auto=format&fit=crop",
-      "href": "#budget-under-5000"
-    },
-    {
-      "id": "5000-10000",
-      "range": "₹5,000 – ₹10,000",
-      "subtitle": "Delicate Charms & Pendants",
-      "ctaText": "Explore Designs",
+      "id": "under-15000",
+      "label": "Under",
+      "amount": "₹15,000",
+      "range": "Under ₹15,000",
       "image": "https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=1000&auto=format&fit=crop",
-      "href": "#budget-5000-10000"
+      "href": "#budget-under-15000",
+      "alt": "Elegant everyday jewellery under ₹15,000"
     },
     {
-      "id": "10000-25000",
-      "range": "₹10,000 – ₹25,000",
-      "subtitle": "Fine Gold & Gemstone Accents",
-      "ctaText": "Explore Designs",
+      "id": "under-30000",
+      "label": "Under",
+      "amount": "₹30,000",
+      "range": "Under ₹30,000",
       "image": "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=1000&auto=format&fit=crop",
-      "href": "#budget-10000-25000"
+      "href": "#budget-under-30000",
+      "alt": "Fine gold and gemstone jewellery under ₹30,000"
     },
     {
-      "id": "above-25000",
-      "range": "Above ₹25,000",
-      "subtitle": "Statement Solitaires & Heirlooms",
-      "ctaText": "Explore Designs",
+      "id": "under-60000",
+      "label": "Under",
+      "amount": "₹60,000",
+      "range": "Under ₹60,000",
       "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=1000&auto=format&fit=crop",
-      "href": "#budget-above-25000"
+      "href": "#budget-under-60000",
+      "alt": "Premium gold and diamond jewellery under ₹60,000"
     }
   ]
 }
-

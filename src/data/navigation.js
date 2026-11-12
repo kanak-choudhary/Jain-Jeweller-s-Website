@@ -2,14 +2,15 @@ export const navigationCategories = [
   {
     id: "all-jewellery",
     label: "All Jewellery",
-    href: "#all-jewellery",
+    href: "/all-jewellery",
     hasMegaMenu: true,
   },
   {
     id: "trending",
     label: "What's Trending",
-    href: "#trending",
+    href: "/whats-trending",
     badge: "Hot",
+    hasMegaMenu: true,
   },
   {
     id: "gold",

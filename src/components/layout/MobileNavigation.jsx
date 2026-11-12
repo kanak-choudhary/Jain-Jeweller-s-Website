@@ -7,6 +7,7 @@ import { X, ChevronRight, ChevronDown, Search, Heart, ShoppingBag, User, Phone, 
 import { navigationCategories } from '@/data/navigation';
 import { allJewelleryMenuData } from '@/data/allJewelleryMenu';
 import { goldMenuData, diamondMenuData, silverMenuData, coinsMenuData } from '@/data/metalMegaMenuData';
+import { trendingMenuData } from '@/data/trendingMenuData';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
 
@@ -306,6 +307,24 @@ export default function MobileNavigation({ isOpen, onClose }) {
                                 </div>
                               );
                             })()
+                          ) : cat.id === 'trending' ? (
+                            <div className="space-y-3">
+                              <p className="text-[10px] font-bold uppercase tracking-wider text-charcoal/80 border-b border-champagne/40 pb-0.5">
+                                {trendingMenuData.title}
+                              </p>
+                              <div className="grid grid-cols-2 gap-2">
+                                {trendingMenuData.columns.flatMap((col) => col.items).map((item, i) => (
+                                  <Link
+                                    key={i}
+                                    href={item.href}
+                                    onClick={handleLinkClick}
+                                    className="text-xs transition-colors py-1.5 px-2 rounded-md font-serif text-charcoal hover:text-burgundy hover:bg-white/80"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
                           ) : cat.id === 'coins' ? (
                             <div className="space-y-3">
                               {coinsMenuData.columns.map((col, idx) => (

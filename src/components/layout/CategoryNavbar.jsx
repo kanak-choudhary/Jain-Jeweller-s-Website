@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
 import AllJewelleryMegaMenu from '@/components/navigation/AllJewelleryMegaMenu';
+import TrendingMegaMenu from '@/components/navigation/TrendingMegaMenu';
 import MetalMegaMenu from '@/components/navigation/MetalMegaMenu';
 import CoinsMegaMenu from '@/components/navigation/CoinsMegaMenu';
 import { goldMenuData, diamondMenuData, silverMenuData } from '@/data/metalMegaMenuData';
@@ -120,6 +121,11 @@ export default function CategoryNavbar() {
                 {/* MEGA MENUS */}
                 {cat.id === 'all-jewellery' ? (
                   <AllJewelleryMegaMenu
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                  />
+                ) : cat.id === 'trending' ? (
+                  <TrendingMegaMenu
                     isOpen={isOpen}
                     onClose={() => setActiveCategory(null)}
                   />

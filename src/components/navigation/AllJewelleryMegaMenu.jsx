@@ -21,6 +21,7 @@ import {
   Users,
   Wine,
   ChevronRight,
+  ArrowRight,
 } from 'lucide-react';
 import { allJewelleryMenuData } from '@/data/allJewelleryMenu';
 
@@ -117,6 +118,14 @@ export default function AllJewelleryMegaMenu({ isOpen, onClose }) {
 
           {/* Quick subtle brand touch in sidebar footer */}
           <div className="mt-auto px-5 pt-4 border-t border-champagne/40">
+            <Link
+              href="/all-jewellery"
+              onClick={() => onClose?.()}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-burgundy hover:text-burgundy-dark transition-colors mb-2 group"
+            >
+              <span>View All Jewellery</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
             <p className="text-[10px] text-muted leading-tight">
               Handcrafted Royal Heritage <br />
               <span className="text-gold font-serif italic">BIS 100% Hallmarked</span>
