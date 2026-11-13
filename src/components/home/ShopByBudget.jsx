@@ -8,20 +8,24 @@ export default function ShopByBudget() {
   return (
     <section
       id="budget"
-      className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-rose-50/25 via-white to-rose-50/15 relative overflow-hidden"
       aria-labelledby="budget-heading"
     >
-      {/* Soft Ambient Glows (Blush Pink top-left, Light Peach bottom-left fading into clean white) */}
+      {/* Soft Ambient Blush Glows matching the reference design */}
       <div
-        className="absolute -top-24 -left-24 w-96 sm:w-[520px] h-96 sm:h-[520px] bg-pink-100/40 rounded-full blur-3xl pointer-events-none -z-10"
+        className="absolute -top-24 -left-20 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-rose-200/40 rounded-full blur-3xl pointer-events-none -z-10"
         aria-hidden="true"
       />
       <div
-        className="absolute -bottom-28 left-4 sm:left-16 w-80 sm:w-[460px] h-80 sm:h-[460px] bg-[#FCE8DC]/50 rounded-full blur-3xl pointer-events-none -z-10"
+        className="absolute top-1/3 left-1/4 w-72 sm:w-[420px] h-72 sm:h-[420px] bg-pink-100/35 rounded-full blur-3xl pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute -top-16 -right-16 w-80 sm:w-[460px] h-80 sm:h-[460px] bg-rose-200/35 rounded-full blur-3xl pointer-events-none -z-10"
         aria-hidden="true"
       />
 
-      {/* Reusable SVG ClipPath for the Soft Organic Hexagonal Silhouette */}
+      {/* SVG Definitions: Octagonal Silhouette ClipPath */}
       <svg
         className="absolute w-0 h-0 pointer-events-none -z-50"
         aria-hidden="true"
@@ -35,45 +39,63 @@ export default function ShopByBudget() {
       </svg>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8 sm:gap-4 lg:gap-6 min-h-0 sm:min-h-[460px] lg:min-h-[540px] xl:min-h-[580px]">
-          {/* Column 1: Heading at top, Smallest Card (Under ₹15,000) at bottom */}
+        {/* Layout matching attached screenshot: 3 columns with Small-to-Big sequence */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-10 sm:gap-4 lg:gap-8 min-h-0 sm:min-h-[460px] lg:min-h-[520px] xl:min-h-[580px]">
+          
+          {/* COLUMN 1: Heading at Top, Smallest Card (Under ₹15,000) at Bottom */}
           <div className="w-full sm:w-[28%] flex flex-col justify-between items-center sm:items-start self-stretch">
-            <div className="text-center sm:text-left mb-6 sm:mb-8 lg:mb-0">
-              <span className="text-sm sm:text-base font-medium tracking-wide text-charcoal/80">
+            <div className="relative text-center sm:text-left pt-1">
+              <span className="block text-sm sm:text-base font-medium tracking-normal text-burgundy/90 mb-0.5">
                 {sectionHeader.smallLabel || 'Shop by'}
               </span>
               <h2
                 id="budget-heading"
-                className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-burgundy tracking-tight mt-1"
+                className="font-playfair text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-burgundy tracking-tight lowercase leading-none"
               >
                 {sectionHeader.title || 'budget'}
               </h2>
             </div>
 
+            {/* Smallest Card: Under ₹15,000 */}
             {card1 && (
-              <div className="w-60 sm:w-full max-w-[240px] lg:max-w-[270px] xl:max-w-[290px] aspect-[1/1.08] mx-auto sm:mx-0">
-                <BudgetCard tier={card1} priority={true} className="w-full h-full" />
+              <div className="w-56 sm:w-full max-w-[220px] lg:max-w-[250px] xl:max-w-[270px] aspect-[1/1.08] mx-auto sm:mx-0 mt-6 sm:mt-0">
+                <BudgetCard
+                  tier={card1}
+                  priority={true}
+                  sizeVariant="sm"
+                  className="w-full h-full"
+                />
               </div>
             )}
           </div>
 
-          {/* Column 2: Medium Card (Under ₹30,000) in the middle */}
-          <div className="w-full sm:w-[32%] flex items-center justify-center pb-0 sm:pb-6 lg:pb-10">
+          {/* COLUMN 2: Medium Card (Under ₹30,000) - Moved to Bottom */}
+          <div className="w-full sm:w-[32%] flex items-end justify-center pb-0">
             {card2 && (
-              <div className="w-72 sm:w-full max-w-[280px] lg:max-w-[340px] xl:max-w-[380px] aspect-[1/1.1]">
-                <BudgetCard tier={card2} className="w-full h-full" />
+              <div className="w-68 sm:w-full max-w-[270px] lg:max-w-[320px] xl:max-w-[350px] aspect-[1/1.1]">
+                <BudgetCard
+                  tier={card2}
+                  sizeVariant="md"
+                  className="w-full h-full"
+                />
               </div>
             )}
           </div>
 
-          {/* Column 3: Largest Card (Under ₹60,000) on the right */}
-          <div className="w-full sm:w-[40%] flex items-center sm:items-end justify-center sm:justify-end pb-0">
+          {/* COLUMN 3: Largest Card (Under ₹60,000) - Dominant & Tall on the Right */}
+          <div className="w-full sm:w-[40%] flex flex-col items-center sm:items-end justify-center sm:justify-end relative pb-0">
+            {/* Largest Card: Under ₹60,000 */}
             {card3 && (
               <div className="w-80 sm:w-full max-w-[340px] lg:max-w-[440px] xl:max-w-[500px] aspect-[1/1.12]">
-                <BudgetCard tier={card3} className="w-full h-full" />
+                <BudgetCard
+                  tier={card3}
+                  sizeVariant="lg"
+                  className="w-full h-full"
+                />
               </div>
             )}
           </div>
+
         </div>
       </div>
     </section>

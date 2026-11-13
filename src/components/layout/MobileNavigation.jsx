@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { X, ChevronRight, ChevronDown, Search, Heart, ShoppingBag, User, Phone, MapPin } from 'lucide-react';
+import { X, ChevronRight, ChevronDown, Search, Heart, ShoppingBag, User, Phone, MapPin, Crown, Link2, Flower2, Sparkles } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
 import { allJewelleryMenuData } from '@/data/allJewelleryMenu';
 import { goldMenuData, diamondMenuData, silverMenuData, coinsMenuData } from '@/data/metalMegaMenuData';
@@ -27,6 +27,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
     diamond: 'category',
     silver: 'category',
   });
+  const [isMobileBridalOpen, setIsMobileBridalOpen] = useState(false);
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
 
   // Prevent background scrolling when mobile menu is open
@@ -304,6 +305,17 @@ export default function MobileNavigation({ isOpen, onClose }) {
                                       ))}
                                     </div>
                                   )}
+
+                                  {/* View All Metal CTA */}
+                                  <div className="pt-2 border-t border-champagne/60">
+                                    <Link
+                                      href={cat.href}
+                                      onClick={handleLinkClick}
+                                      className="block w-full py-2 px-3 rounded-lg bg-burgundy text-white text-center text-xs font-semibold uppercase tracking-wider hover:bg-burgundy-dark transition-colors"
+                                    >
+                                      View All {cat.label} Jewellery
+                                    </Link>
+                                  </div>
                                 </div>
                               );
                             })()
@@ -323,6 +335,17 @@ export default function MobileNavigation({ isOpen, onClose }) {
                                     {item.name}
                                   </Link>
                                 ))}
+                              </div>
+
+                              {/* View Diwali Collection CTA */}
+                              <div className="pt-2 border-t border-champagne/60">
+                                <Link
+                                  href="/diwali"
+                                  onClick={handleLinkClick}
+                                  className="block w-full py-2 px-3 rounded-lg bg-burgundy text-white text-center text-xs font-semibold uppercase tracking-wider hover:bg-burgundy-dark transition-colors"
+                                >
+                                  Explore Diwali Collection
+                                </Link>
                               </div>
                             </div>
                           ) : cat.id === 'coins' ? (
@@ -350,34 +373,96 @@ export default function MobileNavigation({ isOpen, onClose }) {
                                   </div>
                                 </div>
                               ))}
+
+                              {/* View All Coins CTA */}
+                              <div className="pt-2 border-t border-champagne/60">
+                                <Link
+                                  href="/all-jewellery?category=coins"
+                                  onClick={handleLinkClick}
+                                  className="block w-full py-2 px-3 rounded-lg bg-burgundy text-white text-center text-xs font-semibold uppercase tracking-wider hover:bg-burgundy-dark transition-colors"
+                                >
+                                  View All Coins
+                                </Link>
+                              </div>
                             </div>
-                          ) : (
-                            cat.subcategories &&
-                            cat.subcategories.map((sub, idx) => (
-                              <div key={idx} className="space-y-1.5">
-                                {sub.title && (
-                                  <p className="text-[11px] font-bold uppercase tracking-wider text-charcoal/80 border-b border-champagne/60 pb-1">
-                                    {sub.title}
-                                  </p>
-                                )}
-                                {sub.items && (
-                                  <ul className="space-y-1.5 list-none m-0 p-0">
-                                    {sub.items.map((item, i) => (
-                                      <li key={i}>
-                                        <Link
-                                          href={item.href}
-                                          onClick={handleLinkClick}
-                                          className="text-xs text-charcoal/90 hover:text-burgundy transition-colors block py-1 font-serif"
-                                        >
-                                          {item.name}
-                                        </Link>
-                                      </li>
+                          ) : cat.id === 'collections' ? (
+                            <div className="space-y-3 py-1">
+                              {/* Bridal Collection with Click-to-Open Sub-items */}
+                              <div>
+                                <div className="flex items-center justify-between pb-1.5 border-b border-champagne/40">
+                                  <Link
+                                    href="/collections"
+                                    onClick={handleLinkClick}
+                                    className="flex items-center gap-2.5 text-xs font-serif font-bold text-charcoal hover:text-burgundy transition-colors flex-1"
+                                  >
+                                    <span className="w-5 h-5 rounded-md bg-champagne/40 text-gold flex items-center justify-center shrink-0">
+                                      <Crown className="w-3 h-3" strokeWidth={1.7} />
+                                    </span>
+                                    <span>Bridal Collection</span>
+                                  </Link>
+
+                                  <button
+                                    type="button"
+                                    onClick={() => setIsMobileBridalOpen((prev) => !prev)}
+                                    className="p-1 rounded-md text-muted hover:text-burgundy transition-colors"
+                                    aria-expanded={isMobileBridalOpen}
+                                    aria-label="Toggle Bridal subcategories"
+                                  >
+                                    <ChevronDown
+                                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                                        isMobileBridalOpen ? 'rotate-180 text-burgundy' : ''
+                                      }`}
+                                    />
+                                  </button>
+                                </div>
+
+                                {isMobileBridalOpen && (
+                                  <div className="mt-2 ml-3.5 pl-3 space-y-1.5 border-l-2 border-champagne/70 animate-in fade-in duration-150">
+                                    {['Marathi Bride', 'Kerala Bride', 'Tamil Bride', 'Rajisthani Bride'].map((bride, idx) => (
+                                      <div key={idx} className="flex items-center gap-2 text-[11px] font-serif text-muted/90 py-0.5 select-none">
+                                        <Sparkles className="w-2.5 h-2.5 text-gold/80 shrink-0" strokeWidth={1.5} />
+                                        <span>{bride}</span>
+                                      </div>
                                     ))}
-                                  </ul>
+                                  </div>
                                 )}
                               </div>
-                            ))
-                          )}
+
+                              {/* Other Collection Links in Sequence */}
+                              <div className="space-y-1.5 pt-1 border-t border-champagne/40">
+                                <Link
+                                  href="/collections"
+                                  onClick={handleLinkClick}
+                                  className="flex items-center gap-2.5 text-xs font-serif font-semibold text-charcoal hover:text-burgundy transition-colors py-1"
+                                >
+                                  <span className="w-5 h-5 rounded-md bg-champagne/40 text-gold flex items-center justify-center shrink-0">
+                                    <Link2 className="w-3 h-3" strokeWidth={1.7} />
+                                  </span>
+                                  <span>Station Mangalsutra</span>
+                                </Link>
+                                <Link
+                                  href="/collections"
+                                  onClick={handleLinkClick}
+                                  className="flex items-center gap-2.5 text-xs font-serif font-semibold text-charcoal hover:text-burgundy transition-colors py-1"
+                                >
+                                  <span className="w-5 h-5 rounded-md bg-champagne/40 text-gold flex items-center justify-center shrink-0">
+                                    <Flower2 className="w-3 h-3" strokeWidth={1.7} />
+                                  </span>
+                                  <span>Floral Bloom</span>
+                                </Link>
+                                <Link
+                                  href="/collections"
+                                  onClick={handleLinkClick}
+                                  className="flex items-center gap-2.5 text-xs font-serif font-semibold text-charcoal hover:text-burgundy transition-colors py-1"
+                                >
+                                  <span className="w-5 h-5 rounded-md bg-champagne/40 text-gold flex items-center justify-center shrink-0">
+                                    <Heart className="w-3 h-3" strokeWidth={1.7} />
+                                  </span>
+                                  <span>Valentine Special</span>
+                                </Link>
+                              </div>
+                            </div>
+                          ) : null}
                         </div>
                       )}
                     </div>

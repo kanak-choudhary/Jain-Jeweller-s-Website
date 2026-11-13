@@ -1,0 +1,36 @@
+export const collectionsCampaigns = [
+  {
+    id: 'station-mangalsutra',
+    title: 'Station Mangalsutra',
+    bannerImage: '/images/collections/station-mangalsutra-banner.webp',
+    bannerAlt: 'Jain Jewellers Presents Station Mangalsutra — The joy of dressing',
+    width: 1024,
+    height: 320,
+    ctaText: 'SHOP THE COLLECTION',
+    ctaHref: '/all-jewellery?category=mangalsutra',
+    productIds: ['jj-mng-001', 'jj-mng-002', 'jj-mng-003', 'jj-mng-004'],
+  },
+  {
+    id: 'floral-bloom',
+    title: 'Floral Bloom',
+    bannerImage: '/images/collections/floral-bloom-banner.webp',
+    bannerAlt: 'Jain Jewellers Presents Floral Bloom — The joy of dressing',
+    width: 1024,
+    height: 341,
+    ctaText: 'SHOP THE COLLECTION',
+    ctaHref: '/all-jewellery?category=rings%2Cpendants',
+    productIds: ['jj-ring-001', 'jj-ring-002', 'jj-pen-001', 'jj-ring-003'],
+  },
+  {
+    id: 'third-campaign',
+    title: 'The Italian Connection',
+    bannerImage: '/images/collections/third-campaign-banner.webp',
+    bannerAlt: 'Jain Jewellers Presents The Italian Connection — The joy of dressing',
+    width: 1024,
+    height: 341,
+    ctaText: 'SHOP THE COLLECTION',
+    ctaHref: '/all-jewellery?category=chains%2Cbangles',
+    productIds: ['jj-chn-001', 'jj-bang-001', 'jj-chn-002', 'jj-bang-002'],
+  },
+];
+

@@ -8,32 +8,32 @@ export const navigationCategories = [
   {
     id: "trending",
     label: "What's Trending",
-    href: "/whats-trending",
+    href: "/diwali",
     badge: "Hot",
     hasMegaMenu: true,
   },
   {
     id: "gold",
     label: "Gold",
-    href: "#gold",
+    href: "/all-jewellery?metal=gold",
     hasMegaMenu: true,
     subcategories: [
       {
         title: "Gold Categories",
         items: [
-          { name: "Gold Rings", href: "#gold-rings", description: "Timeless handcrafted bands & cocktail rings" },
-          { name: "Gold Earrings", href: "#gold-earrings", description: "Jhumkas, studs, hoops & drops" },
-          { name: "Gold Chains", href: "#gold-chains", description: "Classic daily wear & festive rope chains" },
-          { name: "Gold Bangles", href: "#gold-bangles", description: "Kadas, traditional & sleek bangles" },
+          { name: "Gold Rings", href: "/all-jewellery?metal=gold&category=rings", description: "Timeless handcrafted bands & cocktail rings" },
+          { name: "Gold Earrings", href: "/all-jewellery?metal=gold&category=earrings", description: "Jhumkas, studs, hoops & drops" },
+          { name: "Gold Chains", href: "/all-jewellery?metal=gold&category=chains", description: "Classic daily wear & festive rope chains" },
+          { name: "Gold Bangles", href: "/all-jewellery?metal=gold&category=bangles", description: "Kadas, traditional & sleek bangles" },
         ],
       },
       {
         title: "Purity & Metal",
         items: [
-          { name: "22KT BIS Hallmarked Gold", href: "#22kt-gold" },
-          { name: "18KT Everyday Fine Gold", href: "#18kt-gold" },
-          { name: "Rose Gold Accents", href: "#rose-gold" },
-          { name: "Antique Temple Jewellery", href: "#antique-gold" },
+          { name: "22KT BIS Hallmarked Gold", href: "/all-jewellery?metal=gold&purity=22K" },
+          { name: "18KT Everyday Fine Gold", href: "/all-jewellery?metal=gold&purity=18K" },
+          { name: "Rose Gold Accents", href: "/all-jewellery?metal=gold" },
+          { name: "Antique Temple Jewellery", href: "/all-jewellery?metal=gold&collection=traditional-collection" },
         ],
       },
       {
@@ -42,7 +42,7 @@ export const navigationCategories = [
           title: "The Royal Nizam Collection",
           subtitle: "Heritage 22KT gold craftsmanship",
           cta: "Explore Collection",
-          href: "#royal-nizam",
+          href: "/all-jewellery?metal=gold&collection=traditional-collection",
         },
       },
     ],
@@ -50,7 +50,7 @@ export const navigationCategories = [
   {
     id: "diamond",
     label: "Diamond",
-    href: "#diamond",
+    href: "/all-jewellery?metal=diamond",
     hasMegaMenu: true,
     subcategories: [
       {
@@ -83,7 +83,7 @@ export const navigationCategories = [
   {
     id: "silver",
     label: "Silver",
-    href: "#silver",
+    href: "/all-jewellery?metal=silver",
     hasMegaMenu: true,
     subcategories: [
       {
@@ -107,38 +107,14 @@ export const navigationCategories = [
   {
     id: "coins",
     label: "Coins",
-    href: "#coins",
+    href: "/all-jewellery?category=coins",
     hasMegaMenu: true,
   },
   {
     id: "collections",
     label: "Collections",
-    href: "#collections",
+    href: "/collections",
     hasMegaMenu: true,
-    subcategories: [
-      {
-        title: "Curated Collections",
-        items: [
-          { name: "Bridal Collection", href: "#bridal-collection", description: "Majestic regal bridal sets for the big day" },
-          { name: "Daily Wear", href: "#daily-wear", description: "Lightweight, sleek luxury for everyday elegance" },
-          { name: "Traditional Collection", href: "#traditional-collection", description: "Heritage Kundan, Jadau & Meenakari designs" },
-          { name: "Contemporary Collection", href: "#contemporary-collection", description: "Modern architectural and geometric motifs" },
-        ],
-      },
-      {
-        title: "Special Editions",
-        items: [
-          { name: "Festive Shringaar", href: "#festive-shringaar" },
-          { name: "Royal Rajputana", href: "#royal-rajputana" },
-          { name: "Heirloom Vintage", href: "#heirloom-vintage" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "about-us",
-    label: "About Us",
-    href: "#about-us",
   },
 ];
 

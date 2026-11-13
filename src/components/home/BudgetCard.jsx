@@ -3,13 +3,37 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function BudgetCard({ tier, className = '', priority = false }) {
+export default function BudgetCard({
+  tier,
+  className = '',
+  priority = false,
+  sizeVariant = 'md',
+}) {
   const { label = 'Under', amount, range, image, href = '#budget', alt } = tier;
   const displayAmount = amount || range;
 
+  // Typography sizing per small / medium / large card variant to match attached reference exactly
+  const fontSizes = {
+    sm: {
+      label: 'text-xs sm:text-sm font-medium',
+      amount: 'text-xl sm:text-2xl lg:text-3xl font-bold mt-0.5',
+    },
+    md: {
+      label: 'text-xs sm:text-sm lg:text-base font-medium',
+      amount: 'text-2xl sm:text-3xl lg:text-4xl font-bold mt-0.5',
+    },
+    lg: {
+      label: 'text-sm sm:text-base lg:text-lg font-medium',
+      amount: 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mt-1',
+    },
+  }[sizeVariant] || {
+    label: 'text-xs sm:text-sm lg:text-base font-medium',
+    amount: 'text-2xl sm:text-3xl lg:text-4xl font-bold mt-0.5',
+  };
+
   return (
     <div
-      className={`filter drop-shadow-[0_12px_28px_rgba(41,35,33,0.12)] hover:drop-shadow-[0_18px_36px_rgba(138,2,1,0.18)] transition-all duration-500 ${className}`}
+      className={`filter drop-shadow-[0_14px_32px_rgba(41,35,33,0.14)] hover:drop-shadow-[0_20px_42px_rgba(138,2,1,0.22)] transition-all duration-500 ${className}`}
     >
       <Link
         href={href}
@@ -26,19 +50,23 @@ export default function BudgetCard({ tier, className = '', priority = false }) {
           alt={alt || `${label} ${displayAmount}`}
           fill
           priority={priority}
-          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 35vw, 30vw"
-          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 motion-reduce:transform-none"
+          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 40vw, 35vw"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transform-none"
         />
 
-        {/* Ambient Contrast Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-charcoal/20 to-charcoal/35 transition-opacity duration-500 group-hover:opacity-85 pointer-events-none" />
+        {/* Subtle Ambient Contrast Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/30 transition-opacity duration-500 group-hover:opacity-80 pointer-events-none" />
 
-        {/* Centered Budget Typography */}
+        {/* Centered Budget Typography matching attached reference */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 text-center pointer-events-none select-none">
-          <span className="font-sans text-xs sm:text-sm lg:text-base font-medium tracking-wider text-white/95 uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+          <span
+            className={`font-sans ${fontSizes.label} text-white tracking-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}
+          >
             {label}
           </span>
-          <span className="font-playfair text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white tracking-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)] mt-0.5">
+          <span
+            className={`font-playfair ${fontSizes.amount} text-white tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)]`}
+          >
             {displayAmount}
           </span>
         </div>

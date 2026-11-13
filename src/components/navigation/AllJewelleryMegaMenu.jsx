@@ -116,20 +116,16 @@ export default function AllJewelleryMegaMenu({ isOpen, onClose }) {
             })}
           </div>
 
-          {/* Quick subtle brand touch in sidebar footer */}
-          <div className="mt-auto px-5 pt-4 border-t border-champagne/40">
+          {/* Bottom Action Button */}
+          <div className="mt-auto px-3.5 pt-3 border-t border-champagne/60">
             <Link
               href="/all-jewellery"
               onClick={() => onClose?.()}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-burgundy hover:text-burgundy-dark transition-colors mb-2 group"
+              className="w-full inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg bg-burgundy hover:bg-burgundy-dark text-white text-xs font-medium tracking-wide shadow-2xs hover:shadow-xs transition-all duration-200 group"
             >
               <span>View All Jewellery</span>
-              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
-            <p className="text-[10px] text-muted leading-tight">
-              Handcrafted Royal Heritage <br />
-              <span className="text-gold font-serif italic">BIS 100% Hallmarked</span>
-            </p>
           </div>
         </aside>
 

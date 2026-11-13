@@ -2,12 +2,13 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { navigationCategories } from '@/data/navigation';
 import AllJewelleryMegaMenu from '@/components/navigation/AllJewelleryMegaMenu';
 import TrendingMegaMenu from '@/components/navigation/TrendingMegaMenu';
 import MetalMegaMenu from '@/components/navigation/MetalMegaMenu';
 import CoinsMegaMenu from '@/components/navigation/CoinsMegaMenu';
+import CollectionsMegaMenu from '@/components/navigation/CollectionsMegaMenu';
 import { goldMenuData, diamondMenuData, silverMenuData } from '@/data/metalMegaMenuData';
 
 export default function CategoryNavbar() {
@@ -82,7 +83,10 @@ export default function CategoryNavbar() {
                 <Link
                   href={cat.href}
                   onClick={(e) => {
-                    if (cat.hasMegaMenu) {
+                    if (cat.href && cat.href.startsWith('/')) {
+                      // Allow navigation to page and close open mega menu
+                      setActiveCategory(null);
+                    } else if (cat.hasMegaMenu) {
                       e.preventDefault();
                       setActiveCategory(activeCategory === cat.id ? null : cat.id);
                     }
@@ -155,77 +159,12 @@ export default function CategoryNavbar() {
                     isOpen={isOpen}
                     onClose={() => setActiveCategory(null)}
                   />
-                ) : (
-                  /* STANDARD CATEGORY MEGA MENU (e.g. Collections) */
-                  cat.hasMegaMenu &&
-                  cat.subcategories && (
-                    <div
-                      className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[720px] transition-all duration-200 ease-out ${
-                        isOpen
-                          ? 'opacity-100 translate-y-0 pointer-events-auto'
-                          : 'opacity-0 -translate-y-2 pointer-events-none'
-                      }`}
-                    >
-                      <div className="bg-white border border-border-soft rounded-2xl shadow-2xl shadow-burgundy/10 p-6 grid grid-cols-12 gap-6 text-left">
-                        {cat.subcategories.map((sub, idx) => {
-                          const isFeatured = !!sub.featured;
-                          const colSpan = isFeatured ? 'col-span-4' : 'col-span-4';
-
-                          return (
-                            <div key={idx} className={`${colSpan} space-y-3`}>
-                              <h3 className="text-xs uppercase tracking-wider font-bold text-charcoal border-b border-champagne/60 pb-2">
-                                {sub.title}
-                              </h3>
-
-                              {sub.items && (
-                                <ul className="space-y-2.5 list-none m-0 p-0">
-                                  {sub.items.map((item, i) => (
-                                    <li key={i}>
-                                      <Link
-                                        href={item.href}
-                                        className="group/item block text-xs transition-colors hover:text-burgundy"
-                                      >
-                                        <span className="font-serif font-medium text-charcoal group-hover/item:text-burgundy transition-colors block">
-                                          {item.name}
-                                        </span>
-                                        {item.description && (
-                                          <span className="text-[11px] text-muted line-clamp-1 block">
-                                            {item.description}
-                                          </span>
-                                        )}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-
-                              {/* Optional Featured Highlight in Mega Menu */}
-                              {sub.featured && (
-                                <div className="bg-ivory border border-border-soft rounded-xl p-4 space-y-2">
-                                  <div className="flex items-center gap-1.5 text-gold text-[10px] font-bold uppercase tracking-wider">
-                                    <Sparkles className="w-3 h-3" /> Exclusive
-                                  </div>
-                                  <h4 className="font-serif font-bold text-sm text-burgundy">
-                                    {sub.featured.title}
-                                  </h4>
-                                  <p className="text-[11px] text-muted leading-relaxed">
-                                    {sub.featured.subtitle}
-                                  </p>
-                                  <Link
-                                    href={sub.featured.href}
-                                    className="inline-flex items-center gap-1 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors pt-1"
-                                  >
-                                    {sub.featured.cta} <ArrowRight className="w-3 h-3 text-gold" />
-                                  </Link>
-                                </div>
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )
-                )}
+                ) : cat.id === 'collections' ? (
+                  <CollectionsMegaMenu
+                    isOpen={isOpen}
+                    onClose={() => setActiveCategory(null)}
+                  />
+                ) : null}
               </li>
             );
           })}
