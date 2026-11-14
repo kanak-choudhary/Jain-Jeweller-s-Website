@@ -28,6 +28,9 @@ export const FILTER_SECTIONS = [
         items: [
           { value: 'coins', label: 'Coins' },
           { value: 'silver-articles', label: 'Silver Articles' },
+          { value: 'idols', label: 'Idols' },
+          { value: 'pooja-items', label: 'Pooja Items' },
+          { value: 'gifting-articles', label: 'Gifting Articles' },
         ],
       },
     ],
@@ -60,6 +63,8 @@ export const FILTER_SECTIONS = [
       { value: '18K', label: '18K' },
       { value: '22K', label: '22K' },
       { value: '24K', label: '24K' },
+      { value: '925', label: '925 Silver' },
+      { value: '999', label: '999 Silver' },
     ],
   },
   {
@@ -101,6 +106,7 @@ export const FILTER_SECTIONS = [
 
 export const matchesCategory = (productCategory, filterCategory) => {
   if (productCategory === filterCategory) return true;
+  if (filterCategory === 'silver-articles' && ['silver-articles', 'idols', 'pooja-items', 'gifting-articles'].includes(productCategory)) return true;
   if (filterCategory === 'pendants' && productCategory === 'pendants-sets') return true;
   if (filterCategory === 'pendants-sets' && productCategory === 'pendants') return true;
   if (filterCategory === 'necklaces' && productCategory === 'necklaces-sets') return true;

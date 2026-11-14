@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import productsData from '@/data/products.json';
 import ProductDetailView from '@/components/pdp/ProductDetailView';
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ProductDetailPage({ params }) {
+async function ProductDetailLoader({ params }) {
   const { slug } = await params;
   const product = productsData.find((p) => p.slug === slug);
 
@@ -41,3 +42,10 @@ export default async function ProductDetailPage({ params }) {
   return <ProductDetailView product={product} />;
 }
 
+export default function ProductDetailPage({ params }) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <ProductDetailLoader params={params} />
+    </Suspense>
+  );
+}

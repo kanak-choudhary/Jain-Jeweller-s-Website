@@ -282,6 +282,30 @@ export default function ProductListingLayout({
       const allItems = FILTER_SECTIONS[0].groups.flatMap((g) => g.items);
       const catItem = allItems.find((i) => i.value === catVal);
       const catName = catItem ? catItem.label : 'Jewellery';
+
+      // Category-specific titles & descriptions for Silver categories
+      if (catVal === 'idols') {
+        return {
+          title: 'Idols',
+          subtitle:
+            'Discover handcrafted pure silver divine idols, sculpted with traditional iconography and heirloom finish.',
+        };
+      }
+      if (catVal === 'pooja-items') {
+        return {
+          title: 'Pooja Items',
+          subtitle:
+            'Explore handcrafted 925 sterling silver puja thalis, diyas, kalash, and sacred articles for holy rituals.',
+        };
+      }
+      if (catVal === 'gifting-articles') {
+        return {
+          title: 'Gifting Articles',
+          subtitle:
+            'Discover thoughtful 925 sterling silver keepsake gifts, figurines, and auspicious heirlooms for memorable occasions.',
+        };
+      }
+
       return {
         title: isTrendingOnly ? `Trending ${catName}` : `${catName} Collection`,
         subtitle: isTrendingOnly

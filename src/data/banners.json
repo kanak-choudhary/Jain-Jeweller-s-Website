@@ -5,7 +5,7 @@
     "title": "Idols Collection",
     "subtitle": "Divine Idols in Pure Silver",
     "ctaLabel": "Shop Now",
-    "ctaLink": "#silver-idols",
+    "ctaLink": "/all-jewellery?metal=silver&category=idols",
     "isGraphicArtwork": true,
     "images": {
       "desktop": "/images/home/hero/desktop/hero-banner-01.webp",
@@ -39,7 +39,7 @@
     "title": "Rings that Celebrate Every Moment",
     "subtitle": "Exquisite Fine Jewellery in Gold & Diamonds",
     "ctaLabel": "Shop Now",
-    "ctaLink": "#rings",
+    "ctaLink": "/all-jewellery?metal=gold&category=rings",
     "isGraphicArtwork": true,
     "images": {
       "desktop": "/images/home/hero/desktop/hero-banner-03.webp",
@@ -56,7 +56,7 @@
     "title": "Elegant Earrings for Every Occasion",
     "subtitle": "Modern Minimalism in Gold & Diamonds",
     "ctaLabel": "Shop Now",
-    "ctaLink": "#earrings",
+    "ctaLink": "/all-jewellery?metal=gold&category=earrings",
     "isGraphicArtwork": true,
     "images": {
       "desktop": "/images/home/hero/desktop/hero-banner-04.png",

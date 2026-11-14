@@ -1867,12 +1867,12 @@
     "id": "jj-slv-001",
     "name": "Pure 925 Silver Antique Diya & Puja Thali Set",
     "slug": "pure-925-silver-antique-diya-puja-thali-set",
-    "category": "silver-articles",
-    "categoryName": "Silver Articles",
+    "category": "pooja-items",
+    "categoryName": "Pooja Items",
     "subcategory": "Puja Articles",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22Kt",
+    "purity": "925",
     "price": 28500,
     "originalPrice": 32000,
     "formattedPrice": "₹28,500",
@@ -1904,8 +1904,8 @@
     ],
     "availableVariants": {
       "purities": [
-        "22Kt",
-        "18Kt"
+        "925",
+        "999"
       ],
       "colours": [
         "Silver",
@@ -1920,12 +1920,12 @@
     "id": "jj-slv-002",
     "name": "925 Sterling Silver Royal Elephant Keepsake Figurine",
     "slug": "925-sterling-silver-royal-elephant-keepsake",
-    "category": "silver-articles",
-    "categoryName": "Silver Articles",
+    "category": "gifting-articles",
+    "categoryName": "Gifting Articles",
     "subcategory": "Silver Decor",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22Kt",
+    "purity": "925",
     "price": 15200,
     "originalPrice": 17000,
     "formattedPrice": "₹15,200",
@@ -1957,8 +1957,8 @@
     ],
     "availableVariants": {
       "purities": [
-        "22Kt",
-        "18Kt"
+        "925",
+        "999"
       ],
       "colours": [
         "Silver",
@@ -2069,6 +2069,727 @@
       ],
       "weights": [
         "115.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-ear-005",
+    "name": "Hexagon Top Gold Jhumka Earrings",
+    "slug": "hexagon-top-gold-jhumka-earrings",
+    "category": "earrings",
+    "categoryName": "Earrings",
+    "subcategory": "Jhumka Earrings",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 102664,
+    "mrp": 104759,
+    "formattedPrice": "₹1,02,664",
+    "formattedOriginalPrice": "₹1,04,759",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "wedding",
+    "occasionName": "Wedding",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/shop-by-category/earrings-category.webp",
+    "alt": "Hexagon Top Gold Jhumka Earrings in 22Kt pure gold",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539118",
+    "discount": 2,
+    "colour": "Yellow Gold",
+    "weight": "6.461g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/whats-trending/diwali/categories/earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "6.461g"
+      ]
+    }
+  },
+  {
+    "id": "jj-ear-006",
+    "name": "Concentric Filigree Gold Stud Earrings",
+    "slug": "concentric-filigree-gold-stud-earrings",
+    "category": "earrings",
+    "categoryName": "Earrings",
+    "subcategory": "Stud Earrings",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 96302,
+    "mrp": 98268,
+    "formattedPrice": "₹96,302",
+    "formattedOriginalPrice": "₹98,268",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "daily-wear",
+    "occasionName": "Daily Wear",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/collections/bridal/categories/bridal-earrings.webp",
+    "alt": "Concentric Filigree Gold Stud Earrings in 22Kt yellow gold",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.8,
+    "isTrending": true,
+    "productCode": "539119",
+    "discount": 2,
+    "colour": "Yellow Gold",
+    "weight": "5.920g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 3,
+    "images": [
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold"
+      ],
+      "weights": [
+        "5.920g"
+      ]
+    }
+  },
+  {
+    "id": "jj-ear-007",
+    "name": "Enamel Peacock Tassel Gold Drop Earrings",
+    "slug": "enamel-peacock-tassel-gold-drop-earrings",
+    "category": "earrings",
+    "categoryName": "Earrings",
+    "subcategory": "Drop Earrings",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 95563,
+    "mrp": 97513,
+    "formattedPrice": "₹95,563",
+    "formattedOriginalPrice": "₹97,513",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "festive-shringaar",
+    "collectionName": "Festive Shringaar",
+    "image": "/images/whats-trending/diwali/categories/earrings.webp",
+    "alt": "Enamel Peacock Tassel Gold Drop Earrings crafted in 22Kt yellow gold",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539120",
+    "discount": 2,
+    "colour": "Yellow Gold",
+    "weight": "5.850g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 2,
+    "images": [
+      "/images/whats-trending/diwali/categories/earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold"
+      ],
+      "weights": [
+        "5.850g"
+      ]
+    }
+  },
+  {
+    "id": "jj-ear-008",
+    "name": "Lattice Fringe Yellow Gold Stud Earrings",
+    "slug": "lattice-fringe-yellow-gold-stud-earrings",
+    "category": "earrings",
+    "categoryName": "Earrings",
+    "subcategory": "Stud Earrings",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 92972,
+    "mrp": 94870,
+    "formattedPrice": "₹92,972",
+    "formattedOriginalPrice": "₹94,870",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/diamond/diamond-earrings.webp",
+    "alt": "Lattice Fringe Yellow Gold Stud Earrings in 22Kt gold",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.8,
+    "isTrending": false,
+    "productCode": "539121",
+    "discount": 2,
+    "colour": "Yellow Gold",
+    "weight": "5.710g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 4,
+    "images": [
+      "/images/diamond/diamond-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold"
+      ],
+      "weights": [
+        "5.710g"
+      ]
+    }
+  },
+  {
+    "id": "jj-idl-001",
+    "name": "Divine 999 Pure Silver Lord Ganesha Idol",
+    "slug": "divine-999-pure-silver-lord-ganesha-idol",
+    "category": "idols",
+    "categoryName": "Idols",
+    "subcategory": "Ganesha Idols",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "999",
+    "price": 18500,
+    "originalPrice": 21000,
+    "formattedPrice": "₹18,500",
+    "formattedOriginalPrice": "₹21,000",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+    "alt": "Handcrafted 999 pure fine silver Lord Ganesha idol for home temple",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539151",
+    "mrp": 21000,
+    "discount": 12,
+    "colour": "Silver",
+    "weight": "120.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 4,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "/images/home/shop-by-category/anklets-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "999",
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Antique Silver"
+      ],
+      "weights": [
+        "120.000g",
+        "250.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-idl-002",
+    "name": "Auspicious 999 Pure Silver Goddess Lakshmi Idol",
+    "slug": "auspicious-999-pure-silver-goddess-lakshmi-idol",
+    "category": "idols",
+    "categoryName": "Idols",
+    "subcategory": "Lakshmi Idols",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "999",
+    "price": 22800,
+    "originalPrice": 25500,
+    "formattedPrice": "₹22,800",
+    "formattedOriginalPrice": "₹25,500",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+    "alt": "Auspicious 999 pure silver Goddess Lakshmi seated murti on lotus pedestal",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539152",
+    "mrp": 25500,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "150.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 6,
+    "images": [
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "999",
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Antique Silver"
+      ],
+      "weights": [
+        "150.000g",
+        "300.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-idl-003",
+    "name": "Pure 925 Sterling Silver Radha Krishna Divine Murti",
+    "slug": "pure-925-sterling-silver-radha-krishna-divine-murti",
+    "category": "idols",
+    "categoryName": "Idols",
+    "subcategory": "Radha Krishna Idols",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 34500,
+    "originalPrice": 39000,
+    "formattedPrice": "₹34,500",
+    "formattedOriginalPrice": "₹39,000",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+    "alt": "Intricately detailed 925 sterling silver Radha Krishna divine heirloom idol",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "inStock": true,
+    "rating": 4.8,
+    "isTrending": false,
+    "productCode": "539153",
+    "mrp": 39000,
+    "discount": 12,
+    "colour": "Silver",
+    "weight": "220.000g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "/images/home/shop-by-category/bracelets-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "220.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-idl-004",
+    "name": "999 Fine Silver Bal Gopal Laddu Gopal Idol",
+    "slug": "999-fine-silver-bal-gopal-laddu-gopal-idol",
+    "category": "idols",
+    "categoryName": "Idols",
+    "subcategory": "Bal Gopal Idols",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "999",
+    "price": 14200,
+    "originalPrice": 16000,
+    "formattedPrice": "₹14,200",
+    "formattedOriginalPrice": "₹16,000",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/shop-by-category/anklets-category.webp",
+    "alt": "Handcrafted 999 fine silver Bal Gopal Laddu Gopal idol for home mandir",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.8,
+    "isTrending": false,
+    "productCode": "539154",
+    "mrp": 16000,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "90.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 3,
+    "images": [
+      "/images/home/shop-by-category/anklets-category.webp",
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "999",
+        "925"
+      ],
+      "colours": [
+        "Silver"
+      ],
+      "weights": [
+        "90.000g",
+        "180.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-pja-002",
+    "name": "925 Sterling Silver Nakshi Carved Puja Bell",
+    "slug": "925-sterling-silver-nakshi-carved-puja-bell",
+    "category": "pooja-items",
+    "categoryName": "Pooja Items",
+    "subcategory": "Puja Bells",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 8900,
+    "originalPrice": 9800,
+    "formattedPrice": "₹8,900",
+    "formattedOriginalPrice": "₹9,800",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "daily-wear",
+    "occasionName": "Daily Wear",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+    "alt": "Traditional 925 sterling silver auspicious hand puja bell with sacred iconography",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539155",
+    "mrp": 9800,
+    "discount": 9,
+    "colour": "Silver",
+    "weight": "75.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 8,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver"
+      ],
+      "weights": [
+        "75.000g",
+        "120.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-pja-003",
+    "name": "Traditional 925 Pure Silver Panchamrit Kalash & Spoon",
+    "slug": "traditional-925-pure-silver-panchamrit-kalash-spoon",
+    "category": "pooja-items",
+    "categoryName": "Pooja Items",
+    "subcategory": "Kalash",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 16500,
+    "originalPrice": 18500,
+    "formattedPrice": "₹16,500",
+    "formattedOriginalPrice": "₹18,500",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+    "alt": "925 pure silver sacred panchamrit kalash pot with matching silver spoon",
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.8,
+    "isTrending": false,
+    "productCode": "539156",
+    "mrp": 18500,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "140.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver"
+      ],
+      "weights": [
+        "140.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-pja-004",
+    "name": "Embossed 925 Sterling Silver Kamakshi Aarti Diya",
+    "slug": "embossed-925-sterling-silver-kamakshi-aarti-diya",
+    "category": "pooja-items",
+    "categoryName": "Pooja Items",
+    "subcategory": "Diyas",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 11800,
+    "originalPrice": 13200,
+    "formattedPrice": "₹11,800",
+    "formattedOriginalPrice": "₹13,200",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "festive",
+    "occasionName": "Festive",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+    "alt": "Pure 925 silver traditional Kamakshi deepam oil lamp with intricate floral repousse",
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539157",
+    "mrp": 13200,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "95.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 4,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Antique Gold-Touch"
+      ],
+      "weights": [
+        "95.000g",
+        "150.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-gft-002",
+    "name": "Handcrafted 925 Pure Silver Floral Peacock Bowl Set",
+    "slug": "handcrafted-925-pure-silver-floral-peacock-bowl-set",
+    "category": "gifting-articles",
+    "categoryName": "Gifting Articles",
+    "subcategory": "Silver Tableware",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 19800,
+    "originalPrice": 22000,
+    "formattedPrice": "₹19,800",
+    "formattedOriginalPrice": "₹22,000",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "gifting",
+    "occasionName": "Gifting",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+    "alt": "Royal 925 pure silver floral peacock bowl and spoon set in velvet presentation box",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539158",
+    "mrp": 22000,
+    "discount": 10,
+    "colour": "Silver",
+    "weight": "180.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 6,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Dual Tone"
+      ],
+      "weights": [
+        "180.000g",
+        "250.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-gft-003",
+    "name": "Ornate 925 Sterling Silver Filigree Photo Frame",
+    "slug": "ornate-925-sterling-silver-filigree-photo-frame",
+    "category": "gifting-articles",
+    "categoryName": "Gifting Articles",
+    "subcategory": "Keepsakes",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 9500,
+    "originalPrice": 10800,
+    "formattedPrice": "₹9,500",
+    "formattedOriginalPrice": "₹10,800",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "gifting",
+    "occasionName": "Gifting",
+    "collection": "contemporary-collection",
+    "collectionName": "Contemporary Collection",
+    "image": "/images/home/shop-by-category/anklets-category.webp",
+    "alt": "Handcrafted 925 sterling silver ornamental filigree tabletop photo frame",
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "inStock": true,
+    "rating": 4.7,
+    "isTrending": false,
+    "productCode": "539159",
+    "mrp": 10800,
+    "discount": 12,
+    "colour": "Silver",
+    "weight": "85.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 4,
+    "images": [
+      "/images/home/shop-by-category/anklets-category.webp",
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver"
+      ],
+      "weights": [
+        "85.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-gft-004",
+    "name": "925 Silver Shubh Labh Auspicious Door Hanging",
+    "slug": "925-silver-shubh-labh-auspicious-door-hanging",
+    "category": "gifting-articles",
+    "categoryName": "Gifting Articles",
+    "subcategory": "Auspicious Gifts",
+    "metal": "silver",
+    "metalName": "Silver",
+    "purity": "925",
+    "price": 12400,
+    "originalPrice": 14000,
+    "formattedPrice": "₹12,400",
+    "formattedOriginalPrice": "₹14,000",
+    "gender": "unisex",
+    "genderName": "Unisex",
+    "occasion": "gifting",
+    "occasionName": "Gifting",
+    "collection": "traditional-collection",
+    "collectionName": "Traditional Collection",
+    "image": "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+    "alt": "Auspicious pure 925 silver Shubh Labh wall hanging keepsake for housewarming and festive gifts",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 4.9,
+    "isTrending": true,
+    "productCode": "539160",
+    "mrp": 14000,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "110.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/gifting-and-more/landscape/festive-gifting.webp",
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "925"
+      ],
+      "colours": [
+        "Silver",
+        "Antique Finish"
+      ],
+      "weights": [
+        "110.000g"
       ]
     }
   }

@@ -194,9 +194,9 @@ export const silverMenuData = {
           title: 'OTHER JEWELLERY',
           items: [
             { name: 'Silver Articles', href: '/all-jewellery?metal=silver&category=silver-articles', icon: 'Gift' },
-            { name: 'Idols', href: '/all-jewellery?metal=silver&category=silver-articles', icon: 'Sun' },
-            { name: 'Pooja Items', href: '/all-jewellery?metal=silver&category=silver-articles', icon: 'Sparkle' },
-            { name: 'Gifting Articles', href: '/all-jewellery?metal=silver&category=silver-articles', icon: 'Award' },
+            { name: 'Idols', href: '/all-jewellery?metal=silver&category=idols', icon: 'Sun' },
+            { name: 'Pooja Items', href: '/all-jewellery?metal=silver&category=pooja-items', icon: 'Sparkle' },
+            { name: 'Gifting Articles', href: '/all-jewellery?metal=silver&category=gifting-articles', icon: 'Award' },
           ],
         },
       ],

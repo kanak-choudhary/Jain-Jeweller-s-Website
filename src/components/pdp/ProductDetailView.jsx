@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
+import SimilarProductsSection from './SimilarProductsSection';
 
 export default function ProductDetailView({ product }) {
   const router = useRouter();
@@ -431,6 +432,9 @@ export default function ProductDetailView({ product }) {
           </div>
         </div>
       </div>
+
+      {/* 3. Similar Products Carousel Section */}
+      <SimilarProductsSection currentProduct={product} />
     </div>
   );
 }
