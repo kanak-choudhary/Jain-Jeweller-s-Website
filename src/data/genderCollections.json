@@ -7,21 +7,21 @@
       "name": "Women Jewellery",
       "image": "/images/home/shop-by-gender/women-jewellery.webp",
       "alt": "Women Jewellery - Indian woman wearing traditional green saree and delicate gold jewellery",
-      "href": "#women"
+      "href": "/all-jewellery?gender=women"
     },
     {
       "id": "men-jewellery",
       "name": "Men Jewellery",
       "image": "/images/home/shop-by-gender/men-jewellery.webp",
       "alt": "Men Jewellery - Indian men wearing traditional attire with classic chains and rings",
-      "href": "#men"
+      "href": "/all-jewellery?gender=men"
     },
     {
       "id": "kids-jewellery",
       "name": "Kids Jewellery",
       "image": "/images/home/shop-by-gender/kids-jewellery.webp",
       "alt": "Kids Jewellery - Happy Indian boy and girl wearing delicate gold and silver jewellery",
-      "href": "#kids"
+      "href": "/all-jewellery?gender=kids"
     }
   ]
 }

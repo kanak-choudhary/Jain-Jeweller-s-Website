@@ -7,7 +7,7 @@
     "collection": "PRIDE diamond collection",
     "image": "/images/diamond/diamond-hero-model.webp",
     "alt": "Indian model wearing exquisite emerald saree and diamond jewellery - Jain Jewellers",
-    "href": "#diamond",
+    "href": "/all-jewellery?metal=diamond",
     "ctaLabel": "SHOP NOW"
   },
   "bannerCard": {
@@ -15,7 +15,7 @@
     "collection": "PRIDE diamond collection",
     "image": "/images/diamond/diamond-emerald-necklace-banner.webp",
     "alt": "Diamond and emerald necklace set crafted on terracotta silk - Jain Jewellers",
-    "href": "#diamond",
+    "href": "/all-jewellery?metal=diamond&category=necklaces",
     "ctaLabel": "SHOP NOW"
   },
   "collectionCards": [
@@ -24,21 +24,21 @@
       "title": "Diamond Drop Earrings",
       "image": "/images/diamond/diamond-earrings.webp",
       "alt": "Exquisite diamond teardrop chandelier earrings",
-      "href": "#earrings"
+      "href": "/all-jewellery?metal=diamond&category=earrings"
     },
     {
       "id": "card-necklace",
       "title": "Ruby & Diamond Necklace Set",
       "image": "/images/diamond/diamond-necklace-set.webp",
       "alt": "Royal floral ruby and diamond necklace set",
-      "href": "#necklaces"
+      "href": "/all-jewellery?metal=diamond&category=necklaces"
     },
     {
       "id": "card-bangles",
       "title": "Diamond & Emerald Bangles",
       "image": "/images/diamond/diamond-bangles.webp",
       "alt": "Pair of handcrafted floral diamond and emerald bangles",
-      "href": "#bangles"
+      "href": "/all-jewellery?metal=diamond&category=bangles"
     }
   ]
 }

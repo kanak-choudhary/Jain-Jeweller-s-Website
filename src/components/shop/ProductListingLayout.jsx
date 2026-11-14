@@ -323,6 +323,14 @@ export default function ProductListingLayout({
           : `Explore royal ${metalName.toLowerCase()} jewellery crafted with timeless heritage and contemporary allure.`,
       };
     }
+    if (selectedFilters.gender.length === 1 && selectedFilters.category.length === 0) {
+      const genderVal = selectedFilters.gender[0];
+      const genderName = genderVal === 'women' ? 'Women' : genderVal === 'men' ? 'Men' : 'Kids';
+      return {
+        title: `${genderName}'s Jewellery Collection`,
+        subtitle: `Explore handcrafted royal fine jewellery curated specifically for ${genderName.toLowerCase()}.`,
+      };
+    }
     return {
       title: pageTitle,
       subtitle: pageSubtitle,
@@ -330,12 +338,18 @@ export default function ProductListingLayout({
   }, [selectedFilters, isTrendingOnly, pageTitle, pageSubtitle]);
 
   const activeCategoryTitle = useMemo(() => {
-    if (selectedFilters.category.length !== 1) return null;
-    const catVal = selectedFilters.category[0];
-    const allItems = FILTER_SECTIONS[0]?.groups?.flatMap((g) => g.items) || [];
-    const catItem = allItems.find((i) => i.value === catVal);
-    return catItem ? catItem.label : catVal;
-  }, [selectedFilters.category]);
+    if (selectedFilters.category.length === 1) {
+      const catVal = selectedFilters.category[0];
+      const allItems = FILTER_SECTIONS[0]?.groups?.flatMap((g) => g.items) || [];
+      const catItem = allItems.find((i) => i.value === catVal);
+      return catItem ? catItem.label : catVal;
+    }
+    if (selectedFilters.gender.length === 1 && selectedFilters.category.length === 0) {
+      const gVal = selectedFilters.gender[0];
+      return gVal === 'women' ? 'Women' : gVal === 'men' ? 'Men' : 'Kids';
+    }
+    return null;
+  }, [selectedFilters.category, selectedFilters.gender]);
 
   return (
     <div className="min-h-screen bg-white">
