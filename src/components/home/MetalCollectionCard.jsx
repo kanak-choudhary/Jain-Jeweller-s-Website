@@ -6,10 +6,12 @@ import { ArrowRight } from 'lucide-react';
 
 export default function MetalCollectionCard({ collection, priority = false }) {
   const handleClick = (e) => {
-    const target = document.querySelector(collection.href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (collection.href && collection.href.startsWith('#')) {
+      const target = document.querySelector(collection.href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

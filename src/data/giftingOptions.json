@@ -10,7 +10,7 @@
       "title": "Birthday Gifting",
       "image": "/images/home/gifting-and-more/landscape/birthday-gifting.webp",
       "alt": "Birthday Gifting - Exquisite jewellery gifts for birthdays",
-      "href": "#birthday",
+      "href": "/all-jewellery?occasion=gifting",
       "type": "horizontal"
     },
     {
@@ -18,7 +18,7 @@
       "title": "Festive Gifting",
       "image": "/images/home/gifting-and-more/landscape/festive-gifting.webp",
       "alt": "Festive Gifting - Traditional gold jewellery gifts for festive celebrations",
-      "href": "#festive",
+      "href": "/all-jewellery?occasion=festive",
       "type": "horizontal"
     },
     {
@@ -26,7 +26,7 @@
       "title": "Anniversary Gifting",
       "image": "/images/home/gifting-and-more/landscape/anniversary-gifting.webp",
       "alt": "Anniversary Gifting - Fine diamond jewellery gifts for anniversaries",
-      "href": "#anniversary",
+      "href": "/all-jewellery?metal=diamond",
       "type": "horizontal"
     },
     {
@@ -34,7 +34,7 @@
       "title": "New Born Gifting",
       "image": "/images/home/gifting-and-more/landscape/new-born-gifting.webp",
       "alt": "New Born Gifting - Delicate gold keepsake jewellery for newborns and children",
-      "href": "#newborn",
+      "href": "/all-jewellery?gender=kids",
       "type": "horizontal"
     },
     {
@@ -42,7 +42,7 @@
       "title": "Jain Jewellers Gift Card",
       "image": "/images/home/gifting-and-more/portrait/gift-card-gifting.webp",
       "alt": "Jain Jewellers Gift Card - A gift that always fits, always sparkles",
-      "href": "#gift-card",
+      "href": "/all-jewellery?category=gifting-articles",
       "type": "tall"
     },
     {
@@ -50,7 +50,7 @@
       "title": "Corporate Gifting",
       "image": "/images/home/gifting-and-more/portrait/corporate-gifting.webp",
       "alt": "Corporate Gifting - Elevated gifting for corporate excellence",
-      "href": "#corporate",
+      "href": "/all-jewellery?category=coins",
       "type": "tall"
     }
   ],

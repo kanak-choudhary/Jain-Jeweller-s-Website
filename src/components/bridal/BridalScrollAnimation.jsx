@@ -7,6 +7,12 @@ import { Sparkles, ArrowDown } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+  if (ScrollTrigger.clearScrollMemory) {
+    ScrollTrigger.clearScrollMemory('manual');
+  }
 }
 
 const TOTAL_FRAMES = 300;
@@ -246,6 +252,25 @@ export default function BridalScrollAnimation() {
     const currentHeaderHeight = getHeaderHeight();
     setHeaderHeight(currentHeaderHeight);
 
+    // Enforce top position before initializing ScrollTrigger
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      if (ScrollTrigger.clearScrollMemory) {
+        ScrollTrigger.clearScrollMemory('manual');
+      }
+      const html = document.documentElement;
+      const prevBehavior = html.style.scrollBehavior;
+      html.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      html.scrollTop = 0;
+      document.body.scrollTop = 0;
+      requestAnimationFrame(() => {
+        html.style.scrollBehavior = prevBehavior;
+      });
+    }
+
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: containerRef.current,
@@ -282,6 +307,12 @@ export default function BridalScrollAnimation() {
           }
         },
       });
+
+      // Render frame 0 on start
+      currentFrameRef.current = 0;
+      setScrollProgress(0);
+      setCurrentStageIdx(0);
+      renderFrame(0);
     }, containerRef);
 
     return () => {

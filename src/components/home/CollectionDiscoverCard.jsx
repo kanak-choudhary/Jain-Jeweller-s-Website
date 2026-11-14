@@ -8,7 +8,11 @@ export default function CollectionDiscoverCard({ collection }) {
   return (
     <div className="group flex flex-col h-full bg-white rounded-2xl border border-soft-border/80 hover:border-gold/60 shadow-xs hover:shadow-xl transition-all duration-500 overflow-hidden">
       {/* Image Container */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-champagne/20">
+      <Link
+        href={href}
+        className="relative aspect-[4/5] w-full overflow-hidden bg-champagne/20 block focus-visible:outline-none"
+        aria-label={`${title} image`}
+      >
         <Image
           src={image}
           alt={title}
@@ -26,14 +30,16 @@ export default function CollectionDiscoverCard({ collection }) {
             {number}
           </span>
         </div>
-      </div>
+      </Link>
 
       {/* Card Content */}
       <div className="p-6 flex flex-col flex-grow justify-between bg-white">
         <div>
-          <h3 className="font-playfair text-xl sm:text-2xl font-bold text-charcoal group-hover:text-burgundy transition-colors duration-300 tracking-tight">
-            {title}
-          </h3>
+          <Link href={href} className="block focus-visible:outline-none">
+            <h3 className="font-playfair text-xl sm:text-2xl font-bold text-charcoal group-hover:text-burgundy transition-colors duration-300 tracking-tight">
+              {title}
+            </h3>
+          </Link>
         </div>
 
         <div className="mt-6 pt-4 border-t border-soft-border/60">

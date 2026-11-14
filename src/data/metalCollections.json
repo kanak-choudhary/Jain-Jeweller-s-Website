@@ -8,7 +8,7 @@
     "mobileImage": "/images/home/explore-our-range/shop-by-metal/gold-collection.webp",
     "alt": "22KT BIS Hallmarked traditional yellow gold jewellery collection - Jain Jewellers",
     "ctaLabel": "Explore Gold",
-    "href": "#gold"
+    "href": "/all-jewellery?metal=gold"
   },
   {
     "id": "diamond",
@@ -19,7 +19,7 @@
     "mobileImage": "/images/home/explore-our-range/shop-by-metal/diamond-collection.webp",
     "alt": "Certified diamond necklace, drop earrings, bracelet and ring - Jain Jewellers",
     "ctaLabel": "Explore Diamond",
-    "href": "#diamond"
+    "href": "/all-jewellery?metal=diamond"
   },
   {
     "id": "silver",
@@ -30,7 +30,7 @@
     "mobileImage": "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
     "alt": "925 sterling silver filigree necklace, earrings, bangles and ring - Jain Jewellers",
     "ctaLabel": "Explore Silver",
-    "href": "#silver"
+    "href": "/all-jewellery?metal=silver"
   },
   {
     "id": "daily-wear",
@@ -41,7 +41,7 @@
     "mobileImage": "/images/home/explore-our-range/shop-by-metal/daily-wear-collection.webp",
     "alt": "Feather-light 18KT gold and diamond daily wear jewellery - Jain Jewellers",
     "ctaLabel": "Explore Daily Wear",
-    "href": "#daily-wear"
+    "href": "/all-jewellery?occasion=daily-wear"
   }
 ]
 

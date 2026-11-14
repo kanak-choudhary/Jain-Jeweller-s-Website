@@ -12,7 +12,7 @@
       "description": "Elegant designs that never go out of style.",
       "image": "/images/home/discover-our-collection/timeless-classics.webp",
       "ctaText": "Explore Collection",
-      "href": "#timeless-classics"
+      "href": "/all-jewellery?collection=traditional-collection"
     },
     {
       "id": "contemporary-designs",
@@ -21,7 +21,7 @@
       "description": "Modern jewellery for your individual expression.",
       "image": "/images/home/discover-our-collection/contemporary-designs.webp",
       "ctaText": "Explore Collection",
-      "href": "#contemporary"
+      "href": "/all-jewellery?collection=contemporary-collection"
     },
     {
       "id": "festive-collection",
@@ -30,7 +30,7 @@
       "description": "Celebrate every occasion with exceptional designs.",
       "image": "/images/home/discover-our-collection/festive-collection.webp",
       "ctaText": "Explore Collection",
-      "href": "#festive"
+      "href": "/all-jewellery?occasion=festive"
     },
     {
       "id": "wedding-bridal",
@@ -39,7 +39,7 @@
       "description": "Discover jewellery for your most cherished celebrations.",
       "image": "/images/home/discover-our-collection/wedding-bridal.webp",
       "ctaText": "Explore Collection",
-      "href": "#wedding-bridal"
+      "href": "/bridal-collection"
     }
   ]
 }

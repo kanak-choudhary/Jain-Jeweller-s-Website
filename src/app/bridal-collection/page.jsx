@@ -1,3 +1,4 @@
+import BridalScrollReset from '@/components/bridal/BridalScrollReset';
 import BridalScrollAnimation from '@/components/bridal/BridalScrollAnimation';
 import BridalCategories from '@/components/bridal/BridalCategories';
 import BridalProducts from '@/components/bridal/BridalProducts';
@@ -14,6 +15,9 @@ export const metadata = {
 export default function BridalCollectionPage() {
   return (
     <main className="w-full min-h-screen bg-[#FAF8F4] overflow-x-hidden">
+      {/* Enforce scroll to top at initial frame whenever route runs */}
+      <BridalScrollReset />
+
       {/* Opening Scroll-Driven Canvas Animation Experience (Preserved completely) */}
       <BridalScrollAnimation />
 

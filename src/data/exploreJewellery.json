@@ -7,7 +7,7 @@
     "mobileImage": "/images/home/explore-jewellery/wedding-classics.webp",
     "alt": "Indian bride wearing traditional gold and kundan bridal jewellery - Wedding Classics",
     "ctaLabel": "Explore Collection",
-    "href": "#bridal-collection",
+    "href": "/bridal-collection",
     "featured": true,
     "layoutVariant": "featured-tall"
   },
@@ -19,7 +19,7 @@
     "mobileImage": "/images/home/explore-jewellery/kundan-jadau.webp",
     "alt": "Handcrafted traditional gold Kundan and Jadau necklace - Traditional Elegance",
     "ctaLabel": "Explore",
-    "href": "#traditional",
+    "href": "/all-jewellery?collection=traditional-collection",
     "featured": false,
     "layoutVariant": "standard"
   },
@@ -31,7 +31,7 @@
     "mobileImage": "/images/home/explore-jewellery/fine-jewellery.webp",
     "alt": "Delicate daily-wear gold and diamond fine jewellery - Everyday Elegance",
     "ctaLabel": "Explore",
-    "href": "#daily-wear",
+    "href": "/all-jewellery?occasion=daily-wear",
     "featured": false,
     "layoutVariant": "standard"
   },
@@ -43,7 +43,7 @@
     "mobileImage": "/images/home/explore-jewellery/contemporary-modern-statements.webp",
     "alt": "Bold sculptural contemporary gold jewellery collection - Modern Statements",
     "ctaLabel": "Explore",
-    "href": "#contemporary",
+    "href": "/all-jewellery?collection=contemporary-collection",
     "featured": false,
     "layoutVariant": "standard"
   },
@@ -55,7 +55,7 @@
     "mobileImage": "/images/home/explore-jewellery/celebration-festive-favourites.webp",
     "alt": "Festive gold and polki celebration jewellery set - Festive Favourites",
     "ctaLabel": "Explore",
-    "href": "#festive",
+    "href": "/all-jewellery?occasion=festive",
     "featured": false,
     "layoutVariant": "standard"
   }

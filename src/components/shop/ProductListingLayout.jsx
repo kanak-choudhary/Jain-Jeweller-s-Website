@@ -331,6 +331,26 @@ export default function ProductListingLayout({
         subtitle: `Explore handcrafted royal fine jewellery curated specifically for ${genderName.toLowerCase()}.`,
       };
     }
+    if (selectedFilters.collection.length === 1 && selectedFilters.category.length === 0) {
+      const collVal = selectedFilters.collection[0];
+      const collSection = FILTER_SECTIONS.find((s) => s.id === 'collection');
+      const collItem = collSection?.items?.find((i) => i.value === collVal);
+      const collName = collItem ? collItem.label : 'Collection';
+      return {
+        title: collName,
+        subtitle: `Discover exclusive fine jewellery from our signature ${collName.toLowerCase()}.`,
+      };
+    }
+    if (selectedFilters.occasion.length === 1 && selectedFilters.category.length === 0) {
+      const occVal = selectedFilters.occasion[0];
+      const occSection = FILTER_SECTIONS.find((s) => s.id === 'occasion');
+      const occItem = occSection?.items?.find((i) => i.value === occVal);
+      const occName = occItem ? occItem.label : 'Occasion';
+      return {
+        title: `${occName} Jewellery`,
+        subtitle: `Explore handcrafted fine jewellery curated for ${occName.toLowerCase()} moments.`,
+      };
+    }
     return {
       title: pageTitle,
       subtitle: pageSubtitle,
@@ -348,8 +368,20 @@ export default function ProductListingLayout({
       const gVal = selectedFilters.gender[0];
       return gVal === 'women' ? 'Women' : gVal === 'men' ? 'Men' : 'Kids';
     }
+    if (selectedFilters.collection.length === 1 && selectedFilters.category.length === 0) {
+      const collVal = selectedFilters.collection[0];
+      const collSection = FILTER_SECTIONS.find((s) => s.id === 'collection');
+      const collItem = collSection?.items?.find((i) => i.value === collVal);
+      return collItem ? collItem.label : collVal;
+    }
+    if (selectedFilters.occasion.length === 1 && selectedFilters.category.length === 0) {
+      const occVal = selectedFilters.occasion[0];
+      const occSection = FILTER_SECTIONS.find((s) => s.id === 'occasion');
+      const occItem = occSection?.items?.find((i) => i.value === occVal);
+      return occItem ? occItem.label : occVal;
+    }
     return null;
-  }, [selectedFilters.category, selectedFilters.gender]);
+  }, [selectedFilters.category, selectedFilters.gender, selectedFilters.collection, selectedFilters.occasion]);
 
   return (
     <div className="min-h-screen bg-white">
