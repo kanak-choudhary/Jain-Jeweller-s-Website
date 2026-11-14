@@ -1,17 +1,37 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const WishlistContext = createContext(null);
+const STORAGE_KEY = 'jj_wishlist_items';
+
+const DEFAULT_WISHLIST = [
+  { id: 'jj-ear-001', name: 'Heritage Polki & Pearl Chandelier Earrings', price: '₹1,25,000' },
+  { id: 'jj-rng-001', name: 'Solitaire Diamond Engagement Ring 1.5ct', price: '₹1,85,000' },
+];
 
 export function WishlistProvider({ children }) {
-  // Initialize with sample items so count badge and UI interactions are immediately visible and reactive
-  const [wishlistItems, setWishlistItems] = useState([
-    { id: 1, name: "22KT Royal Nizam Choker Necklace", price: "₹2,45,000" },
-    { id: 2, name: "Solitaire Diamond Engagement Ring 1.5ct", price: "₹1,85,000" },
-  ]);
+  // Use lazy initializer to read from localStorage without cascading renders
+  const [wishlistItems, setWishlistItems] = useState(() => {
+    if (typeof window === 'undefined') return DEFAULT_WISHLIST;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : DEFAULT_WISHLIST;
+    } catch {
+      return DEFAULT_WISHLIST;
+    }
+  });
 
-  const toggleWishlist = (item) => {
+  // Sync to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(wishlistItems));
+    } catch {
+      // Ignore
+    }
+  }, [wishlistItems]);
+
+  const toggleWishlist = useCallback((item) => {
     setWishlistItems((prev) => {
       const exists = prev.some((i) => i.id === item.id);
       if (exists) {
@@ -19,11 +39,14 @@ export function WishlistProvider({ children }) {
       }
       return [...prev, item];
     });
-  };
+  }, []);
 
-  const isInWishlist = (id) => {
-    return wishlistItems.some((item) => item.id === id);
-  };
+  const isInWishlist = useCallback(
+    (id) => {
+      return wishlistItems.some((item) => item.id === id);
+    },
+    [wishlistItems]
+  );
 
   const wishlistCount = wishlistItems.length;
 
@@ -53,4 +76,3 @@ export function useWishlist() {
   }
   return context;
 }
-

@@ -8,7 +8,7 @@
     "subcategory": "Chandelier Earrings",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 125000,
     "originalPrice": 138000,
     "formattedPrice": "₹1,25,000",
@@ -25,7 +25,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539118",
+    "mrp": 138000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "6.461g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "6.461g"
+      ]
+    }
   },
   {
     "id": "jj-ear-002",
@@ -36,7 +61,7 @@
     "subcategory": "Studs",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 68000,
     "originalPrice": 75000,
     "formattedPrice": "₹68,000",
@@ -53,7 +78,33 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539111",
+    "mrp": 75000,
+    "discount": 9,
+    "colour": "White Gold",
+    "weight": "8.120g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/discover-our-collection/contemporary-designs.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "8.120g"
+      ]
+    }
   },
   {
     "id": "jj-ear-003",
@@ -64,7 +115,7 @@
     "subcategory": "Jhumkas",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 6500,
     "originalPrice": 7500,
     "formattedPrice": "₹6,500",
@@ -81,7 +132,32 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.7,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539112",
+    "mrp": 7500,
+    "discount": 13,
+    "colour": "Silver",
+    "weight": "5.240g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "5.240g"
+      ]
+    }
   },
   {
     "id": "jj-ear-004",
@@ -92,7 +168,7 @@
     "subcategory": "Hoops",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "14K",
+    "purity": "14Kt",
     "price": 16800,
     "originalPrice": 19500,
     "formattedPrice": "₹16,800",
@@ -109,7 +185,33 @@
     "isBestSeller": false,
     "inStock": false,
     "rating": 4.7,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539113",
+    "mrp": 19500,
+    "discount": 14,
+    "colour": "White Gold",
+    "weight": "7.850g",
+    "stockStatus": "Out of Stock",
+    "stockQuantity": 0,
+    "images": [
+      "/images/diamond/diamond-earrings.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp",
+      "/images/home/shop-by-category/rings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "7.850g"
+      ]
+    }
   },
   {
     "id": "jj-ring-001",
@@ -120,7 +222,7 @@
     "subcategory": "Solitaire Rings",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 185000,
     "originalPrice": 200000,
     "formattedPrice": "₹1,85,000",
@@ -137,7 +239,33 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 5,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539114",
+    "mrp": 200000,
+    "discount": 8,
+    "colour": "Rose Gold",
+    "weight": "3.850g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/home/discover-our-collection/timeless-classics.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp",
+      "/images/diamond/card3-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "3.850g"
+      ]
+    }
   },
   {
     "id": "jj-ring-002",
@@ -148,7 +276,7 @@
     "subcategory": "Cocktail Rings",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 42000,
     "originalPrice": 46000,
     "formattedPrice": "₹42,000",
@@ -165,7 +293,32 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539115",
+    "mrp": 46000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "4.210g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/diamond/card4-necklace.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "4.210g"
+      ]
+    }
   },
   {
     "id": "jj-ring-003",
@@ -176,7 +329,7 @@
     "subcategory": "Signet Rings",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 58000,
     "originalPrice": 62000,
     "formattedPrice": "₹58,000",
@@ -193,7 +346,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539116",
+    "mrp": 62000,
+    "discount": 6,
+    "colour": "Yellow Gold",
+    "weight": "2.950g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/shop-by-gender/men-jewellery.webp",
+      "/images/diamond/card3-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "2.950g"
+      ]
+    }
   },
   {
     "id": "jj-ring-004",
@@ -204,7 +382,7 @@
     "subcategory": "Stackable Rings",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "14K",
+    "purity": "14Kt",
     "price": 8900,
     "originalPrice": 10500,
     "formattedPrice": "₹8,900",
@@ -221,7 +399,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.6,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539117",
+    "mrp": 10500,
+    "discount": 15,
+    "colour": "Yellow Gold",
+    "weight": "5.100g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/diamond/card4-necklace.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "5.100g"
+      ]
+    }
   },
   {
     "id": "jj-pen-001",
@@ -232,7 +435,7 @@
     "subcategory": "Pendant Sets",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 48000,
     "originalPrice": 52000,
     "formattedPrice": "₹48,000",
@@ -249,7 +452,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539118",
+    "mrp": 52000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "6.250g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/home/shop-by-category/pendants-category.webp",
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "6.250g"
+      ]
+    }
   },
   {
     "id": "jj-pen-002",
@@ -260,7 +488,7 @@
     "subcategory": "Daily Pendants",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 22500,
     "originalPrice": 25000,
     "formattedPrice": "₹22,500",
@@ -277,7 +505,33 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.6,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539119",
+    "mrp": 25000,
+    "discount": 10,
+    "colour": "White Gold",
+    "weight": "5.400g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/daily-wear-collection.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "5.400g"
+      ]
+    }
   },
   {
     "id": "jj-pen-003",
@@ -288,7 +542,7 @@
     "subcategory": "Kids Pendants",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 7800,
     "originalPrice": 8900,
     "formattedPrice": "₹7,800",
@@ -305,7 +559,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539120",
+    "mrp": 8900,
+    "discount": 12,
+    "colour": "Yellow Gold",
+    "weight": "7.120g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-gender/kids-jewellery.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "7.120g"
+      ]
+    }
   },
   {
     "id": "jj-neck-001",
@@ -316,7 +595,7 @@
     "subcategory": "Bridal Sets",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 345000,
     "originalPrice": 380000,
     "formattedPrice": "₹3,45,000",
@@ -333,7 +612,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 5,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539121",
+    "mrp": 380000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "52.100g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/gold-collection.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "52.100g"
+      ]
+    }
   },
   {
     "id": "jj-neck-002",
@@ -344,7 +648,7 @@
     "subcategory": "Diamond Necklaces",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 285000,
     "originalPrice": 310000,
     "formattedPrice": "₹2,85,000",
@@ -361,7 +665,33 @@
     "isBestSeller": true,
     "inStock": false,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539122",
+    "mrp": 310000,
+    "discount": 8,
+    "colour": "Rose Gold",
+    "weight": "38.500g",
+    "stockStatus": "Out of Stock",
+    "stockQuantity": 0,
+    "images": [
+      "/images/diamond/diamond-necklace-set.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp",
+      "/images/home/shop-by-category/rings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "38.500g"
+      ]
+    }
   },
   {
     "id": "jj-neck-003",
@@ -372,7 +702,7 @@
     "subcategory": "Collar Necklaces",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 195000,
     "originalPrice": 215000,
     "formattedPrice": "₹1,95,000",
@@ -389,7 +719,33 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539123",
+    "mrp": 215000,
+    "discount": 9,
+    "colour": "White Gold",
+    "weight": "45.200g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/diamond/diamond-emerald-necklace-banner.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp",
+      "/images/diamond/card3-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "45.200g"
+      ]
+    }
   },
   {
     "id": "jj-bang-001",
@@ -400,7 +756,7 @@
     "subcategory": "Kadas",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 210000,
     "originalPrice": 228000,
     "formattedPrice": "₹2,10,000",
@@ -417,7 +773,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539124",
+    "mrp": 228000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "15.300g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/bracelets-category.webp",
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/diamond/card4-necklace.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "15.300g"
+      ]
+    }
   },
   {
     "id": "jj-bang-002",
@@ -428,7 +809,7 @@
     "subcategory": "Tennis Bracelets",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 145000,
     "originalPrice": 160000,
     "formattedPrice": "₹1,45,000",
@@ -445,7 +826,33 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539125",
+    "mrp": 160000,
+    "discount": 9,
+    "colour": "White Gold",
+    "weight": "24.800g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/diamond/diamond-bangles.webp",
+      "/images/diamond/card3-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "24.800g"
+      ]
+    }
   },
   {
     "id": "jj-bang-003",
@@ -456,7 +863,7 @@
     "subcategory": "Men Bracelets",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 14800,
     "originalPrice": 16500,
     "formattedPrice": "₹14,800",
@@ -473,7 +880,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.7,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539126",
+    "mrp": 16500,
+    "discount": 10,
+    "colour": "Silver",
+    "weight": "22.400g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/home/shop-by-gender/men-jewellery.webp",
+      "/images/diamond/card4-necklace.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "22.400g"
+      ]
+    }
   },
   {
     "id": "jj-chn-001",
@@ -484,7 +916,7 @@
     "subcategory": "Gold Chains",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 96000,
     "originalPrice": 105000,
     "formattedPrice": "₹96,000",
@@ -501,7 +933,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539127",
+    "mrp": 105000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "14.200g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/chains-category.webp",
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "14.200g"
+      ]
+    }
   },
   {
     "id": "jj-chn-002",
@@ -512,7 +969,7 @@
     "subcategory": "Daily Chains",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 34000,
     "originalPrice": 38000,
     "formattedPrice": "₹34,000",
@@ -529,7 +986,32 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.6,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539128",
+    "mrp": 38000,
+    "discount": 11,
+    "colour": "Yellow Gold",
+    "weight": "12.500g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/daily-wear-collection.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "12.500g"
+      ]
+    }
   },
   {
     "id": "jj-mng-001",
@@ -540,7 +1022,7 @@
     "subcategory": "Traditional Mangalsutra",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 78000,
     "originalPrice": 85000,
     "formattedPrice": "₹78,000",
@@ -557,7 +1039,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539129",
+    "mrp": 85000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "9.800g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/mangalsutra-category.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "9.800g"
+      ]
+    }
   },
   {
     "id": "jj-mng-002",
@@ -568,7 +1075,7 @@
     "subcategory": "Modern Mangalsutra",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 52000,
     "originalPrice": 58000,
     "formattedPrice": "₹52,000",
@@ -585,7 +1092,33 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539130",
+    "mrp": 58000,
+    "discount": 10,
+    "colour": "Rose Gold",
+    "weight": "8.900g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/diamond/card1-hero.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "8.900g"
+      ]
+    }
   },
   {
     "id": "jj-mng-003",
@@ -596,7 +1129,7 @@
     "subcategory": "Station Mangalsutra",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 64000,
     "originalPrice": 71000,
     "formattedPrice": "₹64,000",
@@ -613,7 +1146,33 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539131",
+    "mrp": 71000,
+    "discount": 10,
+    "colour": "White Gold",
+    "weight": "11.200g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/mangalsutra-category.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp",
+      "/images/home/shop-by-category/rings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "11.200g"
+      ]
+    }
   },
   {
     "id": "jj-mng-004",
@@ -624,7 +1183,7 @@
     "subcategory": "Station Mangalsutra",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 48500,
     "originalPrice": 53000,
     "formattedPrice": "₹48,500",
@@ -641,7 +1200,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539132",
+    "mrp": 53000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "7.450g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/diamond/card4-necklace.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp",
+      "/images/diamond/card3-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "7.450g"
+      ]
+    }
   },
   {
     "id": "jj-nsp-001",
@@ -652,7 +1236,7 @@
     "subcategory": "Diamond Nose Pins",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 9800,
     "originalPrice": 11500,
     "formattedPrice": "₹9,800",
@@ -669,7 +1253,33 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.7,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539133",
+    "mrp": 11500,
+    "discount": 15,
+    "colour": "White Gold",
+    "weight": "1.200g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/pendants-category.webp",
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/diamond/card4-necklace.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "1.200g"
+      ]
+    }
   },
   {
     "id": "jj-nsp-002",
@@ -680,7 +1290,7 @@
     "subcategory": "Bridal Nath",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 45000,
     "originalPrice": 49000,
     "formattedPrice": "₹45,000",
@@ -697,7 +1307,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539134",
+    "mrp": 49000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "0.850g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/bridal-collection/bridal-collection.webp",
+      "/images/diamond/card3-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "0.850g"
+      ]
+    }
   },
   {
     "id": "jj-ank-001",
@@ -708,7 +1343,7 @@
     "subcategory": "Traditional Payal",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 8900,
     "originalPrice": 9900,
     "formattedPrice": "₹8,900",
@@ -725,7 +1360,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539135",
+    "mrp": 9900,
+    "discount": 10,
+    "colour": "Silver",
+    "weight": "18.200g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-category/anklets-category.webp",
+      "/images/diamond/card4-necklace.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "18.200g"
+      ]
+    }
   },
   {
     "id": "jj-ank-002",
@@ -736,7 +1396,7 @@
     "subcategory": "Kids Anklets",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 18500,
     "originalPrice": 20000,
     "formattedPrice": "₹18,500",
@@ -753,7 +1413,32 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539136",
+    "mrp": 20000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "14.500g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-gender/kids-jewellery.webp",
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "14.500g"
+      ]
+    }
   },
   {
     "id": "jj-mtk-001",
@@ -764,7 +1449,7 @@
     "subcategory": "Bridal Maang Tikka",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 88000,
     "originalPrice": 95000,
     "formattedPrice": "₹88,000",
@@ -781,7 +1466,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 5,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539137",
+    "mrp": 95000,
+    "discount": 7,
+    "colour": "Yellow Gold",
+    "weight": "9.800g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/discover-our-collection/festive-collection.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "9.800g"
+      ]
+    }
   },
   {
     "id": "jj-wst-001",
@@ -792,7 +1502,7 @@
     "subcategory": "Kamarbandh",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 385000,
     "originalPrice": 420000,
     "formattedPrice": "₹3,85,000",
@@ -809,7 +1519,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539138",
+    "mrp": 420000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "85.000g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/home/explore-jewellery/kundan-jadau.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "85.000g"
+      ]
+    }
   },
   {
     "id": "jj-hth-001",
@@ -820,7 +1555,7 @@
     "subcategory": "Bridal Hand Ornaments",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 118000,
     "originalPrice": 130000,
     "formattedPrice": "₹1,18,000",
@@ -837,7 +1572,32 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539139",
+    "mrp": 130000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "24.500g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/discover-our-collection/wedding-bridal.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "24.500g"
+      ]
+    }
   },
   {
     "id": "jj-crw-001",
@@ -848,7 +1608,7 @@
     "subcategory": "Bridal Crowns",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 225000,
     "originalPrice": 245000,
     "formattedPrice": "₹2,25,000",
@@ -865,7 +1625,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 5,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539140",
+    "mrp": 245000,
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "110.000g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/bridal-collection/first-banner-hero.webp",
+      "/images/collections/bridal/categories/bridal-maang-tikka.webp",
+      "/images/home/shop-by-category/rings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "110.000g"
+      ]
+    }
   },
   {
     "id": "jj-acc-001",
@@ -876,7 +1661,7 @@
     "subcategory": "Cufflinks",
     "metal": "diamond",
     "metalName": "Diamond",
-    "purity": "18K",
+    "purity": "18Kt",
     "price": 48000,
     "originalPrice": 54000,
     "formattedPrice": "₹48,000",
@@ -893,7 +1678,33 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.7,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539141",
+    "mrp": 54000,
+    "discount": 11,
+    "colour": "White Gold",
+    "weight": "20.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/shop-by-gender/men-jewellery.webp",
+      "/images/collections/bridal/categories/bridal-nath-nose-rings.webp",
+      "/images/diamond/card3-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "18Kt",
+        "14Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold",
+        "White Gold"
+      ],
+      "weights": [
+        "20.000g"
+      ]
+    }
   },
   {
     "id": "jj-acc-002",
@@ -904,7 +1715,7 @@
     "subcategory": "Brooches",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 62000,
     "originalPrice": 68000,
     "formattedPrice": "₹62,000",
@@ -921,7 +1732,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539142",
+    "mrp": 68000,
+    "discount": 9,
+    "colour": "Yellow Gold",
+    "weight": "15.000g",
+    "stockStatus": "Only 2 Left",
+    "stockQuantity": 2,
+    "images": [
+      "/images/home/shop-by-gender/men-jewellery.webp",
+      "/images/home/shop-by-category/rings-category.webp",
+      "/images/diamond/card4-necklace.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "15.000g"
+      ]
+    }
   },
   {
     "id": "jj-coin-001",
@@ -932,7 +1768,7 @@
     "subcategory": "Gold Coins",
     "metal": "gold",
     "metalName": "Gold",
-    "purity": "24K",
+    "purity": "24Kt",
     "price": 76000,
     "originalPrice": 78500,
     "formattedPrice": "₹76,000",
@@ -949,7 +1785,31 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 5,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539143",
+    "mrp": 78500,
+    "discount": 3,
+    "colour": "Yellow Gold",
+    "weight": "5.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/jain-experience/digital-gold.webp",
+      "/images/diamond/card3-earrings.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "24Kt (999)"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "5.000g"
+      ]
+    }
   },
   {
     "id": "jj-coin-002",
@@ -960,7 +1820,7 @@
     "subcategory": "Silver Bars",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "24K",
+    "purity": "24Kt",
     "price": 4800,
     "originalPrice": 5200,
     "formattedPrice": "₹4,800",
@@ -977,7 +1837,31 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539144",
+    "mrp": 5200,
+    "discount": 8,
+    "colour": "Silver",
+    "weight": "10.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/diamond/card4-necklace.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "24Kt (999)"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "10.000g"
+      ]
+    }
   },
   {
     "id": "jj-slv-001",
@@ -988,7 +1872,7 @@
     "subcategory": "Puja Articles",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 28500,
     "originalPrice": 32000,
     "formattedPrice": "₹28,500",
@@ -1005,7 +1889,32 @@
     "isBestSeller": true,
     "inStock": true,
     "rating": 4.9,
-    "isTrending": true
+    "isTrending": true,
+    "productCode": "539145",
+    "mrp": 32000,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "250.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 5,
+    "images": [
+      "/images/home/explore-our-range/shop-by-metal/silver-collection.webp",
+      "/images/home/shop-by-category/earrings-category.webp",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "250.000g"
+      ]
+    }
   },
   {
     "id": "jj-slv-002",
@@ -1016,7 +1925,7 @@
     "subcategory": "Silver Decor",
     "metal": "silver",
     "metalName": "Silver",
-    "purity": "22K",
+    "purity": "22Kt",
     "price": 15200,
     "originalPrice": 17000,
     "formattedPrice": "₹15,200",
@@ -1033,6 +1942,134 @@
     "isBestSeller": false,
     "inStock": true,
     "rating": 4.8,
-    "isTrending": false
+    "isTrending": false,
+    "productCode": "539146",
+    "mrp": 17000,
+    "discount": 11,
+    "colour": "Silver",
+    "weight": "150.000g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "/images/home/shop-by-category/anklets-category.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp",
+      "/images/collections/bridal/categories/bridal-bangles.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Silver",
+        "Oxidized Silver"
+      ],
+      "weights": [
+        "150.000g"
+      ]
+    }
+  },
+  {
+    "id": "jj-neck-101",
+    "name": "Royal Kundan Necklace Set",
+    "slug": "royal-kundan-necklace-set",
+    "category": "necklaces-sets",
+    "categoryName": "Necklaces & Sets",
+    "subcategory": "Bridal Necklace Set",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 345000,
+    "mrp": 375000,
+    "formattedPrice": "₹3,45,000",
+    "formattedOriginalPrice": "₹3,75,000",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "bridal",
+    "occasionName": "Bridal",
+    "collection": "bridal-collection",
+    "collectionName": "Bridal Collection",
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Royal Kundan Necklace Set with uncut stones in 22KT gold",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 5,
+    "isTrending": true,
+    "productCode": "539151",
+    "discount": 8,
+    "colour": "Yellow Gold",
+    "weight": "62.450g",
+    "stockStatus": "Only 1 Left",
+    "stockQuantity": 1,
+    "images": [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/home/shop-by-category/earrings-category.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt",
+        "18Kt"
+      ],
+      "colours": [
+        "Yellow Gold",
+        "Rose Gold"
+      ],
+      "weights": [
+        "62.450g",
+        "58.200g"
+      ]
+    }
+  },
+  {
+    "id": "jj-set-106",
+    "name": "Signature Bridal Jewellery Set",
+    "slug": "signature-bridal-jewellery-set",
+    "category": "necklaces-sets",
+    "categoryName": "Necklaces & Sets",
+    "subcategory": "Complete Bridal Set",
+    "metal": "gold",
+    "metalName": "Gold",
+    "purity": "22Kt",
+    "price": 580000,
+    "mrp": 625000,
+    "formattedPrice": "₹5,80,000",
+    "formattedOriginalPrice": "₹6,25,000",
+    "gender": "women",
+    "genderName": "Women",
+    "occasion": "bridal",
+    "occasionName": "Bridal",
+    "collection": "bridal-collection",
+    "collectionName": "Bridal Collection",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+    "alt": "Signature Bridal Jewellery Set in antique 22KT gold and heritage gemstones",
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "inStock": true,
+    "rating": 5,
+    "isTrending": true,
+    "productCode": "539156",
+    "discount": 7,
+    "colour": "Yellow Gold",
+    "weight": "115.000g",
+    "stockStatus": "In Stock",
+    "stockQuantity": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+      "/images/collections/bridal/categories/bridal-necklace-sets.webp",
+      "/images/collections/bridal/categories/bridal-earrings.webp"
+    ],
+    "availableVariants": {
+      "purities": [
+        "22Kt"
+      ],
+      "colours": [
+        "Yellow Gold"
+      ],
+      "weights": [
+        "115.000g"
+      ]
+    }
   }
 ]

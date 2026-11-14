@@ -1,5 +1,4 @@
 import BridalScrollAnimation from '@/components/bridal/BridalScrollAnimation';
-import BridalIntro from '@/components/bridal/BridalIntro';
 import BridalCategories from '@/components/bridal/BridalCategories';
 import BridalProducts from '@/components/bridal/BridalProducts';
 import BridalEdit from '@/components/bridal/BridalEdit';
@@ -18,22 +17,19 @@ export default function BridalCollectionPage() {
       {/* Opening Scroll-Driven Canvas Animation Experience (Preserved completely) */}
       <BridalScrollAnimation />
 
-      {/* Section 1: Bridal Introduction */}
-      <BridalIntro />
-
-      {/* Section 2: Shop by Bridal Categories */}
+      {/* Section 1: Shop by Bridal Categories */}
       <BridalCategories />
 
-      {/* Section 3: Featured Bridal Pieces */}
+      {/* Section 2: Featured Bridal Pieces */}
       <BridalProducts />
 
-      {/* Section 4: The Bridal Edit (Editorial Storytelling) */}
+      {/* Section 3: The Bridal Edit (Editorial Storytelling) */}
       <BridalEdit />
 
-      {/* Section 5: Complete Your Bridal Look */}
+      {/* Section 4: Complete Your Bridal Look */}
       <CompleteBridalLook />
 
-      {/* Section 6: Bridal Consultation */}
+      {/* Section 5: Bridal Consultation */}
       <BridalConsultation />
     </main>
   );

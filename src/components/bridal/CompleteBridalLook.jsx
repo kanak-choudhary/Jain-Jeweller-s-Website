@@ -2,35 +2,36 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
-const ACCENT_CATEGORIES = [
+const BRIDAL_LOOK_CATEGORIES = [
   {
     id: 'earrings',
     name: 'Earrings',
-    detail: 'Chandbalis & Jhumkas',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop',
-    href: '#bridal-earrings',
+    image: '/images/collections/bridal/categories/bridal-earrings.webp',
+    alt: 'Heritage bridal earrings and chandeliers',
+    href: '/all-jewellery?category=earrings',
   },
   {
     id: 'maang-tikka',
     name: 'Maang Tikka',
-    detail: 'Matha Patti & Borla',
-    image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=800&auto=format&fit=crop',
-    href: '#bridal-maang-tikka',
+    image: '/images/collections/bridal/categories/bridal-maang-tikka.webp',
+    alt: 'Handcrafted bridal maang tikka with uncut stones',
+    href: '/all-jewellery?category=maang-tikka',
   },
   {
     id: 'bangles',
     name: 'Bangles',
-    detail: 'Kadas & Chooda Sets',
-    image: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?q=80&w=800&auto=format&fit=crop',
-    href: '#bridal-bangles',
+    image: '/images/collections/bridal/categories/bridal-bangles.webp',
+    alt: 'Intricate 22KT gold bridal bangles and kadas',
+    href: '/all-jewellery?category=bangles',
   },
   {
     id: 'nath',
     name: 'Nath',
-    detail: 'Nose Rings & Chains',
-    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800&auto=format&fit=crop',
-    href: '#bridal-nath',
+    image: '/images/collections/bridal/categories/bridal-nath-nose-rings.webp',
+    alt: 'Traditional bridal nath and nose ring with pearl chain',
+    href: '/all-jewellery?category=nose-pins',
   },
 ];
 
@@ -65,35 +66,35 @@ export default function CompleteBridalLook() {
           </p>
         </div>
 
-        {/* 4-Column Sleek Category Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
-          {ACCENT_CATEGORIES.map((cat) => (
+        {/* 4-Column Sleek 4:5 Category Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {BRIDAL_LOOK_CATEGORIES.map((cat) => (
             <Link
               key={cat.id}
               href={cat.href}
               onClick={(e) => handleClick(e, cat.href)}
-              className="group block text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-2xl"
+              className="group block w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-2xl"
             >
-              {/* Image with subtle border and rounded-2xl */}
-              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-white shadow-xs hover:shadow-xl transition-all duration-500">
+              {/* Image Container with strict 4:5 portrait aspect ratio */}
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-charcoal/5 shadow-xs hover:shadow-xl transition-all duration-500">
                 <Image
                   src={cat.image}
-                  alt={cat.name}
+                  alt={cat.alt || cat.name}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-106"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
               </div>
 
-              {/* Minimal Text Below */}
-              <div className="mt-3.5 space-y-0.5">
-                <h3 className="font-serif text-base sm:text-lg font-normal text-charcoal group-hover:text-burgundy transition-colors">
+              {/* Category Name & Subtle Arrow */}
+              <div className="mt-3.5 sm:mt-4 flex items-center justify-between px-1">
+                <h3 className="font-serif text-base sm:text-lg font-normal text-charcoal tracking-normal group-hover:text-burgundy transition-colors duration-300">
                   {cat.name}
                 </h3>
-                <p className="text-[11px] font-sans text-charcoal/60 tracking-wider">
-                  {cat.detail}
-                </p>
+                <div className="w-6 h-6 rounded-full bg-champagne/40 group-hover:bg-burgundy text-charcoal group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300">
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </div>
               </div>
             </Link>
           ))}

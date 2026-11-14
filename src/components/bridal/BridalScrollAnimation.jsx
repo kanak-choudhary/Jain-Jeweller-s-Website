@@ -1,11 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Sparkles, ArrowDown, Gem } from 'lucide-react';
+import { Sparkles, ArrowDown } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +12,7 @@ if (typeof window !== 'undefined') {
 const TOTAL_FRAMES = 300;
 const FRAME_PATH = (idx) => `/images/bridal-frames/frame-${String(idx + 1).padStart(3, '0')}.jpg`;
 
-// 5 Storytelling Stages defined by user specification
+// 5 Storytelling Stages defined for the bridal campaign
 const STAGES = [
   {
     range: [0.0, 0.22],
@@ -34,23 +32,22 @@ const STAGES = [
     range: [0.45, 0.68],
     eyebrow: 'HEIRLOOM ARCHITECTURE',
     heading: 'The Art of Craftsmanship',
-    supporting: 'Every element finds its place.',
+    supporting: 'Every element finds its sacred place.',
     stageNumber: '03',
   },
   {
     range: [0.68, 0.86],
     eyebrow: 'HARMONIOUS SYMPHONY',
     heading: 'A Complete Expression',
-    supporting: 'Made for your most special moments.',
+    supporting: 'Made for your most unforgettable vows.',
     stageNumber: '04',
   },
   {
     range: [0.86, 1.0],
     eyebrow: 'ETERNAL RADIANCE',
     heading: 'Your Forever Begins Here',
-    supporting: 'Exquisite bridal suites handcrafted for life’s most sacred vows.',
+    supporting: 'Exquisite bridal suites handcrafted for generations.',
     stageNumber: '05',
-    hasCta: true,
   },
 ];
 
@@ -65,12 +62,24 @@ export default function BridalScrollAnimation() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentStageIdx, setCurrentStageIdx] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [headerHeight, setHeaderHeight] = useState(120);
 
   // Reference for requestAnimationFrame rendering
   const currentFrameRef = useRef(0);
   const rafIdRef = useRef(null);
 
-  // Draw frame on canvas with high DPI and object-fit: contain scaling
+  // Measure dynamic sticky header height
+  const getHeaderHeight = useCallback(() => {
+    if (typeof window === 'undefined') return 120;
+    const header = document.querySelector('header');
+    if (header) {
+      const height = header.offsetHeight;
+      if (height > 0) return height;
+    }
+    return window.innerWidth >= 1024 ? 120 : 70;
+  }, []);
+
+  // Draw frame on canvas with high DPI and edge-to-edge focal preservation
   const renderFrame = useCallback((frameIndex) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -102,52 +111,58 @@ export default function BridalScrollAnimation() {
 
     const width = canvas.width;
     const height = canvas.height;
+    if (width === 0 || height === 0) return;
 
-    // Clear canvas with luxury ivory background
-    ctx.fillStyle = '#FAF8F4';
-    ctx.fillRect(0, 0, width, height);
-
-    // Calculate aspect ratio containment (1920 / 1080 native 16:9)
-    const imgAspect = img.naturalWidth / img.naturalHeight;
     const canvasAspect = width / height;
 
     let drawWidth, drawHeight, offsetX, offsetY;
 
-    if (canvasAspect > imgAspect) {
-      drawHeight = height;
-      drawWidth = height * imgAspect;
+    if (canvasAspect >= 1.0) {
+      // Landscape (Desktop, Laptop, Tablet Landscape)
+      // Cover full available viewport width edge-to-edge without side margins
+      const scale = Math.max(width / img.naturalWidth, height / img.naturalHeight);
+      drawWidth = img.naturalWidth * scale;
+      drawHeight = img.naturalHeight * scale;
       offsetX = (width - drawWidth) / 2;
-      offsetY = 0;
+      // Head jewellery, maang tikka, and face are centered around 35-45% of height
+      offsetY = Math.min(0, (height - drawHeight) * 0.35);
     } else {
-      drawWidth = width;
-      drawHeight = width / imgAspect;
-      offsetX = 0;
-      offsetY = (height - drawHeight) / 2;
+      // Portrait (Mobile, Tablet Portrait)
+      // Focus on the central bridal suite (face, maang tikka, necklace) while covering full height
+      const scale = Math.max(width / 1200, height / img.naturalHeight);
+      drawWidth = img.naturalWidth * scale;
+      drawHeight = img.naturalHeight * scale;
+      offsetX = (width - drawWidth) / 2;
+      offsetY = Math.min(0, (height - drawHeight) * 0.25);
     }
 
+    // High quality rendering
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
   }, []);
 
-  // Window resize handler for canvas sizing
+  // Update canvas intrinsic resolution to match physical display dimensions & DPR
   const updateCanvasSize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 2);
     const rect = canvas.getBoundingClientRect();
 
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-
-    renderFrame(currentFrameRef.current);
+    if (rect.width > 0 && rect.height > 0) {
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
+      renderFrame(currentFrameRef.current);
+    }
   }, [renderFrame]);
 
-  // Image preloading effect
+  // Image preloading effect: load frame 0 instantly, then concurrent batches
   useEffect(() => {
     let isCancelled = false;
     let loadedCount = 0;
 
-    // Priority 1: Load first frame immediately for instant first-paint
+    // Load first frame immediately
     const firstImg = new window.Image();
     firstImg.src = FRAME_PATH(0);
     imagesRef.current[0] = firstImg;
@@ -160,10 +175,9 @@ export default function BridalScrollAnimation() {
       renderFrame(0);
     };
 
-    // Priority 2: Progressively load remaining frames
     // Batch load frames with concurrency
     const loadBatch = async () => {
-      const BATCH_SIZE = 8;
+      const BATCH_SIZE = 12;
       for (let i = 1; i < TOTAL_FRAMES; i += BATCH_SIZE) {
         if (isCancelled) break;
         const promises = [];
@@ -189,8 +203,7 @@ export default function BridalScrollAnimation() {
         }
         await Promise.all(promises);
 
-        // Mark as ready once first 30 frames are ready
-        if (i >= 30 && !isLoaded) {
+        if (i >= 24 && !isLoaded) {
           setIsLoaded(true);
         }
       }
@@ -207,29 +220,46 @@ export default function BridalScrollAnimation() {
     };
   }, [updateCanvasSize, renderFrame, isLoaded]);
 
-  // Resize listener
+  // Dynamic header measurement & resize listener
   useEffect(() => {
-    window.addEventListener('resize', updateCanvasSize);
-    return () => window.removeEventListener('resize', updateCanvasSize);
-  }, [updateCanvasSize]);
+    const handleResize = () => {
+      const hHeight = getHeaderHeight();
+      setHeaderHeight(hHeight);
+      updateCanvasSize();
+      ScrollTrigger.refresh();
+    };
 
-  // GSAP ScrollTrigger Setup
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, [getHeaderHeight, updateCanvasSize]);
+
+  // GSAP ScrollTrigger Setup: pinned full-viewport section below sticky header
   useEffect(() => {
     if (!containerRef.current || !pinSectionRef.current) return;
+
+    const currentHeaderHeight = getHeaderHeight();
+    setHeaderHeight(currentHeaderHeight);
 
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: 'top top',
+        start: () => `top top+=${getHeaderHeight()}`,
         end: 'bottom bottom',
         pin: pinSectionRef.current,
+        pinSpacing: true,
         anticipatePin: 1,
-        scrub: 0.15, // Smooth responsive scrubbing
+        scrub: 0.15,
         onUpdate: (self) => {
           const progress = self.progress;
           setScrollProgress(progress);
 
-          // Map scroll progress to 0..TOTAL_FRAMES-1
+          // Map scroll progress cleanly to 0..TOTAL_FRAMES-1
           const targetFrame = Math.min(
             TOTAL_FRAMES - 1,
             Math.max(0, Math.floor(progress * (TOTAL_FRAMES - 1)))
@@ -258,16 +288,16 @@ export default function BridalScrollAnimation() {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
       ctx.revert();
     };
-  }, [renderFrame]);
+  }, [renderFrame, getHeaderHeight]);
 
-  // Animate text changes smoothly using GSAP
+  // Animate storytelling subtitles smoothly on stage change
   useEffect(() => {
     if (!textContainerRef.current) return;
 
     gsap.fromTo(
       textContainerRef.current,
-      { opacity: 0, y: 12 },
-      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+      { opacity: 0, y: 8 },
+      { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
     );
   }, [currentStageIdx]);
 
@@ -277,113 +307,67 @@ export default function BridalScrollAnimation() {
     <div
       ref={containerRef}
       className="relative w-full bg-[#FAF8F4]"
-      style={{ height: '450vh' }} // 450vh allows luxurious, smooth scrolling for 300 frames
+      style={{ height: '420vh' }}
     >
-      {/* Pinned Screen Viewport */}
+      {/* Pinned Full-Viewport Screen: Exactly 100vw and fills viewport directly below sticky header */}
       <div
         ref={pinSectionRef}
-        className="relative w-full h-screen overflow-hidden flex flex-col justify-between"
+        className="relative w-full overflow-hidden"
+        style={{
+          width: '100vw',
+          height: `calc(100vh - ${headerHeight}px)`,
+          maxHeight: `calc(100svh - ${headerHeight}px)`,
+        }}
       >
-        {/* Full-Screen Canvas */}
+        {/* Full-Screen Edge-to-Edge Canvas */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-contain pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full block pointer-events-none z-0"
+          style={{ width: '100%', height: '100%' }}
         />
 
-        {/* Ambient Top & Bottom Luxury Vignette */}
-        <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-b from-[#FAF8F4]/80 via-transparent to-[#FAF8F4]/90" />
-
-        {/* Top Minimal Header & Progress Bar */}
-        <header className="relative z-20 w-full pt-6 sm:pt-8 px-6 sm:px-12 flex items-center justify-between pointer-events-none">
-          {/* Left: Brand Logo Link */}
-          <div className="pointer-events-auto">
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-2.5 transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full"
-              aria-label="Jain Jewellers Home"
-            >
-              <div className="relative w-11 h-11 sm:w-14 sm:h-14">
-                <Image
-                  src="/images/logo-emblem.png"
-                  alt="Jain Jewellers Logo"
-                  fill
-                  sizes="56px"
-                  className="object-contain drop-shadow-xs"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
-
-          {/* Center: Stage Number Indicator */}
-          <div className="hidden sm:flex items-center gap-3">
-            <span className="text-xs font-serif text-gold tracking-widest uppercase">
-              Part {activeStage.stageNumber} of 05
-            </span>
-          </div>
-
-          {/* Right: Scroll Percentage */}
-          <div className="flex items-center gap-2.5">
-            <Gem className="w-3.5 h-3.5 text-gold" />
-            <span className="text-xs font-mono font-medium text-charcoal/70 tracking-wider">
-              {Math.round(scrollProgress * 100)}%
-            </span>
-          </div>
-        </header>
-
-        {/* Minimal Thin Scroll Progress Line */}
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-champagne/40 z-30">
+        {/* Minimal Thin Top Progress Line */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-champagne/40 z-20">
           <div
             className="h-full bg-gradient-to-r from-burgundy via-gold to-burgundy transition-all duration-75"
             style={{ width: `${scrollProgress * 100}%` }}
           />
         </div>
 
-        {/* Dynamic Storytelling Text Overlay (Centered, Minimal, No Blur) */}
-        <div className="relative z-20 w-full max-w-4xl mx-auto px-6 text-center pb-12 sm:pb-16 flex flex-col items-center">
+        {/* Subtle, Non-Intrusive Campaign Editorial Subtitle (Positioned elegantly at bottom) */}
+        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 z-20 px-6 text-center pointer-events-none flex flex-col items-center">
           <div
             ref={textContainerRef}
-            className="space-y-2.5 sm:space-y-3 pointer-events-none"
+            className="space-y-1.5 max-w-xl mx-auto"
           >
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2">
-              <span className="w-4 sm:w-6 h-px bg-gold/70" />
-              <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-burgundy uppercase">
-                {activeStage.eyebrow}
-              </p>
-              <span className="w-4 sm:w-6 h-px bg-gold/70" />
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal tracking-tight leading-tight">
+            <p className="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-gold uppercase drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]">
+              {activeStage.eyebrow}
+            </p>
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl text-charcoal tracking-tight font-medium drop-shadow-[0_1px_4px_rgba(255,255,255,0.9)]">
               {activeStage.heading}
-            </h1>
-
-            {/* Supporting Text */}
-            <p className="font-sans text-sm sm:text-base text-charcoal/75 max-w-lg mx-auto leading-relaxed font-light">
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-charcoal/80 font-light leading-relaxed drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]">
               {activeStage.supporting}
             </p>
-
-
           </div>
 
-          {/* Minimal Scroll Indicator (Hidden near end) */}
-          {scrollProgress < 0.9 && (
-            <div className="mt-8 flex flex-col items-center gap-1.5 opacity-60 pointer-events-none transition-opacity duration-300">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-charcoal/70 font-semibold">
-                Scroll to Assemble
+          {/* Minimal Subtle Scroll Prompt */}
+          {scrollProgress < 0.12 && (
+            <div className="mt-4 inline-flex items-center gap-1.5 opacity-70 transition-opacity duration-300">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-charcoal/70 font-medium">
+                Scroll to explore
               </span>
-              <ArrowDown className="w-3.5 h-3.5 text-gold animate-bounce" />
+              <ArrowDown className="w-3 h-3 text-gold animate-bounce" />
             </div>
           )}
         </div>
 
-        {/* Subtle Preloader Badge during initial load */}
+        {/* Discreet Preloader Badge during initial frame buffering */}
         {!isLoaded && loadingProgress < 100 && (
-          <div className="absolute top-4 right-4 z-40 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-border-soft shadow-xs flex items-center gap-2">
+          <div className="absolute top-4 right-4 z-30 px-3 py-1 rounded-full bg-white/80 backdrop-blur-md border border-border-soft shadow-xs flex items-center gap-2">
             <Sparkles className="w-3 h-3 text-gold animate-spin" />
             <span className="text-[10px] font-mono font-medium text-charcoal">
-              Loading frames {loadingProgress}%
+              {loadingProgress}%
             </span>
           </div>
         )}

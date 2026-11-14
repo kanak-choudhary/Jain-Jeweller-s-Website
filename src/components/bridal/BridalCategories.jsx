@@ -22,8 +22,8 @@ export default function BridalCategories() {
           </p>
         </div>
 
-        {/* 6-Category Grid: 3 cols desktop, 2-3 tablet, 2 mobile */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* 5-Category Grid: 5 cols desktop, 3 cols tablet, 2 cols mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 max-w-7xl mx-auto">
           {bridalCategories.map((category) => (
             <BridalCategoryCard key={category.id} category={category} />
           ))}

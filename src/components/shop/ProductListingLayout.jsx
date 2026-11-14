@@ -305,8 +305,13 @@ export default function ProductListingLayout({
     };
   }, [selectedFilters, isTrendingOnly, pageTitle, pageSubtitle]);
 
-  const activeCategoryTitle =
-    selectedFilters.category.length === 1 ? selectedFilters.category[0] : null;
+  const activeCategoryTitle = useMemo(() => {
+    if (selectedFilters.category.length !== 1) return null;
+    const catVal = selectedFilters.category[0];
+    const allItems = FILTER_SECTIONS[0]?.groups?.flatMap((g) => g.items) || [];
+    const catItem = allItems.find((i) => i.value === catVal);
+    return catItem ? catItem.label : catVal;
+  }, [selectedFilters.category]);
 
   return (
     <div className="min-h-screen bg-white">

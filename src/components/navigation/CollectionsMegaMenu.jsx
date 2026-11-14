@@ -30,7 +30,7 @@ export default function CollectionsMegaMenu({ isOpen, onClose }) {
           <li className="rounded-xl transition-colors">
             <div className="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-ivory transition-colors group">
               <Link
-                href="/collections"
+                href="/bridal-collection"
                 onClick={() => onClose?.()}
                 className="flex items-center gap-3 flex-1 font-serif text-sm font-semibold text-charcoal group-hover:text-burgundy transition-colors tracking-wide"
               >

@@ -185,13 +185,15 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                       <span className="text-xs text-muted block mb-2 font-medium">Popular Highlights:</span>
                       <div className="space-y-2">
                         {mockSearchProducts.slice(0, 3).map((item) => (
-                          <div
+                          <Link
                             key={item.id}
-                            className="flex items-center justify-between p-2 rounded-lg hover:bg-ivory transition-colors cursor-pointer text-xs"
+                            href={`/product/${item.slug}`}
+                            onClick={() => setIsSearchOpen(false)}
+                            className="flex items-center justify-between p-2 rounded-lg hover:bg-ivory transition-colors text-xs"
                           >
-                            <span className="font-serif text-charcoal font-medium">{item.name}</span>
+                            <span className="font-serif text-charcoal font-medium hover:text-burgundy transition-colors">{item.name}</span>
                             <span className="text-burgundy font-semibold">{item.price}</span>
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -204,9 +206,11 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                           Showing matches for &quot;<span className="text-burgundy font-medium">{searchQuery}</span>&quot;:
                         </p>
                         {filteredProducts.map((item) => (
-                          <div
+                          <Link
                             key={item.id}
-                            className="flex items-center justify-between p-2.5 rounded-lg hover:bg-ivory transition-colors cursor-pointer group"
+                            href={`/product/${item.slug}`}
+                            onClick={() => setIsSearchOpen(false)}
+                            className="flex items-center justify-between p-2.5 rounded-lg hover:bg-ivory transition-colors group"
                           >
                             <div>
                               <p className="text-xs font-serif font-semibold text-charcoal group-hover:text-burgundy transition-colors">
@@ -217,7 +221,7 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                               </span>
                             </div>
                             <span className="text-xs font-semibold text-burgundy">{item.price}</span>
-                          </div>
+                          </Link>
                         ))}
                       </>
                     ) : (
@@ -374,12 +378,20 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                     ))}
                   </div>
                   <div className="pt-3 border-t border-border-soft space-y-2">
-                    <button
-                      type="button"
-                      className="w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase transition-colors"
+                    <Link
+                      href="/bag"
+                      onClick={() => setIsCartDropdownOpen(false)}
+                      className="block w-full py-2 bg-ivory hover:bg-champagne/40 text-charcoal border border-border-soft rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
+                    >
+                      View Shopping Bag
+                    </Link>
+                    <Link
+                      href="/checkout"
+                      onClick={() => setIsCartDropdownOpen(false)}
+                      className="block w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
                     >
                       Proceed to Checkout
-                    </button>
+                    </Link>
                   </div>
                 </div>
               )}

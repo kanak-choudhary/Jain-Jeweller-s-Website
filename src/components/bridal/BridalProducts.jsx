@@ -1,6 +1,14 @@
 import BridalProductCard from './BridalProductCard';
 import bridalProducts from '@/data/bridalProducts.json';
 
+const categoryAnchorMap = {
+  101: 'bridal-necklaces',
+  102: 'bridal-earrings',
+  103: 'bridal-maang-tikka',
+  104: 'bridal-bangles',
+  105: 'bridal-nath',
+};
+
 export default function BridalProducts() {
   return (
     <section
@@ -22,10 +30,16 @@ export default function BridalProducts() {
           </p>
         </div>
 
-        {/* 6-Product Grid */}
+        {/* Product Grid with category anchors */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {bridalProducts.map((product) => (
-            <BridalProductCard key={product.id} product={product} />
+            <div
+              key={product.id}
+              id={categoryAnchorMap[product.id]}
+              className="scroll-mt-28"
+            >
+              <BridalProductCard product={product} />
+            </div>
           ))}
         </div>
       </div>

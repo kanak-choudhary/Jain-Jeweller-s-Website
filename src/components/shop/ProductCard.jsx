@@ -48,7 +48,7 @@ export default function ProductCard({ product }) {
         </button>
 
         {/* Product Image - perfectly fitted edge-to-edge without extra padding or empty borders */}
-        <Link href={`#${product.slug}`} className="block w-full h-full relative">
+        <Link href={`/product/${product.slug}`} className="block w-full h-full relative">
           <Image
             src={product.image || '/images/home/shop-by-category/rings-category.webp'}
             alt={product.alt || product.name}
@@ -72,7 +72,7 @@ export default function ProductCard({ product }) {
       <div className="pt-3 sm:pt-3.5 px-0.5 flex flex-col flex-grow justify-start">
         {/* Product Name */}
         <h3 className="font-serif text-base sm:text-[17px] font-normal text-charcoal group-hover:text-burgundy transition-colors line-clamp-1 leading-snug">
-          <Link href={`#${product.slug}`}>{product.name}</Link>
+          <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </h3>
 
         {/* Product Price & In Stock / Out of Stock */}

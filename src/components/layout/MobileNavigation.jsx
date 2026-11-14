@@ -391,7 +391,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
                               <div>
                                 <div className="flex items-center justify-between pb-1.5 border-b border-champagne/40">
                                   <Link
-                                    href="/collections"
+                                    href="/bridal-collection"
                                     onClick={handleLinkClick}
                                     className="flex items-center gap-2.5 text-xs font-serif font-bold text-charcoal hover:text-burgundy transition-colors flex-1"
                                   >
@@ -507,7 +507,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
             </Link>
 
             <Link
-              href="#cart"
+              href="/bag"
               onClick={handleLinkClick}
               className="flex items-center justify-between py-2 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors"
             >

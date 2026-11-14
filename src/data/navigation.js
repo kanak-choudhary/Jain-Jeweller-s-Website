@@ -130,11 +130,11 @@ export const trendingSearches = [
 ];
 
 export const mockSearchProducts = [
-  { id: 1, name: "22KT Royal Nizam Choker Necklace", category: "Gold", price: "₹2,45,000", tag: "Bestseller" },
-  { id: 2, name: "Solitaire Diamond Engagement Ring 1.5ct", category: "Diamond", price: "₹1,85,000", tag: "Certified" },
-  { id: 3, name: "Traditional Kundan & Pearl Jhumkas", category: "Gold", price: "₹78,500", tag: "Trending" },
-  { id: 4, name: "925 Sterling Silver Royal Kada", category: "Silver", price: "₹12,400", tag: "Gift Pick" },
-  { id: 5, name: "24K Lakshmi Ganesh Gold Coin 10g", category: "Coins", price: "₹76,000", tag: "999 Purity" },
-  { id: 6, name: "Imperial Polki Bridal Set with Emeralds", category: "Collections", price: "₹4,95,000", tag: "Exclusive" },
+  { id: 1, name: "22KT Royal Nizam Choker Necklace", slug: "22kt-royal-nizam-choker-rani-haar-set", category: "Gold", price: "₹2,45,000", tag: "Bestseller" },
+  { id: 2, name: "Solitaire Diamond Engagement Ring 1.5ct", slug: "solitaire-diamond-engagement-ring-15ct", category: "Diamond", price: "₹1,85,000", tag: "Certified" },
+  { id: 3, name: "Traditional Kundan & Pearl Jhumkas", slug: "heritage-polki-pearl-chandelier-earrings", category: "Gold", price: "₹78,500", tag: "Trending" },
+  { id: 4, name: "925 Sterling Silver Royal Kada", slug: "925-sterling-silver-royal-lion-kada", category: "Silver", price: "₹12,400", tag: "Gift Pick" },
+  { id: 5, name: "24K Lakshmi Ganesh Gold Coin 10g", slug: "24k-gold-lakshmi-ganesh-coin-10g", category: "Coins", price: "₹76,000", tag: "999 Purity" },
+  { id: 6, name: "Imperial Polki Bridal Set with Emeralds", slug: "royal-kundan-necklace-set", category: "Collections", price: "₹4,95,000", tag: "Exclusive" },
 ];
 

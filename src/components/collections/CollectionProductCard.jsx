@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 
@@ -24,6 +25,8 @@ export default function CollectionProductCard({ product }) {
     ? (product.formattedOriginalPrice || `₹ ${product.originalPrice?.toLocaleString('en-IN')}`)
     : null;
 
+  const productUrl = `/product/${product.slug || product.id}`;
+
   return (
     <div className="group relative flex flex-col h-full bg-transparent select-none cursor-default">
       {/* 1. Square 1:1 Image Container with Neutral Luxury Background */}
@@ -45,8 +48,8 @@ export default function CollectionProductCard({ product }) {
           />
         </button>
 
-        {/* Centered Product Image with object-fit: contain (Non-clickable) */}
-        <div className="relative w-full h-full p-4 sm:p-5 flex items-center justify-center pointer-events-none">
+        {/* Centered Product Image with object-fit: contain */}
+        <Link href={productUrl} className="relative block w-full h-full p-4 sm:p-5 flex items-center justify-center">
           <Image
             src={product.image || '/images/home/shop-by-category/rings-category.webp'}
             alt={product.alt || product.name}
@@ -54,14 +57,14 @@ export default function CollectionProductCard({ product }) {
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             className="object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105"
           />
-        </div>
+        </Link>
       </div>
 
       {/* 2. Product Information Strictly in Order: Name -> Price -> Stock */}
       <div className="pt-3 sm:pt-3.5 px-0.5 flex flex-col flex-grow justify-start">
         {/* 1. Product Name */}
-        <h3 className="font-serif text-sm sm:text-base font-normal text-charcoal line-clamp-1 leading-snug">
-          {product.name}
+        <h3 className="font-serif text-sm sm:text-base font-normal text-charcoal group-hover:text-burgundy transition-colors line-clamp-1 leading-snug">
+          <Link href={productUrl}>{product.name}</Link>
         </h3>
 
         {/* 2. Price and Original Price Strikethrough */}

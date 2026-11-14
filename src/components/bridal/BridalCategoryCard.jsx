@@ -21,13 +21,13 @@ export default function BridalCategoryCard({ category }) {
       onClick={handleClick}
       className="group block w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-2xl"
     >
-      {/* Editorial Image Container */}
+      {/* Editorial Image Container - 4:5 Portrait */}
       <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-charcoal/5 shadow-xs hover:shadow-xl transition-all duration-500">
         <Image
           src={category.image}
           alt={category.alt || category.name}
           fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 30vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
 
@@ -36,8 +36,8 @@ export default function BridalCategoryCard({ category }) {
       </div>
 
       {/* Category Name & Minimal Arrow Link */}
-      <div className="mt-3.5 sm:mt-4 flex items-center justify-between px-1">
-        <h3 className="font-serif text-base sm:text-lg lg:text-xl font-normal text-charcoal tracking-normal group-hover:text-burgundy transition-colors duration-300">
+      <div className="mt-3 sm:mt-4 flex items-center justify-between px-1">
+        <h3 className="font-serif text-sm sm:text-base lg:text-lg font-normal text-charcoal tracking-normal group-hover:text-burgundy transition-colors duration-300">
           {category.name}
         </h3>
         <div className="w-6 h-6 rounded-full bg-champagne/40 group-hover:bg-burgundy text-charcoal group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300">

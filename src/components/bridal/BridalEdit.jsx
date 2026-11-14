@@ -1,18 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function BridalEdit() {
-  const handleScrollToCategories = (e) => {
-    const target = document.querySelector('#bridal-categories');
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       id="bridal-edit"
@@ -53,14 +44,16 @@ export default function BridalEdit() {
             </p>
 
             <div className="pt-2">
-              <Link
-                href="#bridal-categories"
-                onClick={handleScrollToCategories}
-                className="group inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-burgundy hover:text-burgundy-dark transition-colors"
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                aria-disabled="true"
+                tabIndex={-1}
+                className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-burgundy pointer-events-none cursor-default select-none"
               >
                 <span>Explore the Collection</span>
-                <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1.5 transition-transform" />
-              </Link>
+                <ArrowRight className="w-4 h-4 text-gold" />
+              </a>
             </div>
           </div>
         </div>
