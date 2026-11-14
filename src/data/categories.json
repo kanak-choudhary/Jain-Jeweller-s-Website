@@ -3,48 +3,48 @@
     "id": "earrings",
     "name": "Earrings",
     "image": "/images/home/shop-by-category/earrings-category.webp",
-    "link": "#earrings"
+    "link": "/all-jewellery?category=earrings"
   },
   {
     "id": "rings",
     "name": "Rings",
     "image": "/images/home/shop-by-category/rings-category.webp",
-    "link": "#rings"
+    "link": "/all-jewellery?category=rings"
   },
   {
     "id": "pendants",
     "name": "Pendants",
     "image": "/images/home/shop-by-category/pendants-category.webp",
-    "link": "#pendants"
+    "link": "/all-jewellery?category=pendants"
   },
   {
     "id": "bracelets",
     "name": "Bracelets",
     "image": "/images/home/shop-by-category/bracelets-category.webp",
-    "link": "#bracelets"
+    "link": "/all-jewellery?category=bangles"
   },
   {
     "id": "chains",
     "name": "Chains",
     "image": "/images/home/shop-by-category/chains-category.webp",
-    "link": "#chains"
+    "link": "/all-jewellery?category=chains"
   },
   {
     "id": "mangalsutras",
     "name": "Mangalsutras",
     "image": "/images/home/shop-by-category/mangalsutra-category.webp",
-    "link": "#mangalsutras"
+    "link": "/all-jewellery?category=mangalsutra"
   },
   {
     "id": "anklets",
     "name": "Anklets",
     "image": "/images/home/shop-by-category/anklets-category.webp",
-    "link": "#anklets"
+    "link": "/all-jewellery?category=anklets"
   },
   {
     "id": "view-all",
     "name": "View All",
-    "link": "#all-jewellery",
+    "link": "/all-jewellery",
     "isViewAll": true
   }
 ]

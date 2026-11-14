@@ -111,8 +111,9 @@ export const matchesCategory = (productCategory, filterCategory) => {
   if (filterCategory === 'pendants-sets' && productCategory === 'pendants') return true;
   if (filterCategory === 'necklaces' && productCategory === 'necklaces-sets') return true;
   if (filterCategory === 'necklaces-sets' && productCategory === 'necklaces') return true;
-  if (filterCategory === 'bangles' && productCategory === 'bangles-bracelets') return true;
-  if (filterCategory === 'bangles-bracelets' && productCategory === 'bangles') return true;
+  if ((filterCategory === 'bangles' || filterCategory === 'bracelets') && productCategory === 'bangles-bracelets') return true;
+  if (filterCategory === 'bangles-bracelets' && (productCategory === 'bangles' || productCategory === 'bracelets')) return true;
+  if ((filterCategory === 'mangalsutra' || filterCategory === 'mangalsutras') && (productCategory === 'mangalsutra' || productCategory === 'mangalsutras')) return true;
   return false;
 };
 
