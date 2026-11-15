@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
+import { useAuth } from '@/context/AuthContext';
 import allProductsData from '@/data/products.json';
 import { FadeUp } from '@/components/ui/Motion';
 
@@ -32,6 +33,7 @@ const CATEGORY_LINK_MAP = {
 
 export default function SimilarProductsSection({ currentProduct }) {
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { requireAuth } = useAuth();
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -39,11 +41,22 @@ export default function SimilarProductsSection({ currentProduct }) {
   const handleWishlistClick = (e, product) => {
     e.preventDefault();
     e.stopPropagation();
-    toggleWishlist({
+
+    const payload = {
       id: product.id,
       name: product.name,
       price: product.formattedPrice || `₹ ${Number(product.price).toLocaleString('en-IN')}`,
       image: product.image || product.images?.[0] || '/images/home/shop-by-category/earrings-category.webp',
+      slug: product.slug,
+    };
+
+    requireAuth({
+      action: 'wishlist',
+      product: payload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : `/product/${product.slug}`,
+      onAllowed: () => {
+        toggleWishlist(payload);
+      },
     });
   };
 

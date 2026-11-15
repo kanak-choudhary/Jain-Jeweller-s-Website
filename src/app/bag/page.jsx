@@ -4,8 +4,9 @@ import { useSyncExternalStore } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ShoppingBag, Trash2, Plus, Minus, ArrowRight, Home, ChevronRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, Trash2, Plus, Minus, ArrowRight, Home, ChevronRight, Sparkles, Lock } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
 import allProductsData from '@/data/products.json';
 import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
@@ -28,6 +29,7 @@ const parsePrice = (val) => {
 export default function ShoppingBagPage() {
   const router = useRouter();
   const mounted = useMounted();
+  const { isAuthenticated } = useAuth();
 
   const {
     cartItems,
@@ -78,14 +80,44 @@ export default function ShoppingBagPage() {
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal">
             Shopping Bag
           </h1>
-          {!isBagEmpty && (
+          {isAuthenticated && !isBagEmpty && (
             <span className="text-xs sm:text-sm text-muted font-sans font-medium">
               {cartCount} {cartCount === 1 ? 'item' : 'items'}
             </span>
           )}
         </div>
 
-        {isBagEmpty ? (
+        {!isAuthenticated ? (
+          /* Guest Sign-In Required State */
+          <FadeUp className="py-16 sm:py-24 text-center max-w-lg mx-auto space-y-5 px-4">
+            <div className="w-20 h-20 mx-auto rounded-full bg-ivory border border-champagne/60 flex items-center justify-center text-burgundy shadow-inner">
+              <Lock className="w-8 h-8 stroke-[1.6]" />
+            </div>
+            <div className="space-y-2">
+              <h2 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal">
+                Sign In to View Your Shopping Bag
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
+                Sign in to access your luxury jewellery shopping bag, view added pieces, manage quantities, and proceed to checkout.
+              </p>
+            </div>
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href="/signin?redirect=/bag"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-3.5 px-8 bg-burgundy hover:bg-burgundy-dark text-white rounded-md text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs hover:scale-105 active:scale-95"
+              >
+                <span>Sign In to Access Bag</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/all-jewellery"
+                className="w-full sm:w-auto inline-flex items-center justify-center py-3.5 px-6 bg-white border border-[#E8E1D8] text-charcoal hover:text-burgundy rounded-md text-xs sm:text-sm font-medium transition-colors"
+              >
+                Explore Jewellery
+              </Link>
+            </div>
+          </FadeUp>
+        ) : isBagEmpty ? (
           /* Empty Bag State */
           <FadeUp className="py-16 sm:py-24 text-center max-w-md mx-auto space-y-5">
             <div className="w-20 h-20 mx-auto rounded-full bg-ivory border border-champagne/60 flex items-center justify-center text-burgundy shadow-inner">

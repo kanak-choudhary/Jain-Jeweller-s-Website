@@ -3,15 +3,17 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, ArrowRight, ShoppingBag, Trash2 } from 'lucide-react';
+import { Heart, ArrowRight, ShoppingBag, Trash2, Lock } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
 import allProductsData from '@/data/products.json';
 import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function WishlistPage() {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
+  const { isAuthenticated, requireAuth } = useAuth();
 
   // Enrich stored wishlist items with full product data from products.json
   const enrichedItems = useMemo(() => {
@@ -58,10 +60,21 @@ export default function WishlistPage() {
 
   const handleAddToCart = (product) => {
     if (!product.inStock) return;
-    addToCart(product, {
-      purity: product.purity || '22Kt',
-      colour: product.colour || 'Yellow Gold',
-      quantity: 1,
+    requireAuth({
+      action: 'cart',
+      product,
+      options: {
+        purity: product.purity || '22Kt',
+        colour: product.colour || 'Yellow Gold',
+        quantity: 1,
+      },
+      onAllowed: () => {
+        addToCart(product, {
+          purity: product.purity || '22Kt',
+          colour: product.colour || 'Yellow Gold',
+          quantity: 1,
+        });
+      },
     });
   };
 
@@ -75,7 +88,35 @@ export default function WishlistPage() {
           </h1>
         </div>
 
-        {enrichedItems.length === 0 ? (
+        {!isAuthenticated ? (
+          /* Guest Sign-In Required State */
+          <FadeUp className="py-16 sm:py-20 text-center rounded-2xl border border-dashed border-[#E8E1D8] bg-[#FAF8F4]/60 max-w-2xl mx-auto px-6">
+            <div className="w-16 h-16 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mx-auto mb-4 shadow-xs">
+              <Lock className="w-7 h-7 stroke-[1.6]" />
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal">
+              Sign In to View Your Wishlist
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-muted mt-2.5 max-w-md mx-auto leading-relaxed">
+              Save, view, and organize your favourite BIS hallmarked gold and solitaire diamond jewellery designs by signing in to your account.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href="/signin?redirect=/wishlist"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-md text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs hover:scale-105 active:scale-95"
+              >
+                <span>Sign In to Access Wishlist</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/all-jewellery"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-white border border-[#E8E1D8] text-charcoal hover:text-burgundy rounded-md text-xs sm:text-sm font-medium transition-colors"
+              >
+                Explore Collections
+              </Link>
+            </div>
+          </FadeUp>
+        ) : enrichedItems.length === 0 ? (
           /* Empty Wishlist State */
           <FadeUp className="py-20 text-center rounded-2xl border border-dashed border-[#E8E1D8] bg-[#FAF8F4]/50 max-w-2xl mx-auto px-6">
             <div className="w-16 h-16 rounded-full bg-burgundy/10 text-burgundy flex items-center justify-center mx-auto mb-4">

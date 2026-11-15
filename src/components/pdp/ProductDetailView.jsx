@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
+import { useAuth } from '@/context/AuthContext';
 import SimilarProductsSection from './SimilarProductsSection';
 import { FadeRight, FadeLeft } from '@/components/ui/Motion';
 
@@ -23,6 +24,7 @@ export default function ProductDetailView({ product }) {
   const router = useRouter();
   const { addToCart, setBuyNowItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { requireAuth } = useAuth();
 
   // Gallery state
   const images = useMemo(() => {
@@ -67,11 +69,21 @@ export default function ProductDetailView({ product }) {
   const isWishlisted = isInWishlist(product.id);
   const handleWishlistClick = (e) => {
     e.preventDefault();
-    toggleWishlist({
+    const payload = {
       id: product.id,
       name: product.name,
       price: `₹ ${currentPrice.toLocaleString('en-IN')}`,
       image: images[0],
+      slug: product.slug,
+    };
+
+    requireAuth({
+      action: 'wishlist',
+      product: payload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : `/product/${product.slug}`,
+      onAllowed: () => {
+        toggleWishlist(payload);
+      },
     });
   };
 
@@ -88,40 +100,58 @@ export default function ProductDetailView({ product }) {
   // Add to Bag action
   const handleAddToBag = () => {
     if (isOutOfStock) return;
-    addToCart(
-      {
-        ...product,
-        price: currentPrice,
-        mrp: currentMrp,
-        image: images[activeImageIndex] || images[0],
+    const productPayload = {
+      ...product,
+      price: currentPrice,
+      mrp: currentMrp,
+      image: images[activeImageIndex] || images[0],
+      slug: product.slug,
+    };
+    const optionsPayload = {
+      purity: selectedPurity,
+      colour: selectedColour,
+      weight: selectedWeight,
+      quantity: 1,
+    };
+
+    requireAuth({
+      action: 'cart',
+      product: productPayload,
+      options: optionsPayload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : `/product/${product.slug}`,
+      onAllowed: () => {
+        addToCart(productPayload, optionsPayload);
       },
-      {
-        purity: selectedPurity,
-        colour: selectedColour,
-        weight: selectedWeight,
-        quantity: 1,
-      }
-    );
+    });
   };
 
   // Buy Now action (direct to checkout, preserving bag)
   const handleBuyNow = () => {
     if (isOutOfStock) return;
-    setBuyNowItem(
-      {
-        ...product,
-        price: currentPrice,
-        mrp: currentMrp,
-        image: images[activeImageIndex] || images[0],
+    const productPayload = {
+      ...product,
+      price: currentPrice,
+      mrp: currentMrp,
+      image: images[activeImageIndex] || images[0],
+      slug: product.slug,
+    };
+    const optionsPayload = {
+      purity: selectedPurity,
+      colour: selectedColour,
+      weight: selectedWeight,
+      quantity: 1,
+    };
+
+    requireAuth({
+      action: 'buynow',
+      product: productPayload,
+      options: optionsPayload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : `/product/${product.slug}`,
+      onAllowed: () => {
+        setBuyNowItem(productPayload, optionsPayload);
+        router.push('/checkout?buyNow=true');
       },
-      {
-        purity: selectedPurity,
-        colour: selectedColour,
-        weight: selectedWeight,
-        quantity: 1,
-      }
-    );
-    router.push('/checkout?buyNow=true');
+    });
   };
 
   // Colour dot styling helper

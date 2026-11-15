@@ -1,11 +1,17 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { useAuth } from './AuthContext';
 
 const CartContext = createContext(null);
 
-const STORAGE_KEY = 'jj_cart_items';
 const BUY_NOW_STORAGE_KEY = 'jj_buy_now_item';
+
+const getUserCartKey = (user) => {
+  if (!user) return null;
+  const identifier = user.email || user.phone || user.id || 'default_user';
+  return `jj_cart_${encodeURIComponent(identifier.toLowerCase().trim())}`;
+};
 
 // Helper to safely parse numeric prices (handles numbers and currency strings like "₹ 1,25,000")
 const parseNumericPrice = (val) => {
@@ -16,16 +22,20 @@ const parseNumericPrice = (val) => {
 };
 
 export function CartProvider({ children }) {
+  const { user, isAuthenticated } = useAuth();
+  const storageKey = useMemo(() => getUserCartKey(user), [user]);
+
+  // Initial cart items (empty for guests)
   const [cartItems, setCartItems] = useState(() => {
-    if (typeof window === 'undefined') return [];
+    if (typeof window === 'undefined' || !storageKey) return [];
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(storageKey);
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
           return parsed.map((item, idx) => ({
             ...item,
-            id: item.id || `item-${item.productId || idx}-${Date.now()}`,
+            id: item.id || `item-${item.productId || idx}`,
             price: parseNumericPrice(item.price),
             mrp: parseNumericPrice(item.mrp || item.originalPrice) || parseNumericPrice(item.price),
             quantity: Math.max(1, Number(item.quantity) || 1),
@@ -51,32 +61,49 @@ export function CartProvider({ children }) {
   const [toast, setToast] = useState({ message: '', visible: false });
   const isLoaded = true;
 
-  // 1. Persist to localStorage whenever cartItems changes
+  // Adjust state during render when user storageKey changes (React pattern: adjusting state when prop/context changes)
+  const [prevKey, setPrevKey] = useState(storageKey);
+  if (prevKey !== storageKey) {
+    setPrevKey(storageKey);
+    if (!isAuthenticated || !storageKey) {
+      setCartItems([]);
+      setDirectCheckoutItemState(null);
+    } else if (typeof window !== 'undefined') {
+      try {
+        const stored = localStorage.getItem(storageKey);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) {
+            setCartItems(
+              parsed.map((item, idx) => ({
+                ...item,
+                id: item.id || `item-${item.productId || idx}`,
+                price: parseNumericPrice(item.price),
+                mrp: parseNumericPrice(item.mrp || item.originalPrice) || parseNumericPrice(item.price),
+                quantity: Math.max(1, Number(item.quantity) || 1),
+              }))
+            );
+          } else {
+            setCartItems([]);
+          }
+        } else {
+          setCartItems([]);
+        }
+      } catch {
+        setCartItems([]);
+      }
+    }
+  }
+
+  // 2. Persist to user-scoped localStorage whenever cartItems changes
   useEffect(() => {
+    if (!isAuthenticated || !storageKey) return;
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cartItems));
+      localStorage.setItem(storageKey, JSON.stringify(cartItems));
     } catch (e) {
       console.error('Failed to save shopping bag to storage:', e);
     }
-  }, [cartItems]);
-
-  // 2. Sync with external tab changes
-  useEffect(() => {
-    const handleStorage = (e) => {
-      if (e.key === STORAGE_KEY && e.newValue) {
-        try {
-          const parsed = JSON.parse(e.newValue);
-          if (Array.isArray(parsed)) {
-            setCartItems(parsed);
-          }
-        } catch {
-          // Ignore parse errors
-        }
-      }
-    };
-    window.addEventListener('storage', handleStorage);
-    return () => window.removeEventListener('storage', handleStorage);
-  }, []);
+  }, [cartItems, isAuthenticated, storageKey]);
 
   // Toast notification helper
   const showToast = useCallback((message) => {
@@ -91,7 +118,7 @@ export function CartProvider({ children }) {
     setToast({ message: '', visible: false });
   }, []);
 
-  // Add to Bag: Guarantees every product added is preserved one by one
+  // Add to Bag
   const addToCart = useCallback((product, options = {}) => {
     const purity = options.purity || product.purity || '22Kt';
     const colour = options.colour || product.colour || 'Yellow Gold';
@@ -106,7 +133,6 @@ export function CartProvider({ children }) {
     setCartItems((prev) => {
       const existingIndex = prev.findIndex((item) => item.id === itemKey);
       if (existingIndex > -1) {
-        // If identical product variant already exists, increment quantity
         const updated = [...prev];
         updated[existingIndex] = {
           ...updated[existingIndex],
@@ -117,7 +143,6 @@ export function CartProvider({ children }) {
         return updated;
       }
 
-      // Otherwise, add as a new distinct row
       const newItem = {
         id: itemKey,
         productId,
@@ -159,12 +184,14 @@ export function CartProvider({ children }) {
   // Clear Bag
   const clearCart = useCallback(() => {
     setCartItems([]);
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // Ignore
+    if (storageKey) {
+      try {
+        localStorage.removeItem(storageKey);
+      } catch {
+        // Ignore
+      }
     }
-  }, []);
+  }, [storageKey]);
 
   // Direct Checkout (Buy Now)
   const setBuyNowItem = useCallback((product, options = {}) => {
@@ -213,21 +240,28 @@ export function CartProvider({ children }) {
   }, []);
 
   // Totals calculated dynamically from all items
-  const cartCount = cartItems.reduce((acc, item) => acc + (Number(item.quantity) || 1), 0);
-  const cartSubtotal = cartItems.reduce(
-    (acc, item) => acc + (parseNumericPrice(item.price)) * (Number(item.quantity) || 1),
-    0
-  );
-  const cartMrpTotal = cartItems.reduce(
-    (acc, item) => acc + (parseNumericPrice(item.mrp || item.price)) * (Number(item.quantity) || 1),
-    0
-  );
+  const activeItems = isAuthenticated ? cartItems : [];
+  const cartCount = isAuthenticated
+    ? activeItems.reduce((acc, item) => acc + (Number(item.quantity) || 1), 0)
+    : 0;
+  const cartSubtotal = isAuthenticated
+    ? activeItems.reduce(
+        (acc, item) => acc + parseNumericPrice(item.price) * (Number(item.quantity) || 1),
+        0
+      )
+    : 0;
+  const cartMrpTotal = isAuthenticated
+    ? activeItems.reduce(
+        (acc, item) => acc + parseNumericPrice(item.mrp || item.price) * (Number(item.quantity) || 1),
+        0
+      )
+    : 0;
   const cartDiscount = cartMrpTotal > cartSubtotal ? cartMrpTotal - cartSubtotal : 0;
 
   return (
     <CartContext.Provider
       value={{
-        cartItems,
+        cartItems: activeItems,
         cartCount,
         cartSubtotal,
         cartMrpTotal,
@@ -237,7 +271,7 @@ export function CartProvider({ children }) {
         removeFromCart,
         updateQuantity,
         clearCart,
-        directCheckoutItem,
+        directCheckoutItem: isAuthenticated ? directCheckoutItem : null,
         setBuyNowItem,
         clearBuyNowItem,
         toast,

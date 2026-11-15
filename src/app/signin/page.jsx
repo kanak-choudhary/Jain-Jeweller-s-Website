@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
+import { executePendingAction } from '@/lib/authGuard';
 import GoogleAuthButton from '@/components/auth/GoogleAuthButton';
 import ForgotPasswordModal from '@/components/auth/ForgotPasswordModal';
 import OtpModal from '@/components/auth/OtpModal';
@@ -14,6 +17,8 @@ function SignInContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { login } = useAuth();
+  const { addToCart, setBuyNowItem } = useCart();
+  const { toggleWishlist } = useWishlist();
 
   // Form states
   const [identifier, setIdentifier] = useState('choudharykanak.2005@gmail.com');
@@ -63,7 +68,13 @@ function SignInContent() {
         password,
       });
       const redirectUrl = searchParams.get('redirect') || '/';
-      router.push(redirectUrl);
+      executePendingAction({
+        addToCart,
+        setBuyNowItem,
+        toggleWishlist,
+        router,
+        defaultRedirect: redirectUrl,
+      });
     } catch (err) {
       console.error('Sign in failed:', err);
       setErrors({ form: 'Invalid credentials. Please try again or request OTP.' });

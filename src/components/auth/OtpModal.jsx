@@ -4,11 +4,16 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { X, Smartphone, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
+import { executePendingAction } from '@/lib/authGuard';
 
 export default function OtpModal({ isOpen, onClose, defaultIdentifier = '' }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { loginWithOtp } = useAuth();
+  const { addToCart, setBuyNowItem } = useCart();
+  const { toggleWishlist } = useWishlist();
 
   const [otp, setOtp] = useState(['4', '8', '2', '9', '1', '0']);
   const [timer, setTimer] = useState(30);
@@ -58,7 +63,13 @@ export default function OtpModal({ isOpen, onClose, defaultIdentifier = '' }) {
       setTimeout(() => {
         onClose();
         const redirectUrl = searchParams.get('redirect') || '/';
-        router.push(redirectUrl);
+        executePendingAction({
+          addToCart,
+          setBuyNowItem,
+          toggleWishlist,
+          router,
+          defaultRedirect: redirectUrl,
+        });
       }, 700);
     } catch (err) {
       console.error('OTP login failed:', err);

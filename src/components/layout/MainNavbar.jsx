@@ -16,8 +16,8 @@ export default function MainNavbar({ onOpenMobileMenu }) {
   const { isAuthenticated, logout } = useAuth();
   const mounted = useIsMounted();
 
-  const displayCartCount = mounted ? cartCount : 0;
-  const displayWishlistCount = mounted ? wishlistCount : 0;
+  const displayCartCount = mounted && isAuthenticated ? cartCount : 0;
+  const displayWishlistCount = mounted && isAuthenticated ? wishlistCount : 0;
 
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
@@ -398,28 +398,57 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                       <X className="w-3.5 h-3.5" />
                     </button>
                   </div>
-                  <div className="py-3 max-h-60 overflow-y-auto space-y-3">
-                    {wishlistItems.map((item) => (
+                  {!isAuthenticated ? (
+                    <div className="py-5 text-center space-y-3">
+                      <p className="font-serif text-sm font-semibold text-charcoal">Sign In to View Wishlist</p>
+                      <p className="text-xs text-muted leading-relaxed">
+                        Please sign in to save and view your favourite jewellery designs.
+                      </p>
                       <Link
-                        key={item.id}
-                        href="/wishlist"
+                        href="/signin?redirect=/wishlist"
                         onClick={() => setIsWishlistDropdownOpen(false)}
-                        className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0 hover:text-burgundy transition-colors"
+                        className="block w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors shadow-xs"
                       >
-                        <span className="font-serif font-medium text-charcoal pr-2 truncate">{item.name}</span>
-                        <span className="font-semibold text-burgundy whitespace-nowrap">{item.price}</span>
+                        Sign In
                       </Link>
-                    ))}
-                  </div>
-                  <div className="pt-3 border-t border-border-soft">
-                    <Link
-                      href="/wishlist"
-                      onClick={() => setIsWishlistDropdownOpen(false)}
-                      className="w-full py-2 bg-ivory hover:bg-champagne/40 border border-border-soft text-charcoal hover:text-burgundy rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
-                    >
-                      View All Saved Items <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                    </div>
+                  ) : wishlistItems.length === 0 ? (
+                    <div className="py-6 text-center space-y-2">
+                      <p className="font-serif text-sm text-charcoal">Your wishlist is empty</p>
+                      <Link
+                        href="/all-jewellery"
+                        onClick={() => setIsWishlistDropdownOpen(false)}
+                        className="text-xs text-burgundy font-medium hover:underline inline-block"
+                      >
+                        Explore jewellery
+                      </Link>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="py-3 max-h-60 overflow-y-auto space-y-3">
+                        {wishlistItems.map((item) => (
+                          <Link
+                            key={item.id}
+                            href="/wishlist"
+                            onClick={() => setIsWishlistDropdownOpen(false)}
+                            className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0 hover:text-burgundy transition-colors"
+                          >
+                            <span className="font-serif font-medium text-charcoal pr-2 truncate">{item.name}</span>
+                            <span className="font-semibold text-burgundy whitespace-nowrap">{item.price}</span>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="pt-3 border-t border-border-soft">
+                        <Link
+                          href="/wishlist"
+                          onClick={() => setIsWishlistDropdownOpen(false)}
+                          className="w-full py-2 bg-ivory hover:bg-champagne/40 border border-border-soft text-charcoal hover:text-burgundy rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+                        >
+                          View All Saved Items <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -455,33 +484,62 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                       <X className="w-3.5 h-3.5" />
                     </button>
                   </div>
-                  <div className="py-3 max-h-60 overflow-y-auto space-y-3">
-                    {cartItems.map((item) => (
-                      <div key={item.id} className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0">
-                        <div>
-                          <p className="font-serif font-medium text-charcoal">{item.name}</p>
-                          <span className="text-[11px] text-muted">Qty: {item.quantity}</span>
-                        </div>
-                        <span className="font-semibold text-burgundy whitespace-nowrap">{item.price}</span>
+                  {!isAuthenticated ? (
+                    <div className="py-5 text-center space-y-3">
+                      <p className="font-serif text-sm font-semibold text-charcoal">Sign In to View Bag</p>
+                      <p className="text-xs text-muted leading-relaxed">
+                        Please sign in to view items added to your shopping bag and proceed to checkout.
+                      </p>
+                      <Link
+                        href="/signin?redirect=/bag"
+                        onClick={() => setIsCartDropdownOpen(false)}
+                        className="block w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors shadow-xs"
+                      >
+                        Sign In
+                      </Link>
+                    </div>
+                  ) : cartItems.length === 0 ? (
+                    <div className="py-6 text-center space-y-2">
+                      <p className="font-serif text-sm text-charcoal">Your bag is empty</p>
+                      <Link
+                        href="/all-jewellery"
+                        onClick={() => setIsCartDropdownOpen(false)}
+                        className="text-xs text-burgundy font-medium hover:underline inline-block"
+                      >
+                        Explore jewellery
+                      </Link>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="py-3 max-h-60 overflow-y-auto space-y-3">
+                        {cartItems.map((item) => (
+                          <div key={item.id} className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0">
+                            <div>
+                              <p className="font-serif font-medium text-charcoal">{item.name}</p>
+                              <span className="text-[11px] text-muted">Qty: {item.quantity}</span>
+                            </div>
+                            <span className="font-semibold text-burgundy whitespace-nowrap">{item.price}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                  <div className="pt-3 border-t border-border-soft space-y-2">
-                    <Link
-                      href="/bag"
-                      onClick={() => setIsCartDropdownOpen(false)}
-                      className="block w-full py-2 bg-ivory hover:bg-champagne/40 text-charcoal border border-border-soft rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
-                    >
-                      View Shopping Bag
-                    </Link>
-                    <Link
-                      href="/checkout"
-                      onClick={() => setIsCartDropdownOpen(false)}
-                      className="block w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
-                    >
-                      Proceed to Checkout
-                    </Link>
-                  </div>
+                      <div className="pt-3 border-t border-border-soft space-y-2">
+                        <Link
+                          href="/bag"
+                          onClick={() => setIsCartDropdownOpen(false)}
+                          className="block w-full py-2 bg-ivory hover:bg-champagne/40 text-charcoal border border-border-soft rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
+                        >
+                          View Shopping Bag
+                        </Link>
+                        <Link
+                          href="/checkout"
+                          onClick={() => setIsCartDropdownOpen(false)}
+                          className="block w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase text-center transition-colors"
+                        >
+                          Proceed to Checkout
+                        </Link>
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
             </div>

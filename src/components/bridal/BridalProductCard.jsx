@@ -4,19 +4,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
+import { useAuth } from '@/context/AuthContext';
 
 export default function BridalProductCard({ product }) {
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { requireAuth } = useAuth();
   const wishlisted = isInWishlist(product.id);
 
   const handleWishlistClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    toggleWishlist({
+
+    const payload = {
       id: product.id,
       name: product.name,
       price: product.price,
       image: product.image,
+      href: product.href,
+    };
+
+    requireAuth({
+      action: 'wishlist',
+      product: payload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : (product.href || '/bridal-collection'),
+      onAllowed: () => {
+        toggleWishlist(payload);
+      },
     });
   };
 

@@ -1,9 +1,9 @@
 'use client';
 
-import { Suspense, useState, useMemo } from 'react';
+import { Suspense, useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import {
   ShieldCheck,
   Truck,
@@ -18,11 +18,20 @@ import {
   Download,
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf';
 
 function CheckoutContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const isBuyNow = searchParams.get('buyNow') === 'true';
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push(`/signin?redirect=${encodeURIComponent(isBuyNow ? '/checkout?buyNow=true' : '/checkout')}`);
+    }
+  }, [isAuthenticated, isBuyNow, router]);
 
   const {
     cartItems,

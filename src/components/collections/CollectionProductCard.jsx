@@ -4,19 +4,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
+import { useAuth } from '@/context/AuthContext';
 
 export default function CollectionProductCard({ product }) {
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { requireAuth } = useAuth();
   const isWishlisted = isInWishlist(product.id);
+
+  const productUrl = `/product/${product.slug || product.id}`;
 
   const handleWishlistClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    toggleWishlist({
+
+    const payload = {
       id: product.id,
       name: product.name,
       price: product.formattedPrice || `₹ ${product.price?.toLocaleString('en-IN')}`,
       image: product.image,
+      slug: product.slug || product.id,
+    };
+
+    requireAuth({
+      action: 'wishlist',
+      product: payload,
+      returnUrl: typeof window !== 'undefined' ? window.location.pathname + window.location.search : productUrl,
+      onAllowed: () => {
+        toggleWishlist(payload);
+      },
     });
   };
 
@@ -24,8 +39,6 @@ export default function CollectionProductCard({ product }) {
   const originalPrice = product.originalPrice
     ? (product.formattedOriginalPrice || `₹ ${product.originalPrice?.toLocaleString('en-IN')}`)
     : null;
-
-  const productUrl = `/product/${product.slug || product.id}`;
 
   return (
     <div className="group relative flex flex-col h-full bg-transparent select-none cursor-default">

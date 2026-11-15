@@ -1,12 +1,15 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import { savePendingAction } from '@/lib/authGuard';
 
 const AuthContext = createContext(null);
 
 const STORAGE_KEY = 'jain_jewellers_auth_user';
 
 export function AuthProvider({ children }) {
+  const router = useRouter();
   const [user, setUser] = useState(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -158,6 +161,38 @@ export function AuthProvider({ children }) {
     showToast('Signed out successfully.', 'info');
   }, [showToast]);
 
+  // Central Global Authentication Guard
+  const requireAuth = useCallback(
+    ({ action = 'general', product = null, options = {}, returnUrl, onAllowed }) => {
+      if (user) {
+        if (typeof onAllowed === 'function') {
+          onAllowed();
+        }
+        return true;
+      }
+
+      // Guest user: save pending action & redirect to sign in
+      const currentPath =
+        typeof window !== 'undefined'
+          ? window.location.pathname + window.location.search
+          : '/';
+      const targetReturnUrl = returnUrl || currentPath;
+
+      savePendingAction({
+        action, // 'wishlist' | 'cart' | 'buynow'
+        product,
+        options,
+        returnUrl: targetReturnUrl,
+        timestamp: Date.now(),
+      });
+
+      const signinUrl = `/signin?redirect=${encodeURIComponent(targetReturnUrl)}&action=${action}`;
+      router.push(signinUrl);
+      return false;
+    },
+    [user, router]
+  );
+
   return (
     <AuthContext.Provider
       value={{
@@ -169,6 +204,7 @@ export function AuthProvider({ children }) {
         loginWithGoogle,
         loginWithOtp,
         logout,
+        requireAuth,
         showToast,
       }}
     >

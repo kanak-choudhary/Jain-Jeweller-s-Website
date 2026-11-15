@@ -528,7 +528,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
               <span className="flex items-center gap-3">
                 <Heart className="w-4 h-4 text-burgundy" /> My Wishlist
               </span>
-              {mounted && wishlistCount > 0 && (
+              {mounted && isAuthenticated && wishlistCount > 0 && (
                 <span className="px-2 py-0.5 bg-burgundy text-white text-[10px] font-bold rounded-full">
                   {wishlistCount}
                 </span>
@@ -543,7 +543,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
               <span className="flex items-center gap-3">
                 <ShoppingBag className="w-4 h-4 text-burgundy" /> Shopping Bag
               </span>
-              {mounted && cartCount > 0 && (
+              {mounted && isAuthenticated && cartCount > 0 && (
                 <span className="px-2 py-0.5 bg-gold text-charcoal text-[10px] font-bold rounded-full">
                   {cartCount}
                 </span>

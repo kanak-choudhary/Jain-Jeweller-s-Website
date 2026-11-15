@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Eye, EyeOff, Calendar, ChevronDown, Check, Loader2 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { useCart } from '@/context/CartContext';
+import { useWishlist } from '@/context/WishlistContext';
+import { executePendingAction } from '@/lib/authGuard';
 import GoogleAuthButton from '@/components/auth/GoogleAuthButton';
 import PolicyModal from '@/components/auth/PolicyModal';
 
@@ -12,6 +15,8 @@ function SignUpContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { signup } = useAuth();
+  const { addToCart, setBuyNowItem } = useCart();
+  const { toggleWishlist } = useWishlist();
 
   // Form states
   const [formData, setFormData] = useState({
@@ -112,7 +117,13 @@ function SignUpContent() {
       });
 
       const redirectUrl = searchParams.get('redirect') || '/';
-      router.push(redirectUrl);
+      executePendingAction({
+        addToCart,
+        setBuyNowItem,
+        toggleWishlist,
+        router,
+        defaultRedirect: redirectUrl,
+      });
     } catch (err) {
       console.error('Registration failed:', err);
       setErrors({ form: 'Registration could not be completed. Please try again.' });
