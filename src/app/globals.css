@@ -215,6 +215,52 @@ a {
   animation: heart-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Jain Promises Inverted U / Rainbow Arc Layout */
+.jain-promises-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .jain-promises-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .jain-promises-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: start;
+    gap: 8px;
+  }
+  .jain-promises-card:nth-child(1) { margin-top: 55px; }
+  .jain-promises-card:nth-child(2) { margin-top: 30px; }
+  .jain-promises-card:nth-child(3) { margin-top: 12px; }
+  .jain-promises-card:nth-child(4) { margin-top: 0px; }
+  .jain-promises-card:nth-child(5) { margin-top: 12px; }
+  .jain-promises-card:nth-child(6) { margin-top: 30px; }
+  .jain-promises-card:nth-child(7) { margin-top: 55px; }
+}
+
+@media (min-width: 1024px) {
+  .jain-promises-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: start;
+    gap: 16px;
+  }
+  .jain-promises-card:nth-child(1) { margin-top: 100px; }
+  .jain-promises-card:nth-child(2) { margin-top: 55px; }
+  .jain-promises-card:nth-child(3) { margin-top: 20px; }
+  .jain-promises-card:nth-child(4) { margin-top: 0px; }
+  .jain-promises-card:nth-child(5) { margin-top: 20px; }
+  .jain-promises-card:nth-child(6) { margin-top: 55px; }
+  .jain-promises-card:nth-child(7) { margin-top: 100px; }
+}
+
 .animate-badge-pulse {
   animation: badge-pulse 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
