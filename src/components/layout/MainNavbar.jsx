@@ -3,14 +3,21 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, User, Heart, ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
+import { Search, User, Heart, ShoppingBag, Menu, X, ArrowRight, ChevronRight } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
 import { trendingSearches, mockSearchProducts } from '@/data/navigation';
+import { useIsMounted } from '@/lib/animations';
 
 export default function MainNavbar({ onOpenMobileMenu }) {
   const { wishlistCount, wishlistItems } = useWishlist();
   const { cartCount, cartItems } = useCart();
+  const { isAuthenticated, logout } = useAuth();
+  const mounted = useIsMounted();
+
+  const displayCartCount = mounted ? cartCount : 0;
+  const displayWishlistCount = mounted ? wishlistCount : 0;
 
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
@@ -106,7 +113,7 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                 width={192}
                 height={64}
                 priority
-                className="h-12 sm:h-14 w-auto object-contain transition-opacity duration-200 group-hover:opacity-95"
+                className="h-12 sm:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-[1.02] group-hover:opacity-95"
               />
             </Link>
           </div>
@@ -127,7 +134,6 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                 onFocus={() => setIsSearchOpen(true)}
                 placeholder="Search for jewellery, collections..."
                 aria-label="Search for jewellery"
-                aria-expanded={isSearchOpen}
                 className="w-full h-11 pl-11 pr-10 text-sm bg-ivory/60 border border-border-soft rounded-full text-charcoal placeholder:text-muted/70 focus:outline-none focus:border-burgundy focus:ring-1 focus:ring-burgundy focus:bg-white transition-all duration-200"
               />
               <button
@@ -250,36 +256,113 @@ export default function MainNavbar({ onOpenMobileMenu }) {
               </button>
 
               {isAccountOpen && (
-                <div className="absolute right-0 top-full mt-2 w-72 bg-white border border-border-soft rounded-2xl shadow-xl shadow-burgundy/5 p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <div className="text-center pb-4 border-b border-border-soft">
-                    <p className="font-serif text-base font-bold text-charcoal">Welcome Guest</p>
-                    <p className="text-xs text-muted mt-0.5">Sign in to access your luxury jewellery bag & orders</p>
-                  </div>
-                  <div className="py-3 space-y-2">
-                    <button
-                      type="button"
-                      className="w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded-lg text-xs font-semibold tracking-wider uppercase transition-colors"
-                    >
-                      Sign In
-                    </button>
-                    <button
-                      type="button"
-                      className="w-full py-2 bg-ivory hover:bg-champagne/40 border border-border-soft text-charcoal rounded-lg text-xs font-medium transition-colors"
-                    >
-                      Create Account
-                    </button>
-                  </div>
-                  <div className="pt-3 border-t border-border-soft text-xs space-y-2 text-muted">
-                    <button type="button" className="block w-full text-left hover:text-burgundy transition-colors">
-                      Track Your Order
-                    </button>
-                    <button type="button" className="block w-full text-left hover:text-burgundy transition-colors">
-                      Book a Store Appointment
-                    </button>
-                    <button type="button" className="block w-full text-left hover:text-burgundy transition-colors">
-                      Jewellery Care Guide
-                    </button>
-                  </div>
+                <div className="absolute right-0 top-full mt-2 w-64 sm:w-72 bg-white border border-[#E8E1D8] shadow-2xl z-50 animate-dropdown">
+                  {/* Subtle top arrow pointer aligned with profile icon */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -top-1.5 right-3.5 w-3 h-3 bg-white border-t border-l border-[#E8E1D8] rotate-45 z-10"
+                  />
+
+                  {isAuthenticated ? (
+                    <div className="relative z-20 flex flex-col divide-y divide-[#E8E1D8] bg-white">
+                      {/* 1. My Profile > */}
+                      <Link
+                        href="/account?tab=profile"
+                        onClick={() => setIsAccountOpen(false)}
+                        className="flex items-center justify-between w-full px-5 sm:px-6 py-4 hover:bg-[#FAF8F4] transition-colors group"
+                      >
+                        <span className="font-sans text-sm sm:text-[15px] font-medium text-burgundy tracking-normal">
+                          My Profile
+                        </span>
+                        <ChevronRight
+                          className="w-4 h-4 text-burgundy transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.5}
+                        />
+                      </Link>
+
+                      {/* 2. My Address > */}
+                      <Link
+                        href="/account?tab=address"
+                        onClick={() => setIsAccountOpen(false)}
+                        className="flex items-center justify-between w-full px-5 sm:px-6 py-4 hover:bg-[#FAF8F4] transition-colors group"
+                      >
+                        <span className="font-sans text-sm sm:text-[15px] font-medium text-charcoal tracking-normal">
+                          My Address
+                        </span>
+                        <ChevronRight
+                          className="w-4 h-4 text-burgundy transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.5}
+                        />
+                      </Link>
+
+                      {/* 3. My Orders > */}
+                      <Link
+                        href="/account?tab=orders"
+                        onClick={() => setIsAccountOpen(false)}
+                        className="flex items-center justify-between w-full px-5 sm:px-6 py-4 hover:bg-[#FAF8F4] transition-colors group"
+                      >
+                        <span className="font-sans text-sm sm:text-[15px] font-medium text-charcoal tracking-normal">
+                          My Orders
+                        </span>
+                        <ChevronRight
+                          className="w-4 h-4 text-burgundy transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.5}
+                        />
+                      </Link>
+
+                      {/* 4. My Returns > */}
+                      <Link
+                        href="/account?tab=returns"
+                        onClick={() => setIsAccountOpen(false)}
+                        className="flex items-center justify-between w-full px-5 sm:px-6 py-4 hover:bg-[#FAF8F4] transition-colors group"
+                      >
+                        <span className="font-sans text-sm sm:text-[15px] font-medium text-charcoal tracking-normal">
+                          My Returns
+                        </span>
+                        <ChevronRight
+                          className="w-4 h-4 text-burgundy transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.5}
+                        />
+                      </Link>
+
+                      {/* 5. Sign Out */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          logout();
+                          setIsAccountOpen(false);
+                        }}
+                        className="flex items-center justify-start w-full px-5 sm:px-6 py-4 text-left hover:bg-[#FAF8F4] transition-colors cursor-pointer"
+                      >
+                        <span className="font-sans text-sm sm:text-[15px] font-medium text-burgundy tracking-normal">
+                          Sign Out
+                        </span>
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="relative z-20 p-5 text-center bg-white">
+                      <p className="font-serif text-base font-bold text-charcoal">Welcome Guest</p>
+                      <p className="text-xs text-muted mt-0.5">
+                        Sign in to access your luxury jewellery bag &amp; account
+                      </p>
+                      <div className="pt-3 space-y-2">
+                        <Link
+                          href="/signin"
+                          onClick={() => setIsAccountOpen(false)}
+                          className="block text-center w-full py-2.5 bg-burgundy hover:bg-burgundy-dark text-white rounded text-xs font-semibold tracking-wider uppercase transition-colors"
+                        >
+                          Sign In
+                        </Link>
+                        <Link
+                          href="/signup"
+                          onClick={() => setIsAccountOpen(false)}
+                          className="block text-center w-full py-2 bg-ivory hover:bg-champagne/40 border border-border-soft text-charcoal rounded text-xs font-medium transition-colors"
+                        >
+                          Create Account
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -289,23 +372,23 @@ export default function MainNavbar({ onOpenMobileMenu }) {
               <button
                 type="button"
                 onClick={() => setIsWishlistDropdownOpen(!isWishlistDropdownOpen)}
-                aria-label={`Wishlist, ${wishlistCount} items`}
+                aria-label={mounted && displayWishlistCount > 0 ? `Wishlist, ${displayWishlistCount} items` : 'Wishlist'}
                 aria-expanded={isWishlistDropdownOpen}
-                className="p-2.5 text-burgundy hover:text-burgundy-dark hover:bg-ivory rounded-full transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold relative"
+                className="p-2.5 text-burgundy hover:text-burgundy-dark hover:bg-ivory rounded-full transition-all duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold relative"
               >
                 <Heart className="w-5 h-5" strokeWidth={1.8} />
-                {wishlistCount > 0 && (
-                  <span className="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-burgundy text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
-                    {wishlistCount}
+                {mounted && displayWishlistCount > 0 && (
+                  <span className="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-burgundy text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white animate-badge-pulse">
+                    {displayWishlistCount}
                   </span>
                 )}
               </button>
 
               {isWishlistDropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-border-soft rounded-2xl shadow-xl shadow-burgundy/5 p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-border-soft rounded-2xl shadow-xl shadow-burgundy/5 p-5 z-50 animate-dropdown">
                   <div className="flex items-center justify-between pb-3 border-b border-border-soft">
                     <span className="font-serif text-sm font-bold text-charcoal">
-                      Your Wishlist ({wishlistCount})
+                      Your Wishlist ({displayWishlistCount})
                     </span>
                     <button
                       type="button"
@@ -317,19 +400,25 @@ export default function MainNavbar({ onOpenMobileMenu }) {
                   </div>
                   <div className="py-3 max-h-60 overflow-y-auto space-y-3">
                     {wishlistItems.map((item) => (
-                      <div key={item.id} className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0">
-                        <span className="font-serif font-medium text-charcoal pr-2">{item.name}</span>
+                      <Link
+                        key={item.id}
+                        href="/wishlist"
+                        onClick={() => setIsWishlistDropdownOpen(false)}
+                        className="flex items-center justify-between text-xs py-1.5 border-b border-border-soft/40 last:border-0 hover:text-burgundy transition-colors"
+                      >
+                        <span className="font-serif font-medium text-charcoal pr-2 truncate">{item.name}</span>
                         <span className="font-semibold text-burgundy whitespace-nowrap">{item.price}</span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                   <div className="pt-3 border-t border-border-soft">
-                    <button
-                      type="button"
+                    <Link
+                      href="/wishlist"
+                      onClick={() => setIsWishlistDropdownOpen(false)}
                       className="w-full py-2 bg-ivory hover:bg-champagne/40 border border-border-soft text-charcoal hover:text-burgundy rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
                     >
                       View All Saved Items <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -340,23 +429,23 @@ export default function MainNavbar({ onOpenMobileMenu }) {
               <button
                 type="button"
                 onClick={() => setIsCartDropdownOpen(!isCartDropdownOpen)}
-                aria-label={`Shopping Bag, ${cartCount} items`}
+                aria-label={mounted && displayCartCount > 0 ? `Shopping Bag, ${displayCartCount} items` : 'Shopping Bag'}
                 aria-expanded={isCartDropdownOpen}
-                className="p-2.5 text-burgundy hover:text-burgundy-dark hover:bg-ivory rounded-full transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold relative"
+                className="p-2.5 text-burgundy hover:text-burgundy-dark hover:bg-ivory rounded-full transition-all duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold relative"
               >
                 <ShoppingBag className="w-5 h-5" strokeWidth={1.8} />
-                {cartCount > 0 && (
-                  <span className="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-gold text-charcoal text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white">
-                    {cartCount}
+                {mounted && displayCartCount > 0 && (
+                  <span className="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-gold text-charcoal text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-white animate-badge-pulse">
+                    {displayCartCount}
                   </span>
                 )}
               </button>
 
               {isCartDropdownOpen && (
-                <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-border-soft rounded-2xl shadow-xl shadow-burgundy/5 p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-border-soft rounded-2xl shadow-xl shadow-burgundy/5 p-5 z-50 animate-dropdown">
                   <div className="flex items-center justify-between pb-3 border-b border-border-soft">
                     <span className="font-serif text-sm font-bold text-charcoal">
-                      Shopping Bag ({cartCount})
+                      Shopping Bag ({displayCartCount})
                     </span>
                     <button
                       type="button"

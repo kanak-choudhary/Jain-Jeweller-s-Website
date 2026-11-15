@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { FadeRight, FadeLeft } from '@/components/ui/Motion';
 
 export default function BridalEdit() {
   return (
@@ -13,28 +14,28 @@ export default function BridalEdit() {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center max-w-6xl mx-auto">
           {/* Left: Large Editorial Photography (7 cols) */}
-          <div className="lg:col-span-7">
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden bg-charcoal/5 shadow-xl">
+          <FadeRight className="lg:col-span-7" distance={32}>
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden bg-charcoal/5 shadow-xl group">
               <Image
                 src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1400&auto=format&fit=crop"
                 alt="Indian bride in royal pastel attire adorned with heritage bridal jewellery"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover object-center transition-transform duration-1000 ease-out hover:scale-105"
+                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent pointer-events-none" />
             </div>
-          </div>
+          </FadeRight>
 
           {/* Right: Minimal Editorial Text & Subtle CTA (5 cols) */}
-          <div className="lg:col-span-5 space-y-5 text-left">
+          <FadeLeft className="lg:col-span-5 space-y-5 text-left" distance={32} delay={0.1}>
             <p className="text-xs font-semibold tracking-[0.25em] text-burgundy uppercase">
               THE BRIDAL EDIT
             </p>
 
             <h2
               id="bridal-edit-heading"
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal tracking-tight leading-tight"
+              className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-normal text-charcoal tracking-tight leading-tight"
             >
               An Expression of Tradition
             </h2>
@@ -55,10 +56,9 @@ export default function BridalEdit() {
                 <ArrowRight className="w-4 h-4 text-gold" />
               </a>
             </div>
-          </div>
+          </FadeLeft>
         </div>
       </div>
     </section>
   );
 }
-

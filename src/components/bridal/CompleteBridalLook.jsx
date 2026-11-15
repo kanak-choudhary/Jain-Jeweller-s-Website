@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 const BRIDAL_LOOK_CATEGORIES = [
   {
@@ -54,7 +55,7 @@ export default function CompleteBridalLook() {
     >
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <h2
             id="complete-look-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-normal"
@@ -64,10 +65,13 @@ export default function CompleteBridalLook() {
           <p className="font-sans text-sm sm:text-base text-charcoal/70 mt-2 font-normal">
             Discover the finishing touches to your wedding jewellery.
           </p>
-        </div>
+        </FadeUp>
 
         {/* 4-Column Sleek 4:5 Category Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <StaggerReveal
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto"
+          stagger={0.08}
+        >
           {BRIDAL_LOOK_CATEGORIES.map((cat) => (
             <Link
               key={cat.id}
@@ -98,7 +102,7 @@ export default function CompleteBridalLook() {
               </div>
             </Link>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

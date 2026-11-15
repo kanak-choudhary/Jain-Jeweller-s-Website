@@ -2,6 +2,7 @@
 
 import JewelleryExploreCard from './JewelleryExploreCard';
 import exploreData from '@/data/exploreJewellery.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function ExploreJewellery() {
   const featuredCard = exploreData.find((item) => item.featured) || exploreData[0];
@@ -15,7 +16,7 @@ export default function ExploreJewellery() {
     >
       <div className="container-custom">
         {/* Section Header: Minimal & Centered */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <h2
             id="explore-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-normal"
@@ -25,21 +26,24 @@ export default function ExploreJewellery() {
           <p className="font-sans text-sm sm:text-base text-charcoal/70 mt-1 sm:mt-2 font-normal">
             Discover Your Style
           </p>
-        </div>
+        </FadeUp>
 
         {/* Editorial Asymmetric Magazine Grid (1 Featured Tall + 4 Supporting 2x2) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
           {/* LEFT: Featured Tall Flagship Card (5 cols) */}
-          <div className="lg:col-span-5 h-full flex flex-col">
+          <FadeUp className="lg:col-span-5 h-full flex flex-col" delay={0.1}>
             <JewelleryExploreCard
               card={featuredCard}
               isFeatured={true}
               priority={true}
             />
-          </div>
+          </FadeUp>
 
           {/* RIGHT: Supporting 4 Cards in 2x2 Grid (7 cols) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <StaggerReveal
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+            stagger={0.08}
+          >
             {supportingCards.map((card, index) => (
               <JewelleryExploreCard
                 key={card.id}
@@ -48,7 +52,7 @@ export default function ExploreJewellery() {
                 priority={index < 2}
               />
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </div>
     </section>

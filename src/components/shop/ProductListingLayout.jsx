@@ -11,6 +11,7 @@ import ProductFilterSidebar from './ProductFilterSidebar';
 import ProductFilterDrawer from './ProductFilterDrawer';
 import ProductGrid from './ProductGrid';
 import { FILTER_SECTIONS, matchesCategory } from './filterData';
+import { FadeUp } from '@/components/ui/Motion';
 
 export default function ProductListingLayout({
   pageTitle = 'All Jewellery',
@@ -396,7 +397,7 @@ export default function ProductListingLayout({
       {/* Main Container */}
       <div className="container-custom py-6 sm:py-8 lg:py-10">
         {/* Editorial Collection Header Banner */}
-        <div className="mb-8 pb-6 border-b border-champagne">
+        <FadeUp className="mb-8 pb-6 border-b border-champagne" duration={0.6}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-champagne/40 text-gold text-xs font-semibold uppercase tracking-wider mb-2">
@@ -462,7 +463,7 @@ export default function ProductListingLayout({
             onRemoveFilter={handleRemoveFilter}
             onClearAll={handleClearAll}
           />
-        </div>
+        </FadeUp>
 
         {/* 2-Column Layout: Sidebar (Desktop) + Product Grid */}
         <div className="flex gap-8 items-start">

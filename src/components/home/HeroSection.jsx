@@ -2,6 +2,7 @@
 
 import CampaignSlider from './CampaignSlider';
 import { ShieldCheck, Truck, RefreshCw, Award } from 'lucide-react';
+import { StaggerReveal } from '@/components/ui/Motion';
 
 export default function HeroSection() {
   const brandPillars = [
@@ -35,21 +36,25 @@ export default function HeroSection() {
       {/* Royal Heritage Trust Ribbon (Anchoring Hero to Homepage) */}
       <div className="bg-ivory border-b border-champagne py-4 sm:py-5">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-border-soft/60">
+          <StaggerReveal
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-border-soft/60"
+            stagger={0.08}
+            distance={16}
+          >
             {brandPillars.map((pillar, idx) => {
               const IconComponent = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 pt-3 sm:pt-0 sm:px-4 ${
+                  className={`flex items-center gap-3 pt-3 sm:pt-0 sm:px-4 group transition-transform duration-300 hover:translate-x-1 ${
                     idx === 0 ? 'sm:pl-0' : ''
                   }`}
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-champagne flex items-center justify-center shrink-0 text-burgundy shadow-xs">
-                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-champagne flex items-center justify-center shrink-0 text-burgundy shadow-xs transition-colors duration-300 group-hover:border-gold group-hover:bg-champagne/20">
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-gold transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div className="text-left">
-                    <h3 className="font-serif text-xs sm:text-sm font-bold text-charcoal tracking-tight">
+                    <h3 className="font-serif text-xs sm:text-sm font-bold text-charcoal tracking-tight group-hover:text-burgundy transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="text-[11px] text-muted font-sans font-medium line-clamp-1">
@@ -59,7 +64,7 @@ export default function HeroSection() {
                 </div>
               );
             })}
-          </div>
+          </StaggerReveal>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import {
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import SimilarProductsSection from './SimilarProductsSection';
+import { FadeRight, FadeLeft } from '@/components/ui/Motion';
 
 export default function ProductDetailView({ product }) {
   const router = useRouter();
@@ -187,7 +188,7 @@ export default function ProductDetailView({ product }) {
       <div className="container-custom py-8 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           {/* LEFT: Product Image Gallery */}
-          <div className="lg:col-span-7 flex flex-col items-center">
+          <FadeRight className="lg:col-span-7 flex flex-col items-center" distance={24}>
             {/* Primary Main Image Container */}
             <div className="relative w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] max-w-xl mx-auto rounded-2xl overflow-hidden bg-white border border-border-soft/70 shadow-xs flex items-center justify-center group">
               {/* Top-Right Favorite Icon */}
@@ -195,11 +196,11 @@ export default function ProductDetailView({ product }) {
                 type="button"
                 onClick={handleWishlistClick}
                 aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
-                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs border border-border-soft/60 shadow-xs flex items-center justify-center text-charcoal hover:text-burgundy hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs border border-border-soft/60 shadow-xs flex items-center justify-center text-charcoal hover:text-burgundy hover:scale-105 active:scale-90 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <Heart
                   className={`w-5 h-5 transition-colors ${
-                    isWishlisted ? 'fill-burgundy text-burgundy' : 'text-charcoal/70'
+                    isWishlisted ? 'fill-burgundy text-burgundy animate-heart-pop' : 'text-charcoal/70'
                   }`}
                   strokeWidth={1.5}
                 />
@@ -212,7 +213,7 @@ export default function ProductDetailView({ product }) {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-contain p-4 sm:p-8 transition-transform duration-500 group-hover:scale-103"
+                className="object-contain p-4 sm:p-8 transition-transform duration-700 ease-out group-hover:scale-103"
               />
             </div>
 
@@ -225,7 +226,7 @@ export default function ProductDetailView({ product }) {
                     type="button"
                     onClick={() => setActiveImageIndex(idx)}
                     aria-label={`View product image ${idx + 1}`}
-                    className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-white border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-white border transition-all duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                       activeImageIndex === idx
                         ? 'border-burgundy ring-2 ring-burgundy/20 shadow-xs'
                         : 'border-border-soft/70 hover:border-charcoal/40 opacity-80 hover:opacity-100'
@@ -242,10 +243,10 @@ export default function ProductDetailView({ product }) {
                 ))}
               </div>
             )}
-          </div>
+          </FadeRight>
 
           {/* RIGHT: Product Information (Strict Order) */}
-          <div className="lg:col-span-5 flex flex-col space-y-5 text-left max-w-lg">
+          <FadeLeft className="lg:col-span-5 flex flex-col space-y-5 text-left max-w-lg" distance={24} delay={0.08}>
             {/* 1. Product Code */}
             <div>
               <span className="text-xs uppercase tracking-wider text-muted font-sans font-medium">
@@ -429,7 +430,7 @@ export default function ProductDetailView({ product }) {
                 <span className="text-[11px] font-medium leading-tight">Insured Transit</span>
               </div>
             </div>
-          </div>
+          </FadeLeft>
         </div>
       </div>
 

@@ -10,6 +10,8 @@ import { goldMenuData, diamondMenuData, silverMenuData, coinsMenuData } from '@/
 import { trendingMenuData } from '@/data/trendingMenuData';
 import { useWishlist } from '@/context/WishlistContext';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
+import { useIsMounted } from '@/lib/animations';
 
 const metalDataMap = {
   gold: goldMenuData,
@@ -20,6 +22,8 @@ const metalDataMap = {
 export default function MobileNavigation({ isOpen, onClose }) {
   const { wishlistCount } = useWishlist();
   const { cartCount } = useCart();
+  const { user, isAuthenticated, logout } = useAuth();
+  const mounted = useIsMounted();
   const [expandedCategories, setExpandedCategories] = useState({});
   const [mobileAllJewelleryTab, setMobileAllJewelleryTab] = useState('category');
   const [mobileMetalTabs, setMobileMetalTabs] = useState({
@@ -483,23 +487,48 @@ export default function MobileNavigation({ isOpen, onClose }) {
 
           {/* Quick Account, Wishlist & Cart Actions */}
           <div className="pt-4 space-y-2">
-            <Link
-              href="#account"
-              onClick={handleLinkClick}
-              className="flex items-center gap-3 py-2 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors"
-            >
-              <User className="w-4 h-4 text-burgundy" /> Sign In / My Account
-            </Link>
+            {isAuthenticated ? (
+              <div className="space-y-1 border-b border-champagne/40 pb-3">
+                <Link
+                  href="/account?tab=profile"
+                  onClick={handleLinkClick}
+                  className="flex items-center justify-between py-2 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors"
+                >
+                  <span className="flex items-center gap-3">
+                    <User className="w-4 h-4 text-burgundy" /> My Account
+                  </span>
+                  <span className="text-[11px] text-muted font-normal">{user?.name}</span>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    logout();
+                    handleLinkClick();
+                  }}
+                  className="w-full text-left py-1 text-xs text-burgundy hover:text-burgundy-dark font-semibold uppercase tracking-wider cursor-pointer"
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <Link
+                href="/signin"
+                onClick={handleLinkClick}
+                className="flex items-center gap-3 py-2 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors"
+              >
+                <User className="w-4 h-4 text-burgundy" /> Sign In / Register
+              </Link>
+            )}
 
             <Link
-              href="#wishlist"
+              href="/wishlist"
               onClick={handleLinkClick}
               className="flex items-center justify-between py-2 text-xs font-semibold text-charcoal hover:text-burgundy transition-colors"
             >
               <span className="flex items-center gap-3">
                 <Heart className="w-4 h-4 text-burgundy" /> My Wishlist
               </span>
-              {wishlistCount > 0 && (
+              {mounted && wishlistCount > 0 && (
                 <span className="px-2 py-0.5 bg-burgundy text-white text-[10px] font-bold rounded-full">
                   {wishlistCount}
                 </span>
@@ -514,7 +543,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
               <span className="flex items-center gap-3">
                 <ShoppingBag className="w-4 h-4 text-burgundy" /> Shopping Bag
               </span>
-              {cartCount > 0 && (
+              {mounted && cartCount > 0 && (
                 <span className="px-2 py-0.5 bg-gold text-charcoal text-[10px] font-bold rounded-full">
                   {cartCount}
                 </span>

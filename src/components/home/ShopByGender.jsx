@@ -2,6 +2,7 @@
 
 import GenderCollectionCard from './GenderCollectionCard';
 import genderData from '@/data/genderCollections.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function ShopByGender() {
   const title = genderData.title || 'Curated For You';
@@ -16,7 +17,7 @@ export default function ShopByGender() {
     >
       <div className="container-custom">
         {/* Section Header: Minimal, Centered, No Sentences */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <h2
             id="gender-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-normal"
@@ -28,10 +29,13 @@ export default function ShopByGender() {
               {subtitle}
             </p>
           )}
-        </div>
+        </FadeUp>
 
         {/* 3-Column Minimal Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <StaggerReveal
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto"
+          stagger={0.1}
+        >
           {collections.map((collection, index) => (
             <GenderCollectionCard
               key={collection.id || index}
@@ -39,7 +43,7 @@ export default function ShopByGender() {
               priority={index === 0}
             />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

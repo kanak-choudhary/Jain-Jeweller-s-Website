@@ -166,3 +166,94 @@ a {
   scrollbar-color: rgba(217, 149, 6, 0.25) transparent;
 }
 
+/* ==========================================================================
+   Luxury Motion & Micro-Interaction System
+   ========================================================================== */
+
+/* Keyframe Animations */
+@keyframes heart-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.28); }
+  100% { transform: scale(1); }
+}
+
+@keyframes badge-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+@keyframes dropdown-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* Utility Animation Classes */
+.animate-heart-pop {
+  animation: heart-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-badge-pulse {
+  animation: badge-pulse 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-dropdown {
+  animation: dropdown-enter 0.22s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-modal {
+  animation: modal-scale-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Luxury Card & Button Micro-Interactions */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -8px rgba(41, 35, 33, 0.08);
+}
+
+.btn-interactive {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease, opacity 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+.btn-interactive:active {
+  transform: scale(0.98);
+}
+
+/* Accessibility: Global Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+

@@ -1,6 +1,9 @@
+'use client';
+
 import { Gift, Scroll, ShieldCheck, Sparkles } from 'lucide-react';
 import GiftingCard from './GiftingCard';
 import giftingData from '@/data/giftingOptions.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 const iconMap = {
   Gift,
@@ -29,7 +32,7 @@ export default function GiftingSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-14">
+        <FadeUp className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-14">
           <p className="text-xs font-bold tracking-[0.25em] text-burgundy uppercase mb-3">
             {sectionHeader.eyebrow}
           </p>
@@ -43,10 +46,13 @@ export default function GiftingSection() {
           <p className="text-base sm:text-lg text-muted font-light leading-relaxed">
             {sectionHeader.description}
           </p>
-        </div>
+        </FadeUp>
 
         {/* Asymmetrical 4-Column Gifting Grid (Reference Match) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch">
+        <StaggerReveal
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch"
+          stagger={0.08}
+        >
           {giftCards.map((card, index) => (
             <GiftingCard
               key={card.id}
@@ -55,7 +61,7 @@ export default function GiftingSection() {
               className={cardLayoutClasses[card.id] || 'aspect-[1.9/1]'}
             />
           ))}
-        </div>
+        </StaggerReveal>
 
         {/* Complimentary Gifting Perks Strip */}
         {giftingPerks && giftingPerks.length > 0 && (

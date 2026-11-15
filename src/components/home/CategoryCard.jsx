@@ -37,23 +37,23 @@ export default function CategoryCard({ category, priority = false }) {
   return (
     <Link
       href={link}
-      className="group flex flex-col items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-2xl"
+      className="group flex flex-col items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-2xl transition-transform duration-300 hover:-translate-y-1"
       aria-label={`Shop ${name}`}
     >
       {/* Image Container with Consistent Aspect Ratio */}
-      <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-champagne/20 border border-champagne/40 hover:border-gold/60 shadow-xs hover:shadow-md transition-all duration-300">
+      <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-champagne/20 border border-champagne/40 hover:border-gold/60 shadow-xs hover:shadow-lg transition-all duration-500">
         <Image
           src={image}
           alt={name}
           fill
           priority={priority}
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
-          className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transform-none"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 motion-reduce:transform-none"
         />
       </div>
 
       {/* Text Below Card */}
-      <h3 className="mt-3 text-center text-sm sm:text-base font-medium text-charcoal group-hover:text-burgundy transition-colors duration-200">
+      <h3 className="mt-3 text-center text-sm sm:text-base font-medium text-charcoal group-hover:text-burgundy transition-colors duration-300">
         {name}
       </h3>
     </Link>

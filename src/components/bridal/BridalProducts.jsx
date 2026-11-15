@@ -1,5 +1,8 @@
+'use client';
+
 import BridalProductCard from './BridalProductCard';
 import bridalProducts from '@/data/bridalProducts.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 const categoryAnchorMap = {
   101: 'bridal-necklaces',
@@ -18,7 +21,7 @@ export default function BridalProducts() {
     >
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <h2
             id="bridal-products-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-normal"
@@ -28,10 +31,13 @@ export default function BridalProducts() {
           <p className="font-sans text-sm sm:text-base text-charcoal/70 mt-2 font-normal">
             A curated selection for your most special moments.
           </p>
-        </div>
+        </FadeUp>
 
         {/* Product Grid with category anchors */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <StaggerReveal
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto"
+          stagger={0.08}
+        >
           {bridalProducts.map((product) => (
             <div
               key={product.id}
@@ -41,7 +47,7 @@ export default function BridalProducts() {
               <BridalProductCard product={product} />
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

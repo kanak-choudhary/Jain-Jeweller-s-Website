@@ -1,5 +1,8 @@
+'use client';
+
 import CollectionDiscoverCard from './CollectionDiscoverCard';
 import discoverData from '@/data/discoverCollections.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function DiscoverCollection() {
   const { sectionHeader, collections } = discoverData;
@@ -12,7 +15,7 @@ export default function DiscoverCollection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
+        <FadeUp className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
           <p className="text-xs font-bold tracking-[0.25em] text-burgundy uppercase mb-3">
             {sectionHeader.eyebrow}
           </p>
@@ -23,17 +26,20 @@ export default function DiscoverCollection() {
             {sectionHeader.title}
           </h2>
           <div className="w-16 h-0.5 bg-gold mx-auto my-4" />
-        </div>
+        </FadeUp>
 
         {/* 4-Card Collection Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <StaggerReveal
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          stagger={0.09}
+        >
           {collections.map((collection) => (
             <CollectionDiscoverCard
               key={collection.id}
               collection={collection}
             />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

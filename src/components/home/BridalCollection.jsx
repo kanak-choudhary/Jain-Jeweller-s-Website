@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Calendar, Sparkles, CheckCircle2 } from 'lucide-react';
 import bridalData from '@/data/bridalCollection.json';
+import { FadeRight, FadeLeft } from '@/components/ui/Motion';
 
 export default function BridalCollection() {
   const {
@@ -30,7 +33,7 @@ export default function BridalCollection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Visual Hero: Indian Bridal Portrait (Image First) */}
-          <div className="lg:col-span-7 order-1">
+          <FadeRight className="lg:col-span-7 order-1" distance={36}>
             <div className="group relative rounded-3xl overflow-hidden border border-gold/30 bg-champagne/20 shadow-xl lg:shadow-2xl">
               {/* Outer Decorative Gold Trim */}
               <div className="absolute -inset-0.5 rounded-3xl border border-gold/20 pointer-events-none z-20 group-hover:border-gold/50 transition-colors duration-500" />
@@ -60,10 +63,10 @@ export default function BridalCollection() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeRight>
 
           {/* Editorial Content Block (Text & CTAs) */}
-          <div className="lg:col-span-5 order-2 flex flex-col justify-center">
+          <FadeLeft className="lg:col-span-5 order-2 flex flex-col justify-center" distance={36} delay={0.15}>
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-px bg-gold" />
@@ -148,7 +151,7 @@ export default function BridalCollection() {
                 </div>
               </div>
             )}
-          </div>
+          </FadeLeft>
         </div>
       </div>
     </section>

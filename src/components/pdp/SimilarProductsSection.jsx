@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import allProductsData from '@/data/products.json';
+import { FadeUp } from '@/components/ui/Motion';
 
 const CATEGORY_LINK_MAP = {
   earrings: '/all-jewellery?category=earrings',
@@ -120,7 +121,7 @@ export default function SimilarProductsSection({ currentProduct }) {
     >
       <div className="container-custom">
         {/* Section Header: Title & View More on Left, Carousel Controls on Right */}
-        <div className="flex items-start justify-between gap-4 mb-6 sm:mb-8">
+        <FadeUp className="flex items-start justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <h2
               id="similar-products-heading"
@@ -167,7 +168,7 @@ export default function SimilarProductsSection({ currentProduct }) {
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </FadeUp>
 
         {/* Carousel Container */}
         <div
@@ -202,12 +203,12 @@ export default function SimilarProductsSection({ currentProduct }) {
                       type="button"
                       onClick={(e) => handleWishlistClick(e, p)}
                       aria-label={isWishlisted ? `Remove ${p.name} from wishlist` : `Add ${p.name} to wishlist`}
-                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-10 p-1.5 sm:p-2 rounded-full text-charcoal/70 hover:text-burgundy bg-white/70 hover:bg-white backdrop-blur-xs transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-10 p-1.5 sm:p-2 rounded-full text-charcoal/70 hover:text-burgundy bg-white/70 hover:bg-white backdrop-blur-xs transition-all duration-200 hover:scale-110 active:scale-90 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold"
                     >
                       <Heart
                         className={`w-4 h-4 sm:w-4.5 sm:h-4.5 transition-colors ${
                           isWishlisted
-                            ? 'text-burgundy fill-burgundy'
+                            ? 'text-burgundy fill-burgundy animate-heart-pop'
                             : 'text-charcoal/70 hover:text-burgundy'
                         }`}
                         strokeWidth={1.5}

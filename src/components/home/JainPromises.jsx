@@ -2,6 +2,7 @@
 
 import PromiseCard from './PromiseCard';
 import promisesData from '@/data/promises.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function JainPromises() {
   return (
@@ -30,7 +31,7 @@ export default function JainPromises() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header: "Jain" Eyebrow + "Promises" Major Heading */}
-        <div className="text-center max-w-xl mx-auto space-y-2 mb-12 sm:mb-16 lg:mb-20">
+        <FadeUp className="text-center max-w-xl mx-auto space-y-2 mb-12 sm:mb-16 lg:mb-20">
           <p className="font-serif text-sm sm:text-base font-bold text-burgundy/80 tracking-[0.25em] uppercase">
             Jain
           </p>
@@ -45,10 +46,13 @@ export default function JainPromises() {
           <p className="font-sans text-xs sm:text-sm text-muted max-w-md mx-auto pt-1 leading-relaxed">
             Our timeless commitment to certified purity, authentic Indian craftsmanship, and an effortless luxury jewellery experience.
           </p>
-        </div>
+        </FadeUp>
 
         {/* Upward Curved Arch of 6 Promise Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-3 items-start pt-4 sm:pt-6">
+        <StaggerReveal
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-3 items-start pt-4 sm:pt-6"
+          stagger={0.09}
+        >
           {promisesData.map((promise, index) => (
             <PromiseCard
               key={promise.id}
@@ -56,7 +60,7 @@ export default function JainPromises() {
               index={index}
             />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

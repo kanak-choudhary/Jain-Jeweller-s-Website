@@ -1,5 +1,8 @@
+'use client';
+
 import BudgetCard from './BudgetCard';
 import budgetData from '@/data/budgetRanges.json';
+import { StaggerReveal } from '@/components/ui/Motion';
 
 export default function ShopByBudget() {
   const { sectionHeader, budgetTiers } = budgetData;
@@ -40,7 +43,10 @@ export default function ShopByBudget() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Layout matching attached screenshot: 3 columns with Small-to-Big sequence */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-10 sm:gap-4 lg:gap-8 min-h-0 sm:min-h-[460px] lg:min-h-[520px] xl:min-h-[580px]">
+        <StaggerReveal
+          className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-10 sm:gap-4 lg:gap-8 min-h-0 sm:min-h-[460px] lg:min-h-[520px] xl:min-h-[580px]"
+          stagger={0.12}
+        >
           
           {/* COLUMN 1: Heading at Top, Smallest Card (Under ₹15,000) at Bottom */}
           <div className="w-full sm:w-[28%] flex flex-col justify-between items-center sm:items-start self-stretch">
@@ -96,7 +102,7 @@ export default function ShopByBudget() {
             )}
           </div>
 
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

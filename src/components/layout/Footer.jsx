@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import FooterColumn from './FooterColumn';
 import footerData from '@/data/footerLinks.json';
+import { FadeUp } from '@/components/ui/Motion';
 
 export default function Footer() {
   const { brand, columns, newsletter, legal, copyright } = footerData;
@@ -53,7 +54,7 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 lg:pt-20 lg:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+        <FadeUp className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8" duration={0.8}>
           {/* Brand Area (4 cols on desktop) */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
@@ -144,7 +145,7 @@ export default function Footer() {
               )}
             </form>
           </div>
-        </div>
+        </FadeUp>
       </div>
 
       {/* Bottom Legal & Copyright Bar */}

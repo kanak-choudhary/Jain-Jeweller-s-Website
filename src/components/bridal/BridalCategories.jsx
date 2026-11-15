@@ -1,5 +1,8 @@
+'use client';
+
 import BridalCategoryCard from './BridalCategoryCard';
 import bridalCategories from '@/data/bridalCategories.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function BridalCategories() {
   return (
@@ -10,7 +13,7 @@ export default function BridalCategories() {
     >
       <div className="container-custom">
         {/* Section Header: Minimal & Centered */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <h2
             id="bridal-categories-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-normal"
@@ -20,14 +23,17 @@ export default function BridalCategories() {
           <p className="font-sans text-sm sm:text-base text-charcoal/70 mt-2 font-normal">
             Find the pieces that complete your bridal look.
           </p>
-        </div>
+        </FadeUp>
 
         {/* 5-Category Grid: 5 cols desktop, 3 cols tablet, 2 cols mobile */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 max-w-7xl mx-auto">
+        <StaggerReveal
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 max-w-7xl mx-auto"
+          stagger={0.07}
+        >
           {bridalCategories.map((category) => (
             <BridalCategoryCard key={category.id} category={category} />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

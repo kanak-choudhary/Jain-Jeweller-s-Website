@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import diamondData from '@/data/diamondCollection.json';
+import { FadeUp } from '@/components/ui/Motion';
 
 export default function DiamondCollection() {
   const { title, subtitle, heroCard, bannerCard, collectionCards } = diamondData;
@@ -25,7 +26,7 @@ export default function DiamondCollection() {
     >
       <div className="container-custom">
         {/* Section Header: Minimal & Centered */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <h2
             id="diamond-jewellery-heading"
             className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-charcoal tracking-[0.08em] uppercase"
@@ -37,7 +38,7 @@ export default function DiamondCollection() {
               {subtitle}
             </p>
           )}
-        </div>
+        </FadeUp>
 
         {/* 5-Card Asymmetrical Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 items-stretch">

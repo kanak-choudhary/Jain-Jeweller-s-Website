@@ -2,11 +2,12 @@
 
 import ProductCard from './ProductCard';
 import { Sparkles, RotateCcw } from 'lucide-react';
+import { StaggerReveal } from '@/components/ui/Motion';
 
 export default function ProductGrid({ products, onClearAll }) {
   if (!products || products.length === 0) {
     return (
-      <div className="bg-white border border-border-soft rounded-2xl p-10 sm:p-16 text-center my-6 flex flex-col items-center justify-center">
+      <div className="bg-white border border-border-soft rounded-2xl p-10 sm:p-16 text-center my-6 flex flex-col items-center justify-center animate-in fade-in duration-300">
         <div className="w-16 h-16 rounded-full bg-champagne/40 border border-gold/30 flex items-center justify-center text-burgundy mb-4 shadow-xs">
           <Sparkles className="w-8 h-8 text-gold" strokeWidth={1.5} />
         </div>
@@ -21,7 +22,7 @@ export default function ProductGrid({ products, onClearAll }) {
         <button
           type="button"
           onClick={onClearAll}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-burgundy hover:bg-burgundy-dark text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-burgundy/20 hover:scale-105"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-burgundy hover:bg-burgundy-dark text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-burgundy/20 hover:scale-105 active:scale-95"
         >
           <RotateCcw className="w-4 h-4" />
           <span>Reset All Filters</span>
@@ -31,11 +32,15 @@ export default function ProductGrid({ products, onClearAll }) {
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+    <StaggerReveal
+      className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 lg:gap-6"
+      stagger={0.04}
+      distance={16}
+    >
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-    </div>
+    </StaggerReveal>
   );
 }
 

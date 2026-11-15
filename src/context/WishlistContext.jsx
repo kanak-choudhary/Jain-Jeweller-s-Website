@@ -7,7 +7,7 @@ const STORAGE_KEY = 'jj_wishlist_items';
 
 const DEFAULT_WISHLIST = [
   { id: 'jj-ear-001', name: 'Heritage Polki & Pearl Chandelier Earrings', price: '₹1,25,000' },
-  { id: 'jj-rng-001', name: 'Solitaire Diamond Engagement Ring 1.5ct', price: '₹1,85,000' },
+  { id: 'jj-ring-001', name: 'Royal Nizam Solitaire Halo Diamond Ring', price: '₹1,85,000' },
 ];
 
 export function WishlistProvider({ children }) {
@@ -41,6 +41,14 @@ export function WishlistProvider({ children }) {
     });
   }, []);
 
+  const removeFromWishlist = useCallback((id) => {
+    setWishlistItems((prev) => prev.filter((i) => i.id !== id));
+  }, []);
+
+  const clearWishlist = useCallback(() => {
+    setWishlistItems([]);
+  }, []);
+
   const isInWishlist = useCallback(
     (id) => {
       return wishlistItems.some((item) => item.id === id);
@@ -56,6 +64,8 @@ export function WishlistProvider({ children }) {
         wishlistItems,
         wishlistCount,
         toggleWishlist,
+        removeFromWishlist,
+        clearWishlist,
         isInWishlist,
       }}
     >
@@ -71,6 +81,8 @@ export function useWishlist() {
       wishlistItems: [],
       wishlistCount: 0,
       toggleWishlist: () => {},
+      removeFromWishlist: () => {},
+      clearWishlist: () => {},
       isInWishlist: () => false,
     };
   }

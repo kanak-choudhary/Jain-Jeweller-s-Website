@@ -1,5 +1,8 @@
+'use client';
+
 import TestimonialCard from './TestimonialCard';
 import testimonialsData from '@/data/testimonials.json';
+import { FadeUp } from '@/components/ui/Motion';
 
 const tilts = [-2.5, 2, -1.5, 2.5, -2, 1.5];
 
@@ -33,7 +36,7 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16 lg:mb-20">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-14 sm:mb-16 lg:mb-20">
           <p className="text-sm font-sans font-medium tracking-[0.25em] text-charcoal/70 uppercase mb-2">
             {sectionHeader.smallHeading || 'Our'}
           </p>
@@ -44,7 +47,7 @@ export default function Testimonials() {
             {sectionHeader.title || 'Testimonials'}
           </h2>
           <div className="w-16 h-0.5 bg-gold mx-auto my-4" />
-        </div>
+        </FadeUp>
       </div>
 
       {/* Horizontally moving, continuous infinite loop marquee */}

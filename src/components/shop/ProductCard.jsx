@@ -35,12 +35,12 @@ export default function ProductCard({ product }) {
           type="button"
           onClick={handleWishlistClick}
           aria-label={isWishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
-          className="absolute top-3 right-3 z-10 p-1.5 rounded-full text-charcoal/60 hover:text-burgundy transition-all duration-200 hover:scale-110 focus:outline-none"
+          className="absolute top-3 right-3 z-10 p-1.5 rounded-full text-charcoal/60 hover:text-burgundy transition-all duration-200 hover:scale-110 active:scale-90 focus:outline-none"
         >
           <Heart
             className={`w-5 h-5 transition-colors ${
               isWishlisted
-                ? 'text-burgundy fill-burgundy'
+                ? 'text-burgundy fill-burgundy animate-heart-pop'
                 : 'text-charcoal/70 hover:text-burgundy'
             }`}
             strokeWidth={1.4}
@@ -54,7 +54,7 @@ export default function ProductCard({ product }) {
             alt={product.alt || product.name}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform"
           />
         </Link>
 

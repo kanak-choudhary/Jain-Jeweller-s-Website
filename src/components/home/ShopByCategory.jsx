@@ -2,6 +2,7 @@
 
 import CategoryCard from './CategoryCard';
 import categoriesData from '@/data/categories.json';
+import { FadeUp, StaggerReveal } from '@/components/ui/Motion';
 
 export default function ShopByCategory() {
   return (
@@ -12,7 +13,7 @@ export default function ShopByCategory() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header Matching Attached Reference */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <FadeUp className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <p className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-gold uppercase mb-2">
             BRILLIANT DESIGNS AND UNPARALLELED CRAFTSMANSHIP.
           </p>
@@ -26,10 +27,13 @@ export default function ShopByCategory() {
 
           {/* Elegant Gold Accent Line */}
           <div className="w-16 h-0.5 bg-gold mx-auto mt-3" />
-        </div>
+        </FadeUp>
 
         {/* Categories Grid: 4 Cards per Row (2 Rows = 8 Cards) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <StaggerReveal
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+          stagger={0.07}
+        >
           {categoriesData.map((category, index) => (
             <CategoryCard
               key={category.id}
@@ -37,7 +41,7 @@ export default function ShopByCategory() {
               priority={index < 4}
             />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
