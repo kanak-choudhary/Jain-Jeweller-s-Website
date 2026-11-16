@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
+import ProductImage from '@/components/ui/ProductImage';
 import { useWishlist } from '@/context/WishlistContext';
 import { useAuth } from '@/context/AuthContext';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, priority = false }) {
   const { isInWishlist, toggleWishlist } = useWishlist();
   const { requireAuth } = useAuth();
   const isWishlisted = isInWishlist(product.id);
@@ -62,10 +62,11 @@ export default function ProductCard({ product }) {
 
         {/* Product Image - perfectly fitted edge-to-edge without extra padding or empty borders */}
         <Link href={`/product/${product.slug}`} className="block w-full h-full relative">
-          <Image
+          <ProductImage
             src={product.image || '/images/home/shop-by-category/rings-category.webp'}
             alt={product.alt || product.name}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform"
           />

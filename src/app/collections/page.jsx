@@ -25,7 +25,7 @@ export default function CollectionsPage() {
     <div className="min-h-screen bg-white pb-16 sm:pb-20 lg:pb-24">
       {/* 3 Vertically Stacked Campaign Sections (Full-Width Edge-to-Edge Banners) */}
       <main id="collections-main">
-        {collectionsCampaigns.map((campaign) => {
+        {collectionsCampaigns.map((campaign, index) => {
           const sectionProducts = campaign.productIds
             .map((id) => productsMap.get(id))
             .filter(Boolean);
@@ -35,6 +35,7 @@ export default function CollectionsPage() {
               key={campaign.id}
               campaign={campaign}
               products={sectionProducts}
+              isFirst={index === 0}
             />
           );
         })}

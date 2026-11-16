@@ -163,68 +163,93 @@ export default function BridalScrollAnimation() {
     }
   }, [renderFrame]);
 
-  // Image preloading effect: load frame 0 instantly, then concurrent batches
+  // Reference to track frames that have been requested
+  const requestedFramesRef = useRef(new Set());
+
+  // Function to ensure a specific frame is requested exactly once
+  const ensureFrameLoaded = useCallback((idx) => {
+    if (idx < 0 || idx >= TOTAL_FRAMES) return;
+    if (requestedFramesRef.current.has(idx)) return;
+    requestedFramesRef.current.add(idx);
+
+    if (typeof window === 'undefined') return;
+    const img = new window.Image();
+    img.decoding = 'async';
+    img.src = FRAME_PATH(idx);
+    imagesRef.current[idx] = img;
+
+    img.onload = () => {
+      if (Math.abs(currentFrameRef.current - idx) <= 1) {
+        renderFrame(currentFrameRef.current);
+      }
+    };
+  }, [renderFrame]);
+
+  // Load a lookahead window around a target frame
+  const loadFrameBuffer = useCallback((centerIdx, bufferAhead = 35) => {
+    const start = Math.max(0, centerIdx - 8);
+    const end = Math.min(TOTAL_FRAMES - 1, centerIdx + bufferAhead);
+    for (let i = start; i <= end; i++) {
+      ensureFrameLoaded(i);
+    }
+  }, [ensureFrameLoaded]);
+
+  // Progressive image preloading: load initial 20 frames immediately, then buffer on-demand and during idle
   useEffect(() => {
     let isCancelled = false;
-    let loadedCount = 0;
+    let idleTimer = null;
 
-    // Load first frame immediately
-    const firstImg = new window.Image();
-    firstImg.src = FRAME_PATH(0);
-    imagesRef.current[0] = firstImg;
+    // 1. Preload first 20 frames immediately
+    for (let i = 0; i <= 20; i++) {
+      ensureFrameLoaded(i);
+    }
 
-    firstImg.onload = () => {
-      if (isCancelled) return;
-      loadedCount++;
-      setLoadingProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100));
-      updateCanvasSize();
-      renderFrame(0);
-    };
-
-    // Batch load frames with concurrency
-    const loadBatch = async () => {
-      const BATCH_SIZE = 12;
-      for (let i = 1; i < TOTAL_FRAMES; i += BATCH_SIZE) {
-        if (isCancelled) break;
-        const promises = [];
-        for (let j = i; j < Math.min(i + BATCH_SIZE, TOTAL_FRAMES); j++) {
-          const img = new window.Image();
-          img.src = FRAME_PATH(j);
-          imagesRef.current[j] = img;
-
-          const p = new Promise((resolve) => {
-            img.onload = () => {
-              loadedCount++;
-              if (!isCancelled) {
-                setLoadingProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100));
-              }
-              resolve();
-            };
-            img.onerror = () => {
-              loadedCount++;
-              resolve();
-            };
-          });
-          promises.push(p);
-        }
-        await Promise.all(promises);
-
-        if (i >= 24 && !isLoaded) {
-          setIsLoaded(true);
-        }
-      }
-
-      if (!isCancelled) {
+    const firstImg = imagesRef.current[0];
+    if (firstImg) {
+      if (firstImg.complete && firstImg.naturalWidth > 0) {
         setIsLoaded(true);
+        setLoadingProgress(100);
+        updateCanvasSize();
+        renderFrame(0);
+      } else {
+        firstImg.onload = () => {
+          if (isCancelled) return;
+          setIsLoaded(true);
+          setLoadingProgress(100);
+          updateCanvasSize();
+          renderFrame(0);
+        };
+      }
+    }
+
+    // 2. Progressively fetch upcoming frames in background during idle periods
+    const scheduleIdleBatch = (startIndex = 21) => {
+      if (isCancelled || startIndex >= TOTAL_FRAMES) return;
+
+      const runBatch = () => {
+        if (isCancelled) return;
+        const BATCH = 6;
+        for (let i = startIndex; i < Math.min(startIndex + BATCH, TOTAL_FRAMES); i++) {
+          ensureFrameLoaded(i);
+        }
+        idleTimer = setTimeout(() => scheduleIdleBatch(startIndex + BATCH), 100);
+      };
+
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(runBatch);
+      } else {
+        idleTimer = setTimeout(runBatch, 100);
       }
     };
 
-    loadBatch();
+    // Begin background trickle after initial render
+    idleTimer = setTimeout(() => scheduleIdleBatch(21), 600);
 
     return () => {
       isCancelled = true;
+      if (idleTimer) clearTimeout(idleTimer);
     };
-  }, [updateCanvasSize, renderFrame, isLoaded]);
+  }, [ensureFrameLoaded, updateCanvasSize, renderFrame]);
 
   // Dynamic header measurement & resize listener
   useEffect(() => {
@@ -292,6 +317,9 @@ export default function BridalScrollAnimation() {
 
           if (targetFrame !== currentFrameRef.current) {
             currentFrameRef.current = targetFrame;
+            // Preload buffer ahead of scroll position
+            loadFrameBuffer(targetFrame, 35);
+
             if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
             rafIdRef.current = requestAnimationFrame(() => {
               renderFrame(targetFrame);
@@ -319,7 +347,7 @@ export default function BridalScrollAnimation() {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
       ctx.revert();
     };
-  }, [renderFrame, getHeaderHeight]);
+  }, [renderFrame, getHeaderHeight, loadFrameBuffer]);
 
   // Animate storytelling subtitles smoothly on stage change
   useEffect(() => {

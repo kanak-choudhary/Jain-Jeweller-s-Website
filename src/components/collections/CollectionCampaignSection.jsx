@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import CollectionProductCard from './CollectionProductCard';
 
-export default function CollectionCampaignSection({ campaign, products }) {
+export default function CollectionCampaignSection({ campaign, products, isFirst = false }) {
   const { title, bannerImage, bannerAlt, ctaText, ctaHref, width = 1024, height = 320 } = campaign;
 
   return (
@@ -20,9 +20,9 @@ export default function CollectionCampaignSection({ campaign, products }) {
           alt={bannerAlt || title}
           width={width}
           height={height}
-          priority
-          unoptimized
-          sizes="100vw"
+          priority={isFirst}
+          loading={isFirst ? undefined : 'lazy'}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
           className="w-full h-auto block select-none pointer-events-none"
           style={{ width: '100%', height: 'auto', display: 'block' }}
         />
