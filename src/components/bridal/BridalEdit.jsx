@@ -15,13 +15,13 @@ export default function BridalEdit() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center max-w-6xl mx-auto">
           {/* Left: Large Editorial Photography (7 cols) */}
           <FadeRight className="lg:col-span-7" distance={32}>
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden bg-charcoal/5 shadow-xl group">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] rounded-3xl overflow-hidden bg-charcoal/5 shadow-xl group">
               <Image
-                src="/images/home/bridal-collection/bridal-collection.webp"
-                alt="Indian bride in royal pastel attire adorned with heritage bridal jewellery"
+                src="/images/home/explore-jewellery/kundan-jadau.webp"
+                alt="Handcrafted traditional gold Kundan and Jadau bridal jewellery - An Expression of Tradition"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent pointer-events-none" />
             </div>
