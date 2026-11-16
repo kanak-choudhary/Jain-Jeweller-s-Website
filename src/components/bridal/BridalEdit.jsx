@@ -17,11 +17,11 @@ export default function BridalEdit() {
           <FadeRight className="lg:col-span-7" distance={32}>
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden bg-charcoal/5 shadow-xl group">
               <Image
-                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1400&auto=format&fit=crop"
+                src="/images/home/bridal-collection/bridal-collection.webp"
                 alt="Indian bride in royal pastel attire adorned with heritage bridal jewellery"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent pointer-events-none" />
             </div>

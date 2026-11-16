@@ -56,11 +56,11 @@ export default function BridalConsultation() {
             <div className="md:col-span-5">
               <div className="relative w-full aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden bg-charcoal/5 shadow-md">
                 <Image
-                  src="https://images.unsplash.com/photo-1667522589430-10839f374743?q=80&w=1000&auto=format&fit=crop"
-                  alt="Bride being adorned with wedding jewellery"
+                  src="/images/home/discover-our-collection/wedding-bridal.webp"
+                  alt="Bride being adorned with royal wedding jewellery"
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
+                  className="object-cover object-center transition-transform duration-700 ease-out hover:scale-105"
                 />
               </div>
             </div>

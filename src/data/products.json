@@ -1989,7 +1989,7 @@
     "occasionName": "Bridal",
     "collection": "bridal-collection",
     "collectionName": "Bridal Collection",
-    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop",
+    "image": "/images/collections/bridal/categories/bridal-necklace-sets.webp",
     "alt": "Royal Kundan Necklace Set with uncut stones in 22KT gold",
     "isNewArrival": true,
     "isBestSeller": true,
@@ -2003,7 +2003,6 @@
     "stockStatus": "Only 1 Left",
     "stockQuantity": 1,
     "images": [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop",
       "/images/collections/bridal/categories/bridal-necklace-sets.webp",
       "/images/home/shop-by-category/earrings-category.webp"
     ],
@@ -2042,7 +2041,7 @@
     "occasionName": "Bridal",
     "collection": "bridal-collection",
     "collectionName": "Bridal Collection",
-    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+    "image": "/images/home/bridal-collection/bridal-collection.webp",
     "alt": "Signature Bridal Jewellery Set in antique 22KT gold and heritage gemstones",
     "isNewArrival": true,
     "isBestSeller": true,
@@ -2056,7 +2055,7 @@
     "stockStatus": "In Stock",
     "stockQuantity": 2,
     "images": [
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+      "/images/home/bridal-collection/bridal-collection.webp",
       "/images/collections/bridal/categories/bridal-necklace-sets.webp",
       "/images/collections/bridal/categories/bridal-earrings.webp"
     ],

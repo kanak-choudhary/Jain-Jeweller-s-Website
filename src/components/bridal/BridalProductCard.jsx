@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/context/WishlistContext';
 import { useAuth } from '@/context/AuthContext';
+import ProductImage from '@/components/ui/ProductImage';
 
 export default function BridalProductCard({ product }) {
   const { isInWishlist, toggleWishlist } = useWishlist();
@@ -40,16 +40,15 @@ export default function BridalProductCard({ product }) {
         href={product.href || '#'}
         className="relative block w-full aspect-square rounded-2xl overflow-hidden bg-ivory shadow-xs hover:shadow-xl transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
       >
-        <Image
+        <ProductImage
           src={product.image}
           alt={product.alt || product.name}
-          fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-106"
+          className="group-hover:scale-106"
         />
 
         {/* Ambient Hover Overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none" />
 
         {/* Wishlist Button */}
         <button
