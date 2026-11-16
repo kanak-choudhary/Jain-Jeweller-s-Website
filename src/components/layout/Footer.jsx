@@ -101,8 +101,8 @@ export default function Footer() {
 
           {/* Newsletter Area (3 cols on desktop) */}
           <div className="lg:col-span-3 flex flex-col">
-            <h3 className="font-playfair text-base font-bold text-gold-light tracking-wide mb-4">
-              {newsletter.heading}
+            <h3 className="font-playfair text-base font-bold text-[#F6B621] text-gold-light tracking-wide mb-4">
+              <span className="text-[#F6B621] text-gold-light">{newsletter.heading}</span>
             </h3>
             <div className="w-8 h-0.5 bg-gold/60 mb-4" />
             <p className="text-sm text-ivory/80 font-light leading-relaxed mb-4">

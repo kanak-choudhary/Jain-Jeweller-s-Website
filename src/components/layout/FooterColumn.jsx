@@ -3,8 +3,8 @@ import Link from 'next/link';
 export default function FooterColumn({ title, links }) {
   return (
     <div className="flex flex-col">
-      <h3 className="font-playfair text-base font-bold text-gold-light tracking-wide mb-4 flex items-center gap-2">
-        <span>{title}</span>
+      <h3 className="font-playfair text-base font-bold text-[#F6B621] text-gold-light tracking-wide mb-4 flex items-center gap-2">
+        <span className="text-[#F6B621] text-gold-light">{title}</span>
       </h3>
       <div className="w-8 h-0.5 bg-gold/60 mb-4" />
       <ul className="space-y-2.5" role="list">
