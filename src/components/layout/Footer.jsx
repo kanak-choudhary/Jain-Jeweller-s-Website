@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import FooterColumn from './FooterColumn';
 import footerData from '@/data/footerLinks.json';
@@ -60,14 +61,22 @@ export default function Footer() {
             <div>
               <Link
                 href="/"
-                className="group inline-flex flex-col items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm py-1"
+                className="group inline-flex items-center gap-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm py-1"
                 aria-label="Jain Jewellers Home"
               >
-                <span className="font-playfair text-2xl sm:text-3xl font-bold tracking-[0.16em] text-white transition-colors duration-200 group-hover:text-gold-light">
-                  {brand.name}
-                </span>
-                <span className="text-[9px] tracking-[0.32em] uppercase text-gold-light font-medium -mt-0.5">
-                  {brand.tagline}
+                <Image
+                  src="/images/brand/logo/logo-emblem.png"
+                  alt="Jain Jewellers Emblem"
+                  width={64}
+                  height={64}
+                  priority
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="font-playfair text-2xl sm:text-3xl font-bold tracking-[0.16em] text-white transition-colors duration-200 group-hover:text-gold-light flex flex-col">
+                  <span>{brand.name}</span>
+                  <span className="font-sans text-[9px] tracking-[0.32em] uppercase text-gold-light font-medium -mt-0.5">
+                    {brand.tagline}
+                  </span>
                 </span>
               </Link>
 
@@ -92,7 +101,7 @@ export default function Footer() {
 
           {/* Newsletter Area (3 cols on desktop) */}
           <div className="lg:col-span-3 flex flex-col">
-            <h3 className="font-playfair text-base font-bold text-white tracking-wide mb-4">
+            <h3 className="font-playfair text-base font-bold text-gold-light tracking-wide mb-4">
               {newsletter.heading}
             </h3>
             <div className="w-8 h-0.5 bg-gold/60 mb-4" />
